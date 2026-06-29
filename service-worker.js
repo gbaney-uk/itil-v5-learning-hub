@@ -1,4 +1,4 @@
-const CACHE_NAME = "itil-v5-four-dimensions-v1";
+const CACHE_NAME = "itil-v5-four-dimensions-v3";
 
 const FILES_TO_CACHE = [
   "./",
