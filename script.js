@@ -836,12 +836,12 @@ function attachProgressListeners() {
 
 function getProgressCheckboxes() {
   return [
+    document.getElementById("progress-four-dimensions"),
     document.getElementById("progress-service-value"),
     document.getElementById("progress-service-relationships"),
     document.getElementById("progress-value-system"),
     document.getElementById("progress-governance"),
     document.getElementById("progress-guiding-principles"),
-    document.getElementById("progress-four-dimensions"),
     document.getElementById("progress-lifecycle"),
     document.getElementById("progress-value-chain"),
     document.getElementById("progress-value-streams-mapping"),
