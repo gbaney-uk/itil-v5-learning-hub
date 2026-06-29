@@ -1,11 +1,11 @@
 {
-  "name": "ITIL V5 Foundation Learning Hub",
+  "name": "ITIL V5 Four Dimensions Learning Hub",
   "short_name": "ITIL V5 Hub",
-  "description": "A personal ITIL V5 Foundation revision hub with mind-map style notes.",
+  "description": "A personal ITIL V5 Foundation revision hub for the Four Dimensions of Product and Service Management.",
   "start_url": "./index.html",
   "display": "standalone",
-  "background_color": "#f7f9fa",
-  "theme_color": "#1f4f5f",
+  "background_color": "#f6f8fb",
+  "theme_color": "#102a5c",
   "icons": [
     {
       "src": "icon-192.png",
