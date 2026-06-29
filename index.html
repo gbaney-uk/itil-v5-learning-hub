@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>ITIL V5 Foundation Learning Hub</title>
+
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="manifest" href="manifest.json" />
+
+  <meta name="theme-color" content="#1f4f5f" />
+</head>
+
+<body>
+  <header class="app-header">
+    <div>
+      <h1>ITIL V5 Foundation Learning Hub</h1>
+      <p>Mind-map style revision notes, exam takeaways and self-test questions.</p>
+    </div>
+  </header>
+
+  <nav class="top-nav">
+    <button onclick="scrollToSection('dashboard')">Dashboard</button>
+    <button onclick="scrollToSection('four-dimensions')">Four Dimensions</button>
+    <button onclick="scrollToSection('practice')">Practice Questions</button>
+  </nav>
+
+  <main>
+    <section id="dashboard" class="panel">
+      <h2>Revision Dashboard</h2>
+
+      <div class="dashboard-grid">
+        <div class="stat-card">
+          <span class="stat-number" id="completedCount">0</span>
+          <span class="stat-label">Topics completed</span>
+        </div>
+
+        <div class="stat-card">
+          <span class="stat-number" id="remainingCount">1</span>
+          <span class="stat-label">Topics remaining</span>
+        </div>
+      </div>
+
+      <label class="progress-check">
+        <input type="checkbox" id="topicFourDimensions" />
+        Mark “The Four Dimensions” as revised
+      </label>
+    </section>
+
+    <section id="four-dimensions" class="panel">
+      <h2>The Four Dimensions</h2>
+      <p class="section-intro">
+        This is a starter mind-map layout. Replace the wording with your actual ITIL V5 Foundation notes.
+      </p>
+
+      <div class="mindmap">
+        <div class="central-node">
+          The Four Dimensions
+        </div>
+
+        <div class="branch branch-one">
+          <h3>Organisations and People</h3>
+          <p>Roles, responsibilities, culture, communication and skills.</p>
+        </div>
+
+        <div class="branch branch-two">
+          <h3>Information and Technology</h3>
+          <p>Information, knowledge, tools, systems and security.</p>
+        </div>
+
+        <div class="branch branch-three">
+          <h3>Partners and Suppliers</h3>
+          <p>External organisations, supplier relationships and contracts.</p>
+        </div>
+
+        <div class="branch branch-four">
+          <h3>Value Streams and Processes</h3>
+          <p>Activities, workflows, procedures and how value is created.</p>
+        </div>
+      </div>
+
+      <div class="exam-box">
+        <h3>Exam Takeaway</h3>
+        <p>
+          The four dimensions help make sure service management is considered from all key angles,
+          not just technology.
+        </p>
+      </div>
+    </section>
+
+    <section id="practice" class="panel">
+      <h2>Practice Questions</h2>
+
+      <div class="question-card">
+        <h3>Question 1</h3>
+        <p>Why should service management consider all four dimensions?</p>
+
+        <button class="answer-button" onclick="toggleAnswer('answer1')">
+          Show / Hide Answer
+        </button>
+
+        <div id="answer1" class="answer hidden">
+          <p>
+            Because focusing on only one area, such as technology, can create weak services.
+            Good service management needs people, technology, suppliers, processes and value streams
+            to work together.
+          </p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="app-footer">
+    <p>ITIL V5 Foundation Learning Hub</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
