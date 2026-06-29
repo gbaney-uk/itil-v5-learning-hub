@@ -1,4 +1,4 @@
-const CACHE_NAME = "itil-v5-foundation-hub-v2";
+const CACHE_NAME = "itil-v5-foundation-hub-v3";
 
 const FILES_TO_CACHE = [
   "./",
