@@ -1,0 +1,21 @@
+{
+  "name": "ITIL V5 Foundation Learning Hub",
+  "short_name": "ITIL V5 Hub",
+  "description": "A personal ITIL V5 Foundation revision hub with mind-map style notes.",
+  "start_url": "./index.html",
+  "display": "standalone",
+  "background_color": "#f7f9fa",
+  "theme_color": "#1f4f5f",
+  "icons": [
+    {
+      "src": "icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+}
