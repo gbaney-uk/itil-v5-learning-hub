@@ -4,97 +4,296 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-  <title>ITIL V5 Foundation Learning Hub</title>
+  <title>ITIL V5 Four Dimensions Learning Hub</title>
 
   <link rel="stylesheet" href="styles.css" />
   <link rel="manifest" href="manifest.json" />
 
-  <meta name="theme-color" content="#1f4f5f" />
+  <meta name="theme-color" content="#102a5c" />
 </head>
 
 <body>
   <header class="app-header">
-    <div>
-      <h1>ITIL V5 Foundation Learning Hub</h1>
-      <p>Mind-map style revision notes, exam takeaways and self-test questions.</p>
+    <div class="header-content">
+      <p class="eyebrow">ITIL V5 Foundation Revision</p>
+      <h1>Four Dimensions Learning Hub</h1>
+      <p>
+        Mind-map revision for the Four Dimensions of Product and Service Management.
+      </p>
     </div>
   </header>
 
-  <nav class="top-nav">
+  <nav class="top-nav" aria-label="Main navigation">
     <button onclick="scrollToSection('dashboard')">Dashboard</button>
-    <button onclick="scrollToSection('four-dimensions')">Four Dimensions</button>
-    <button onclick="scrollToSection('practice')">Practice Questions</button>
+    <button onclick="scrollToSection('mindmaps')">Mind Maps</button>
+    <button onclick="scrollToSection('exam-takeaways')">Exam Takeaways</button>
+    <button onclick="scrollToSection('practice')">Practice</button>
   </nav>
 
   <main>
     <section id="dashboard" class="panel">
-      <h2>Revision Dashboard</h2>
+      <div class="section-heading">
+        <h2>Revision Dashboard</h2>
+        <p>Track which Four Dimensions mind maps you have revised.</p>
+      </div>
 
       <div class="dashboard-grid">
         <div class="stat-card">
           <span class="stat-number" id="completedCount">0</span>
-          <span class="stat-label">Topics completed</span>
+          <span class="stat-label">Mind maps completed</span>
         </div>
 
         <div class="stat-card">
-          <span class="stat-number" id="remainingCount">1</span>
-          <span class="stat-label">Topics remaining</span>
+          <span class="stat-number" id="remainingCount">6</span>
+          <span class="stat-label">Mind maps remaining</span>
+        </div>
+
+        <div class="stat-card">
+          <span class="stat-number" id="progressPercent">0%</span>
+          <span class="stat-label">Progress</span>
         </div>
       </div>
 
-      <label class="progress-check">
-        <input type="checkbox" id="topicFourDimensions" />
-        Mark “The Four Dimensions” as revised
-      </label>
+      <div class="progress-list">
+        <label class="progress-check">
+          <input type="checkbox" id="productsAndService" />
+          Four Dimensions overview revised
+        </label>
+
+        <label class="progress-check">
+          <input type="checkbox" id="organisationsAndPeople" />
+          Organisations and People revised
+        </label>
+
+        <label class="progress-check">
+          <input type="checkbox" id="informationAndTechnology" />
+          Information and Technology revised
+        </label>
+
+        <label class="progress-check">
+          <input type="checkbox" id="partnersAndSuppliers" />
+          Partners and Suppliers revised
+        </label>
+
+        <label class="progress-check">
+          <input type="checkbox" id="valueStreamsProcesses" />
+          Value Streams and Processes revised
+        </label>
+
+        <label class="progress-check">
+          <input type="checkbox" id="externalFactors" />
+          External Factors PESTLE revised
+        </label>
+      </div>
     </section>
 
-    <section id="four-dimensions" class="panel">
-      <h2>The Four Dimensions</h2>
-      <p class="section-intro">
-        This is a starter mind-map layout. Replace the wording with your actual ITIL V5 Foundation notes.
-      </p>
-
-      <div class="mindmap">
-        <div class="central-node">
-          The Four Dimensions
-        </div>
-
-        <div class="branch branch-one">
-          <h3>Organisations and People</h3>
-          <p>Roles, responsibilities, culture, communication and skills.</p>
-        </div>
-
-        <div class="branch branch-two">
-          <h3>Information and Technology</h3>
-          <p>Information, knowledge, tools, systems and security.</p>
-        </div>
-
-        <div class="branch branch-three">
-          <h3>Partners and Suppliers</h3>
-          <p>External organisations, supplier relationships and contracts.</p>
-        </div>
-
-        <div class="branch branch-four">
-          <h3>Value Streams and Processes</h3>
-          <p>Activities, workflows, procedures and how value is created.</p>
-        </div>
+    <section id="mindmaps" class="panel">
+      <div class="section-heading">
+        <h2>Four Dimensions Mind Map Gallery</h2>
+        <p>Click any mind map to open it in a larger revision view.</p>
       </div>
 
-      <div class="exam-box">
-        <h3>Exam Takeaway</h3>
-        <p>
-          The four dimensions help make sure service management is considered from all key angles,
-          not just technology.
-        </p>
+      <div class="mindmap-grid">
+        <article class="mindmap-card">
+          <div class="card-header blue">
+            <h3>Four Dimensions Overview</h3>
+          </div>
+
+          <button
+            class="image-button"
+            onclick="openMindmap('assets/mindmaps/Products-and-Service.png', 'ITIL V5 Four Dimensions of Product and Service Management')"
+            aria-label="Open Four Dimensions overview mind map"
+          >
+            <img
+              src="assets/mindmaps/Products-and-Service.png"
+              alt="ITIL V5 Four Dimensions of Product and Service Management mind map"
+            />
+          </button>
+
+          <p>
+            The core overview showing the four dimensions, their purpose, relationship with other ITIL concepts and exam takeaway.
+          </p>
+        </article>
+
+        <article class="mindmap-card">
+          <div class="card-header purple">
+            <h3>Organisations and People</h3>
+          </div>
+
+          <button
+            class="image-button"
+            onclick="openMindmap('assets/mindmaps/Organisations-and-people.png', 'ITIL V5 Organisations and People')"
+            aria-label="Open Organisations and People mind map"
+          >
+            <img
+              src="assets/mindmaps/Organisations-and-people.png"
+              alt="ITIL V5 Organisations and People mind map"
+            />
+          </button>
+
+          <p>
+            Covers people, structure, culture, leadership, skills, roles and collaboration.
+          </p>
+        </article>
+
+        <article class="mindmap-card">
+          <div class="card-header teal">
+            <h3>Information and Technology</h3>
+          </div>
+
+          <button
+            class="image-button"
+            onclick="openMindmap('assets/mindmaps/Information-and-Technology.png', 'ITIL V5 Information and Technology')"
+            aria-label="Open Information and Technology mind map"
+          >
+            <img
+              src="assets/mindmaps/Information-and-Technology.png"
+              alt="ITIL V5 Information and Technology mind map"
+            />
+          </button>
+
+          <p>
+            Covers data, information, knowledge, automation, AI, security, reliability and governance.
+          </p>
+        </article>
+
+        <article class="mindmap-card">
+          <div class="card-header orange">
+            <h3>Partners and Suppliers</h3>
+          </div>
+
+          <button
+            class="image-button"
+            onclick="openMindmap('assets/mindmaps/Partners-and-Suppliers.png', 'ITIL V5 Partners and Suppliers')"
+            aria-label="Open Partners and Suppliers mind map"
+          >
+            <img
+              src="assets/mindmaps/Partners-and-Suppliers.png"
+              alt="ITIL V5 Partners and Suppliers mind map"
+            />
+          </button>
+
+          <p>
+            Covers sourcing, contracts, collaboration, dependencies, risk, resilience and value contribution.
+          </p>
+        </article>
+
+        <article class="mindmap-card">
+          <div class="card-header green">
+            <h3>Value Streams and Processes</h3>
+          </div>
+
+          <button
+            class="image-button"
+            onclick="openMindmap('assets/mindmaps/value-streams-and-processes.png', 'ITIL V5 Value Streams and Processes')"
+            aria-label="Open Value Streams and Processes mind map"
+          >
+            <img
+              src="assets/mindmaps/value-streams-and-processes.png"
+              alt="ITIL V5 Value Streams and Processes mind map"
+            />
+          </button>
+
+          <p>
+            Covers value streams, processes, flow, coordination, handoffs, measurement, improvement and complexity thinking.
+          </p>
+        </article>
+
+        <article class="mindmap-card">
+          <div class="card-header red">
+            <h3>External Factors PESTLE</h3>
+          </div>
+
+          <button
+            class="image-button"
+            onclick="openMindmap('assets/mindmaps/External-Factors.png', 'ITIL V5 External Factors PESTLE')"
+            aria-label="Open External Factors PESTLE mind map"
+          >
+            <img
+              src="assets/mindmaps/External-Factors.png"
+              alt="ITIL V5 External Factors PESTLE mind map"
+            />
+          </button>
+
+          <p>
+            Covers political, economic, social, technological, legal and environmental external factors.
+          </p>
+        </article>
+      </div>
+    </section>
+
+    <section id="exam-takeaways" class="panel">
+      <div class="section-heading">
+        <h2>Exam Takeaways</h2>
+        <p>Short points to remember before answering exam-style questions.</p>
+      </div>
+
+      <div class="takeaway-list">
+        <article class="takeaway-card">
+          <h3>Four Dimensions Overview</h3>
+          <ul>
+            <li>The Four Dimensions provide a balanced, holistic perspective for managing products and services.</li>
+            <li>They should be considered together, not separately.</li>
+            <li>They support service relationships, governance, the ITIL value system, the service value chain, management practices, value streams and continual improvement.</li>
+          </ul>
+        </article>
+
+        <article class="takeaway-card">
+          <h3>Organisations and People</h3>
+          <ul>
+            <li>This dimension is not just about HR.</li>
+            <li>It includes leadership, culture, safety culture, structure, governance, roles, skills and collaboration.</li>
+            <li>Even strong technology or processes can fail if people factors are not aligned.</li>
+          </ul>
+        </article>
+
+        <article class="takeaway-card">
+          <h3>Information and Technology</h3>
+          <ul>
+            <li>This dimension is not just about tools.</li>
+            <li>It includes data, information, knowledge, governance, automation, AI, security, reliability and compliance.</li>
+            <li>Technology only creates value when information is accurate, accessible, protected, governed and used well.</li>
+          </ul>
+        </article>
+
+        <article class="takeaway-card">
+          <h3>Partners and Suppliers</h3>
+          <ul>
+            <li>This dimension is not just vendor management.</li>
+            <li>It covers sourcing, contracts, collaboration, dependencies, risk and value contribution.</li>
+            <li>External relationships should strengthen resilience, service outcomes and value creation.</li>
+          </ul>
+        </article>
+
+        <article class="takeaway-card">
+          <h3>Value Streams and Processes</h3>
+          <ul>
+            <li>Value streams show how value is created from start to finish.</li>
+            <li>Processes describe specific activities performed within that flow.</li>
+            <li>This dimension helps identify bottlenecks, handoffs, delays and improvement opportunities.</li>
+          </ul>
+        </article>
+
+        <article class="takeaway-card">
+          <h3>External Factors PESTLE</h3>
+          <ul>
+            <li>External Factors help organisations understand influences outside their direct control.</li>
+            <li>PESTLE stands for Political, Economic, Social, Technological, Legal and Environmental.</li>
+            <li>External factors should be considered when designing, changing, improving and assessing risk.</li>
+          </ul>
+        </article>
       </div>
     </section>
 
     <section id="practice" class="panel">
-      <h2>Practice Questions</h2>
+      <div class="section-heading">
+        <h2>Practice Questions</h2>
+        <p>Use these for active recall. Try to answer before revealing the answer.</p>
+      </div>
 
       <div class="question-card">
         <h3>Question 1</h3>
-        <p>Why should service management consider all four dimensions?</p>
+        <p>Why should the Four Dimensions be considered together?</p>
 
         <button class="answer-button" onclick="toggleAnswer('answer1')">
           Show / Hide Answer
@@ -102,17 +301,108 @@
 
         <div id="answer1" class="answer hidden">
           <p>
-            Because focusing on only one area, such as technology, can create weak services.
-            Good service management needs people, technology, suppliers, processes and value streams
-            to work together.
+            Because focusing on one dimension in isolation can create gaps, risks, inefficiencies or poor decisions.
+            The dimensions are interdependent and together give a balanced view of product and service management.
+          </p>
+        </div>
+      </div>
+
+      <div class="question-card">
+        <h3>Question 2</h3>
+        <p>What is the main idea behind Organisations and People?</p>
+
+        <button class="answer-button" onclick="toggleAnswer('answer2')">
+          Show / Hide Answer
+        </button>
+
+        <div id="answer2" class="answer hidden">
+          <p>
+            Products and services depend on people factors such as leadership, culture, communication, structure,
+            governance, roles, skills and collaboration. Good technology or processes can still fail if people factors are not aligned.
+          </p>
+        </div>
+      </div>
+
+      <div class="question-card">
+        <h3>Question 3</h3>
+        <p>Why is Information and Technology not just about tools?</p>
+
+        <button class="answer-button" onclick="toggleAnswer('answer3')">
+          Show / Hide Answer
+        </button>
+
+        <div id="answer3" class="answer hidden">
+          <p>
+            Because it also includes the data, information, knowledge, governance, automation, AI, security,
+            reliability and compliance needed to support products and services.
+          </p>
+        </div>
+      </div>
+
+      <div class="question-card">
+        <h3>Question 4</h3>
+        <p>What does Partners and Suppliers cover beyond simple procurement?</p>
+
+        <button class="answer-button" onclick="toggleAnswer('answer4')">
+          Show / Hide Answer
+        </button>
+
+        <div id="answer4" class="answer hidden">
+          <p>
+            It covers sourcing choices, contracts, collaboration, dependencies, supplier integration, risk,
+            resilience and how external organisations contribute to value creation.
+          </p>
+        </div>
+      </div>
+
+      <div class="question-card">
+        <h3>Question 5</h3>
+        <p>What is the difference between a value stream and a process?</p>
+
+        <button class="answer-button" onclick="toggleAnswer('answer5')">
+          Show / Hide Answer
+        </button>
+
+        <div id="answer5" class="answer hidden">
+          <p>
+            A value stream shows the end-to-end flow of how value is created. A process describes specific
+            activities or steps that may happen within that value stream.
+          </p>
+        </div>
+      </div>
+
+      <div class="question-card">
+        <h3>Question 6</h3>
+        <p>What does PESTLE stand for?</p>
+
+        <button class="answer-button" onclick="toggleAnswer('answer6')">
+          Show / Hide Answer
+        </button>
+
+        <div id="answer6" class="answer hidden">
+          <p>
+            Political, Economic, Social, Technological, Legal and Environmental.
           </p>
         </div>
       </div>
     </section>
   </main>
 
+  <div id="imageModal" class="modal hidden" role="dialog" aria-modal="true" aria-label="Mind map viewer">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h2 id="modalTitle">Mind Map</h2>
+        <button class="close-button" onclick="closeMindmap()" aria-label="Close mind map">×</button>
+      </div>
+
+      <div class="modal-image-wrap">
+        <img id="modalImage" src="" alt="" />
+      </div>
+    </div>
+  </div>
+
   <footer class="app-footer">
-    <p>ITIL V5 Foundation Learning Hub</p>
+    <p>ITIL V5 Four Dimensions Learning Hub</p>
   </footer>
 
   <script src="script.js"></script>
