@@ -1,0 +1,10 @@
+{
+  "name": "ITIL V5 Foundation Learning Hub",
+  "short_name": "ITIL V5 Hub",
+  "description": "A personal ITIL V5 Foundation revision hub with topic cards, HTML mind maps and practice questions.",
+  "start_url": "./index.html",
+  "display": "standalone",
+  "background_color": "#f6f8fb",
+  "theme_color": "#102a5c",
+  "icons": []
+}
