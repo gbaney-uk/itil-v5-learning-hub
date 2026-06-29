@@ -28,55 +28,6 @@ function toggleAnswer(answerId) {
   answer.classList.toggle("hidden");
 }
 
-function openMindmap(imagePath, title) {
-  const modal = document.getElementById("imageModal");
-  const modalImage = document.getElementById("modalImage");
-  const modalTitle = document.getElementById("modalTitle");
-
-  if (!modal || !modalImage || !modalTitle) {
-    return;
-  }
-
-  modalImage.src = imagePath;
-  modalImage.alt = title;
-  modalTitle.textContent = title;
-  modal.classList.remove("hidden");
-
-  document.body.style.overflow = "hidden";
-}
-
-function closeMindmap() {
-  const modal = document.getElementById("imageModal");
-  const modalImage = document.getElementById("modalImage");
-
-  if (!modal || !modalImage) {
-    return;
-  }
-
-  modal.classList.add("hidden");
-  modalImage.src = "";
-
-  document.body.style.overflow = "";
-}
-
-document.addEventListener("keydown", (event) => {
-  if (event.key === "Escape") {
-    closeMindmap();
-  }
-});
-
-document.addEventListener("click", (event) => {
-  const modal = document.getElementById("imageModal");
-
-  if (!modal || modal.classList.contains("hidden")) {
-    return;
-  }
-
-  if (event.target === modal) {
-    closeMindmap();
-  }
-});
-
 function attachProgressListeners() {
   const checkboxes = getTopicCheckboxes();
 
@@ -90,30 +41,30 @@ function attachProgressListeners() {
 
 function getTopicCheckboxes() {
   return [
-    document.getElementById("productsAndService"),
-    document.getElementById("organisationsAndPeople"),
-    document.getElementById("informationAndTechnology"),
-    document.getElementById("partnersAndSuppliers"),
-    document.getElementById("valueStreamsProcesses"),
-    document.getElementById("externalFactors")
+    document.getElementById("topicOverview"),
+    document.getElementById("topicOrganisations"),
+    document.getElementById("topicInformation"),
+    document.getElementById("topicPartners"),
+    document.getElementById("topicValueStreams"),
+    document.getElementById("topicExternal")
   ].filter(Boolean);
 }
 
 function saveProgress() {
   const progress = {
-    productsAndService: getCheckedValue("productsAndService"),
-    organisationsAndPeople: getCheckedValue("organisationsAndPeople"),
-    informationAndTechnology: getCheckedValue("informationAndTechnology"),
-    partnersAndSuppliers: getCheckedValue("partnersAndSuppliers"),
-    valueStreamsProcesses: getCheckedValue("valueStreamsProcesses"),
-    externalFactors: getCheckedValue("externalFactors")
+    topicOverview: getCheckedValue("topicOverview"),
+    topicOrganisations: getCheckedValue("topicOrganisations"),
+    topicInformation: getCheckedValue("topicInformation"),
+    topicPartners: getCheckedValue("topicPartners"),
+    topicValueStreams: getCheckedValue("topicValueStreams"),
+    topicExternal: getCheckedValue("topicExternal")
   };
 
-  localStorage.setItem("itilV5FourDimensionsProgress", JSON.stringify(progress));
+  localStorage.setItem("itilV5FourDimensionsHtmlProgress", JSON.stringify(progress));
 }
 
 function loadProgress() {
-  const savedProgress = localStorage.getItem("itilV5FourDimensionsProgress");
+  const savedProgress = localStorage.getItem("itilV5FourDimensionsHtmlProgress");
 
   if (!savedProgress) {
     return;
@@ -122,12 +73,12 @@ function loadProgress() {
   try {
     const progress = JSON.parse(savedProgress);
 
-    setCheckedValue("productsAndService", progress.productsAndService);
-    setCheckedValue("organisationsAndPeople", progress.organisationsAndPeople);
-    setCheckedValue("informationAndTechnology", progress.informationAndTechnology);
-    setCheckedValue("partnersAndSuppliers", progress.partnersAndSuppliers);
-    setCheckedValue("valueStreamsProcesses", progress.valueStreamsProcesses);
-    setCheckedValue("externalFactors", progress.externalFactors);
+    setCheckedValue("topicOverview", progress.topicOverview);
+    setCheckedValue("topicOrganisations", progress.topicOrganisations);
+    setCheckedValue("topicInformation", progress.topicInformation);
+    setCheckedValue("topicPartners", progress.topicPartners);
+    setCheckedValue("topicValueStreams", progress.topicValueStreams);
+    setCheckedValue("topicExternal", progress.topicExternal);
   } catch (error) {
     console.log("Could not load progress:", error);
   }
