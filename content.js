@@ -2253,3 +2253,300 @@ const SECTIONS = [
     }
   ];
 })();
+
+
+/* Phase 4.4 — Service Value and Co-Creation restructure
+   Pattern mirrors Four Dimensions and Service Relationships: one overview plus sub-topic mind maps in the modal viewer. */
+(function () {
+  const section = SECTIONS.find(function (item) { return item.id === "service-value"; });
+  if (section) {
+    section.short = "Service value, outcomes, costs, risks and value co-creation.";
+    section.intro = "Service Value and Co-Creation explains how value is perceived, shaped and created through service relationships. This section is split into Service Value, Outcomes, Costs and Risks, and Value Co-Creation.";
+    section.overview = [
+      ["Service Value", "Explains value, perceived value, service value and why value is not fixed or delivered by the provider alone."],
+      ["Outcomes", "Explains the results consumers want to achieve and how services enable those results without the consumer managing every cost and risk directly."],
+      ["Costs and Risks", "Explains how costs and risks influence service value, including costs and risks removed by the service and costs and risks introduced by using it."],
+      ["Value Co-Creation", "Explains how providers and consumers work together through interaction, feedback and shared responsibility to create value."],
+    ];
+    section.terms = [
+      ["Value", "The perceived benefits, usefulness and importance of something."],
+      ["Service value", "The perceived benefits, usefulness and importance of a service."],
+      ["Perceived value", "How valuable something appears from the perspective of a stakeholder or consumer."],
+      ["Dynamic value", "The idea that value can change as needs, expectations, priorities and circumstances change."],
+      ["Outcome", "A result for a stakeholder enabled by one or more outputs."],
+      ["Desired outcome", "The result the consumer wants to achieve through use of a service."],
+      ["Output", "A tangible or intangible deliverable of an activity."],
+      ["Cost", "The amount of money, time, effort or other resource spent on a specific activity or resource."],
+      ["Risk", "A possible event that could cause harm or loss, or make it more difficult to achieve objectives."],
+      ["Cost removed", "A cost the consumer avoids because the provider manages the work through the service."],
+      ["Cost imposed", "A cost the consumer still incurs when consuming the service."],
+      ["Risk removed", "A risk the provider helps the consumer avoid or reduce through the service."],
+      ["Risk introduced", "A risk the consumer accepts by using the service or depending on the provider."],
+      ["Value co-creation", "The joint creation of value through interaction between the service provider and service consumer."],
+      ["Service relationship", "A cooperation between a provider and consumer that enables value co-creation."],
+    ];
+    section.examFocus = [
+      "Know that value is perceived, not absolute or universal.",
+      "Service value is the perceived benefits, usefulness and importance of a service.",
+      "Outcomes are the results the consumer wants to achieve; outputs are deliverables that may help enable outcomes.",
+      "A service can remove some costs and risks from the consumer, but it can also impose new costs and introduce new risks.",
+      "Value co-creation means value emerges through provider-consumer interaction, not provider-only delivery.",
+      "Value is dynamic and can change over time as priorities, expectations and circumstances change.",
+    ];
+    section.traps = [
+      ["Provider delivers value alone", "Do not state that the provider creates and hands over value by itself. Value is co-created through provider and consumer interaction."],
+      ["Output vs outcome", "An output is a deliverable; an outcome is the result the consumer wants to achieve."],
+      ["Ignoring costs and risks", "Value is not only about benefits. It is also shaped by the costs and risks that are removed, imposed, reduced or introduced."],
+      ["Assuming value is fixed", "Value is dynamic and can change as circumstances, expectations and priorities change."],
+      ["Treating technical success as value", "A service can work technically but still fail to create value if it does not support the consumer’s desired outcome."],
+      ["Thinking the consumer is passive", "The consumer contributes to value through use, feedback, decisions, resources, data and behaviour."],
+    ];
+  }
+
+  function examBlock(items) {
+    return `<div class="mm-exam"><div class="mm-exam-grid"><div class="mm-exam-label">🎓 Exam takeaway</div><ul>${items.map(function (item) { return `<li>${item}</li>`; }).join("")}</ul></div></div>`;
+  }
+
+  MIND_MAPS["service-value"] = [
+    {
+      title: "Service Value and Co-Creation Overview",
+      html: `
+        <div class="mm-page">
+          <div class="mm-head">
+            <h2 class="mm-title">ITIL V5: Service Value and Value Co-Creation</h2>
+            <p class="mm-subtitle">Section overview: service value, outcomes, costs, risks and value co-creation.</p>
+          </div>
+          <div class="mm-grid">
+            <section class="mm-box mm-blue"><div class="mm-box-h"><span class="mm-icon">💎</span>Service Value</div><div class="mm-box-b"><ul>
+              <li>Value is the perceived benefits, usefulness and importance of something.</li>
+              <li>Service value is the perceived benefits, usefulness and importance of a service.</li>
+              <li>Value is perceived, not absolute, and can be different for different stakeholders.</li>
+              <li>Value is dynamic and can change as expectations, priorities and circumstances change.</li>
+            </ul></div></section>
+            <section class="mm-box mm-purple"><div class="mm-box-h"><span class="mm-icon">🎯</span>Outcomes</div><div class="mm-box-b"><ul>
+              <li>Consumers use services because they want to achieve outcomes.</li>
+              <li>An outcome is a result enabled by one or more outputs.</li>
+              <li>Services help consumers achieve outcomes without managing every cost and risk themselves.</li>
+              <li>Exam questions often test outcome versus output.</li>
+            </ul></div></section>
+            <section class="mm-box mm-orange"><div class="mm-box-h"><span class="mm-icon">⚖️</span>Costs and Risks</div><div class="mm-box-b"><ul>
+              <li>Services affect value by changing the consumer’s costs and risks.</li>
+              <li>Some costs and risks are removed or reduced by the service.</li>
+              <li>Some costs and risks are imposed or introduced by using the service.</li>
+              <li>Value depends on whether the positive effects outweigh the negative effects.</li>
+            </ul></div></section>
+            <section class="mm-box mm-red"><div class="mm-box-h"><span class="mm-icon">🤝</span>Value Co-Creation</div><div class="mm-box-b"><ul>
+              <li>Value is not produced by the provider alone.</li>
+              <li>Value emerges through interaction between the service provider and service consumer.</li>
+              <li>Consumers contribute through use, feedback, resources, data, decisions and behaviours.</li>
+              <li>Co-creation happens within service relationships.</li>
+            </ul></div></section>
+            <section class="mm-core"><h3>Service Value<br>and Co-Creation</h3><div class="mm-divider"></div><p>Service management exists to enable value creation. Value is shaped by the consumer’s desired outcomes, experience, costs, risks and active participation.</p><p class="mm-emphasis">The provider enables value; the consumer helps realize and perceive it.</p></section>
+            <section class="mm-box mm-teal"><div class="mm-box-h"><span class="mm-icon">🧠</span>How to use this section</div><div class="mm-box-b"><ul>
+              <li>Use Service Value to understand what value means.</li>
+              <li>Use Outcomes to separate results from deliverables.</li>
+              <li>Use Costs and Risks to understand positive and negative effects of a service.</li>
+              <li>Use Value Co-Creation to understand provider-consumer interaction.</li>
+            </ul></div></section>
+          </div>
+          <div class="mm-support"><strong>Sub-sections</strong><span class="mm-inline-links"><span>Service Value</span><span class="mm-dot">•</span><span>Outcomes</span><span class="mm-dot">•</span><span>Costs and Risks</span><span class="mm-dot">•</span><span>Value Co-Creation</span></span></div>
+          ${examBlock([
+            "Value is perceived, dynamic and stakeholder-dependent.",
+            "Outcomes are the results consumers want; outputs are deliverables that may enable outcomes.",
+            "Services can remove and reduce costs and risks, but may also impose or introduce them.",
+            "Value is co-created through provider-consumer interaction."
+          ])}
+        </div>`
+    },
+    {
+      title: "Service Value",
+      html: `
+        <div class="mm-page">
+          <div class="mm-head"><h2 class="mm-title">ITIL V5: Service Value</h2><p class="mm-subtitle">Value is perceived, service-specific, dynamic and dependent on the consumer’s context.</p></div>
+          <div class="mm-grid">
+            <section class="mm-box mm-blue"><div class="mm-box-h"><span class="mm-icon">💡</span>Overview</div><div class="mm-box-b"><ul>
+              <li>The purpose of managing digital products and services is to enable value creation.</li>
+              <li>Services help organizations and individuals achieve what matters to them.</li>
+              <li>A service can be well designed and efficiently operated, but still fail to create value if it does not meet the consumer’s expectations or needs.</li>
+              <li>Service value focuses on how a service contributes to what the consumer is trying to achieve.</li>
+            </ul></div></section>
+            <section class="mm-box mm-purple"><div class="mm-box-h"><span class="mm-icon">📘</span>Key terms</div><div class="mm-box-b"><ul>
+              <li><strong>Value:</strong> the perceived benefits, usefulness and importance of something.</li>
+              <li><strong>Service value:</strong> the perceived benefits, usefulness and importance of a service.</li>
+              <li><strong>Perceived value:</strong> value as judged by a stakeholder or consumer.</li>
+              <li><strong>Dynamic value:</strong> value that changes as priorities, expectations or circumstances change.</li>
+            </ul></div></section>
+            <section class="mm-box mm-orange"><div class="mm-box-h"><span class="mm-icon">👁️</span>Value is perceived</div><div class="mm-box-b"><ul>
+              <li>Value does not exist as a fixed property of the service.</li>
+              <li>The same service may be valuable to one consumer and less valuable to another.</li>
+              <li>The same consumer may perceive the same service differently at different times.</li>
+              <li>Perception depends on outcomes, experience, cost, risk and context.</li>
+            </ul></div></section>
+            <section class="mm-box mm-red"><div class="mm-box-h"><span class="mm-icon">🔄</span>Dynamic value</div><div class="mm-box-b"><ul>
+              <li>Value changes when business priorities change.</li>
+              <li>Value changes when expectations or operating conditions change.</li>
+              <li>External circumstances can also change value perception.</li>
+              <li>Effective service management continually checks whether the service still supports value creation.</li>
+            </ul></div></section>
+            <section class="mm-core"><h3>Service Value</h3><div class="mm-divider"></div><p class="mm-emphasis">Service value is the perceived benefits, usefulness and importance of a service.</p><p>A service creates value when it supports desired outcomes and when its positive effects outweigh negative effects experienced by the consumer.</p></section>
+            <section class="mm-box mm-teal"><div class="mm-box-h"><span class="mm-icon">🎓</span>Exam focus</div><div class="mm-box-b"><ul>
+              <li>Know the wording of value and service value.</li>
+              <li>Choose answers that mention perception, outcomes and consumer context.</li>
+              <li>Reject answers that make value purely technical or provider-owned.</li>
+              <li>Remember value is not fixed; it changes over time.</li>
+            </ul></div></section>
+            <section class="mm-box mm-gold"><div class="mm-box-h"><span class="mm-icon">⚠️</span>Common traps</div><div class="mm-box-b"><ul>
+              <li>Confusing provider activity with consumer value.</li>
+              <li>Thinking a technically successful service always creates value.</li>
+              <li>Assuming value is the same for every consumer.</li>
+              <li>Forgetting that value can change over time.</li>
+            </ul></div></section>
+          </div>
+          ${examBlock(["Value is perceived, not absolute.", "Service value is the perceived benefits, usefulness and importance of a service.", "Service value depends on outcomes, experience, costs and risks."])}
+        </div>`
+    },
+    {
+      title: "Outcomes",
+      html: `
+        <div class="mm-page">
+          <div class="mm-head"><h2 class="mm-title">ITIL V5: Outcomes</h2><p class="mm-subtitle">Consumers use services to achieve results, not simply to receive outputs.</p></div>
+          <div class="mm-grid">
+            <section class="mm-box mm-blue"><div class="mm-box-h"><span class="mm-icon">💡</span>Overview</div><div class="mm-box-b"><ul>
+              <li>Consumers engage with services because they want to achieve outcomes.</li>
+              <li>Services support or enable outcomes, but they do not guarantee every business result by themselves.</li>
+              <li>The provider contributes capability, resources and service actions.</li>
+              <li>The consumer contributes context, use, decisions and responsibilities.</li>
+            </ul></div></section>
+            <section class="mm-box mm-purple"><div class="mm-box-h"><span class="mm-icon">📘</span>Key terms</div><div class="mm-box-b"><ul>
+              <li><strong>Outcome:</strong> a result for a stakeholder enabled by one or more outputs.</li>
+              <li><strong>Desired outcome:</strong> the result the consumer wants to achieve.</li>
+              <li><strong>Output:</strong> a tangible or intangible deliverable of an activity.</li>
+              <li><strong>Utility:</strong> what the service does to support needs or outcomes.</li>
+            </ul></div></section>
+            <section class="mm-box mm-orange"><div class="mm-box-h"><span class="mm-icon">🔀</span>Outcome vs output</div><div class="mm-box-b"><ul>
+              <li>Outputs are deliverables produced by activities.</li>
+              <li>Outcomes are the results stakeholders want to achieve.</li>
+              <li>A report, ticket, application or completed request can be an output.</li>
+              <li>Improved decision-making, restored productivity or completed work may be outcomes.</li>
+            </ul></div></section>
+            <section class="mm-box mm-red"><div class="mm-box-h"><span class="mm-icon">🧩</span>How services enable outcomes</div><div class="mm-box-b"><ul>
+              <li>Services give consumers access to provider resources and capabilities.</li>
+              <li>Consumers do not need to own or manage all underlying resources themselves.</li>
+              <li>Services can remove work, complexity, cost or risk from the consumer.</li>
+              <li>Outcomes depend on how the service is used in the consumer’s real context.</li>
+            </ul></div></section>
+            <section class="mm-core"><h3>Outcomes</h3><div class="mm-divider"></div><p class="mm-emphasis">An outcome is a result for a stakeholder enabled by one or more outputs.</p><p>The exam often tests whether you can separate the deliverable from the result the consumer actually wants.</p></section>
+            <section class="mm-box mm-teal"><div class="mm-box-h"><span class="mm-icon">🎓</span>Exam focus</div><div class="mm-box-b"><ul>
+              <li>Look for language about results, objectives and what the consumer wants to achieve.</li>
+              <li>Do not confuse an output with the outcome it helps enable.</li>
+              <li>Remember services enable outcomes by helping consumers avoid direct ownership of specific costs and risks.</li>
+            </ul></div></section>
+            <section class="mm-box mm-gold"><div class="mm-box-h"><span class="mm-icon">⚠️</span>Common traps</div><div class="mm-box-b"><ul>
+              <li>Calling a deliverable an outcome.</li>
+              <li>Assuming the provider alone is responsible for the final business result.</li>
+              <li>Ignoring the consumer’s role in achieving the outcome.</li>
+              <li>Focusing only on activity completion instead of value achieved.</li>
+            </ul></div></section>
+          </div>
+          ${examBlock(["Outcomes are results, not just deliverables.", "Outputs may enable outcomes but are not the same thing.", "Services help consumers achieve outcomes without managing every cost and risk directly."])}
+        </div>`
+    },
+    {
+      title: "Costs and Risks",
+      html: `
+        <div class="mm-page">
+          <div class="mm-head"><h2 class="mm-title">ITIL V5: Costs and Risks</h2><p class="mm-subtitle">Service value is shaped by the costs and risks removed, reduced, imposed and introduced.</p></div>
+          <div class="mm-grid">
+            <section class="mm-box mm-blue"><div class="mm-box-h"><span class="mm-icon">💡</span>Overview</div><div class="mm-box-b"><ul>
+              <li>Services help consumers achieve outcomes while avoiding some costs and risks they would otherwise manage themselves.</li>
+              <li>Using a service can also impose costs and introduce risks.</li>
+              <li>Value depends on whether benefits outweigh negative effects.</li>
+              <li>Costs and risks must be considered from the consumer’s perspective.</li>
+            </ul></div></section>
+            <section class="mm-box mm-purple"><div class="mm-box-h"><span class="mm-icon">📘</span>Key terms</div><div class="mm-box-b"><ul>
+              <li><strong>Cost:</strong> money, time, effort or other resources spent on a specific activity or resource.</li>
+              <li><strong>Risk:</strong> a possible event that could cause harm or loss, or make objectives harder to achieve.</li>
+              <li><strong>Cost removed:</strong> a cost the consumer avoids because the provider manages it.</li>
+              <li><strong>Cost imposed:</strong> a cost the consumer incurs when using the service.</li>
+              <li><strong>Risk removed:</strong> a risk reduced or avoided through the service.</li>
+              <li><strong>Risk introduced:</strong> a new or changed risk accepted through service use.</li>
+            </ul></div></section>
+            <section class="mm-box mm-orange"><div class="mm-box-h"><span class="mm-icon">➖</span>Costs and risks removed</div><div class="mm-box-b"><ul>
+              <li>The provider may remove the need for the consumer to buy, build, operate or maintain resources directly.</li>
+              <li>The provider may reduce operational, technical, security or continuity risks.</li>
+              <li>These removed costs and risks are part of why the service may be valuable.</li>
+            </ul></div></section>
+            <section class="mm-box mm-red"><div class="mm-box-h"><span class="mm-icon">➕</span>Costs and risks introduced</div><div class="mm-box-b"><ul>
+              <li>The consumer may still pay fees, spend time, train users, adapt processes or manage change.</li>
+              <li>The consumer may accept dependence on the provider.</li>
+              <li>The consumer may face data, integration, compliance or supplier-related risks.</li>
+              <li>These negative effects reduce perceived value if not managed well.</li>
+            </ul></div></section>
+            <section class="mm-core"><h3>Costs<br>and Risks</h3><div class="mm-divider"></div><p>Service value is influenced by the balance between positive effects and negative effects.</p><p class="mm-emphasis">A valuable service removes or reduces important costs and risks, while keeping imposed costs and introduced risks acceptable.</p></section>
+            <section class="mm-box mm-teal"><div class="mm-box-h"><span class="mm-icon">🎓</span>Exam focus</div><div class="mm-box-b"><ul>
+              <li>Identify whether the question describes costs removed or costs imposed.</li>
+              <li>Identify whether the question describes risks removed or risks introduced.</li>
+              <li>Remember that services do not remove all costs and risks.</li>
+              <li>Cost and risk must be judged alongside benefits and outcomes.</li>
+            </ul></div></section>
+            <section class="mm-box mm-gold"><div class="mm-box-h"><span class="mm-icon">⚠️</span>Common traps</div><div class="mm-box-b"><ul>
+              <li>Thinking services remove every cost and risk.</li>
+              <li>Ignoring costs imposed on the consumer, such as training or service charges.</li>
+              <li>Ignoring risks introduced by dependency on the provider.</li>
+              <li>Focusing only on price rather than total cost, effort and risk.</li>
+            </ul></div></section>
+          </div>
+          ${examBlock(["Services can remove costs and risks, but also impose costs and introduce risks.", "The value judgement depends on the balance of benefits, costs and risks.", "Costs and risks should be viewed from the service consumer’s perspective."])}
+        </div>`
+    },
+    {
+      title: "Value Co-Creation",
+      html: `
+        <div class="mm-page">
+          <div class="mm-head"><h2 class="mm-title">ITIL V5: Value Co-Creation</h2><p class="mm-subtitle">Value emerges through interaction between provider and consumer within a service relationship.</p></div>
+          <div class="mm-grid">
+            <section class="mm-box mm-blue"><div class="mm-box-h"><span class="mm-icon">💡</span>Overview</div><div class="mm-box-b"><ul>
+              <li>Value is not produced by the service provider alone.</li>
+              <li>Value emerges when the provider and consumer interact within a service relationship.</li>
+              <li>The provider makes services available and supports their use.</li>
+              <li>The consumer uses the service, provides feedback, supplies context and makes decisions that affect value.</li>
+            </ul></div></section>
+            <section class="mm-box mm-purple"><div class="mm-box-h"><span class="mm-icon">📘</span>Key terms</div><div class="mm-box-b"><ul>
+              <li><strong>Value co-creation:</strong> joint creation of value through provider-consumer interaction.</li>
+              <li><strong>Service relationship:</strong> cooperation between provider and consumer to enable value co-creation.</li>
+              <li><strong>Service provider:</strong> the party offering, delivering or supporting services.</li>
+              <li><strong>Service consumer:</strong> the party using, receiving or consuming services.</li>
+              <li><strong>Experience:</strong> the consumer’s perception of interaction with the service and provider.</li>
+            </ul></div></section>
+            <section class="mm-box mm-orange"><div class="mm-box-h"><span class="mm-icon">🏢</span>Provider contribution</div><div class="mm-box-b"><ul>
+              <li>Designs and offers services.</li>
+              <li>Provides resources, capabilities and support.</li>
+              <li>Manages service performance, availability, support and improvement.</li>
+              <li>Removes or reduces some costs and risks for the consumer.</li>
+            </ul></div></section>
+            <section class="mm-box mm-red"><div class="mm-box-h"><span class="mm-icon">👤</span>Consumer contribution</div><div class="mm-box-b"><ul>
+              <li>Defines needs and desired outcomes.</li>
+              <li>Uses the service in a real operational context.</li>
+              <li>Provides information, feedback and decisions.</li>
+              <li>Accepts remaining costs and risks.</li>
+              <li>Shapes whether value is actually realized.</li>
+            </ul></div></section>
+            <section class="mm-core"><h3>Value<br>Co-Creation</h3><div class="mm-divider"></div><p class="mm-emphasis">Value is co-created through active interaction between the service provider and service consumer.</p><p>The provider enables value, but the consumer’s use, experience and context influence whether value is realized.</p></section>
+            <section class="mm-box mm-teal"><div class="mm-box-h"><span class="mm-icon">🎓</span>Exam focus</div><div class="mm-box-b"><ul>
+              <li>Choose answers that show provider and consumer working together.</li>
+              <li>Reject answers that say value is delivered by the provider alone.</li>
+              <li>Connect co-creation with service relationships, feedback and consumer experience.</li>
+              <li>Remember that value is influenced by use and perception.</li>
+            </ul></div></section>
+            <section class="mm-box mm-gold"><div class="mm-box-h"><span class="mm-icon">⚠️</span>Common traps</div><div class="mm-box-b"><ul>
+              <li>Making the consumer passive.</li>
+              <li>Assuming a service offering automatically creates value.</li>
+              <li>Ignoring experience and feedback.</li>
+              <li>Confusing output delivery with value realization.</li>
+            </ul></div></section>
+          </div>
+          ${examBlock(["Value is co-created, not delivered one-way by the provider.", "The service consumer contributes through use, feedback, context and decisions.", "Service relationships provide the context for value co-creation."])}
+        </div>`
+    }
+  ];
+})();
