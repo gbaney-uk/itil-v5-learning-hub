@@ -485,7 +485,7 @@ body.dark .flash-card {
   .exam-controls .secondary-btn, .exam-controls .danger-btn { width: auto; }
 }
 
-/* Phase 3 mind map integration */
+/* Mind map integration */
 .mindmap-intro,
 .mindmap-empty {
   background: var(--panel-2);
@@ -624,7 +624,7 @@ body.dark .flash-card {
 }
 
 
-/* Phase 4 — richer HTML mind maps recreated from the original colour diagrams */
+/* Rich HTML mind maps recreated from original colour diagrams */
 .mindmap-rich-card {
   background: transparent;
   border: 0;
@@ -846,3 +846,115 @@ body.dark .flash-card {
 }
 
 .source-line { margin-top: 10px; color: var(--muted); font-size: .9rem; }
+
+
+/* Mind map button launcher and popup modal */
+.mindmap-launch-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 14px;
+}
+.mindmap-launch-card {
+  appearance: none;
+  border: 1px solid var(--border);
+  background: linear-gradient(180deg, var(--panel), var(--panel-2));
+  color: var(--text);
+  border-radius: 18px;
+  padding: 18px;
+  text-align: left;
+  cursor: pointer;
+  display: grid;
+  grid-template-columns: 48px 1fr;
+  gap: 8px 14px;
+  align-items: center;
+  box-shadow: var(--shadow-soft);
+  transition: transform .18s ease, border-color .18s ease, box-shadow .18s ease;
+}
+.mindmap-launch-card:hover {
+  transform: translateY(-2px);
+  border-color: var(--accent);
+  box-shadow: 0 14px 30px rgba(37, 99, 235, .16);
+}
+.mindmap-launch-icon {
+  grid-row: span 2;
+  width: 48px;
+  height: 48px;
+  border-radius: 16px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(37, 99, 235, .12);
+  font-size: 1.55rem;
+}
+.mindmap-launch-title {
+  font-size: 1.05rem;
+  font-weight: 800;
+}
+.mindmap-launch-subtitle {
+  color: var(--muted);
+  font-size: .9rem;
+}
+body.modal-open { overflow: hidden; }
+.mindmap-modal {
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+  display: none;
+}
+.mindmap-modal.show { display: block; }
+.mindmap-modal-backdrop {
+  position: absolute;
+  inset: 0;
+  background: rgba(7, 18, 42, .72);
+  backdrop-filter: blur(4px);
+}
+.mindmap-modal-panel {
+  position: absolute;
+  inset: 24px;
+  background: var(--bg);
+  border: 1px solid var(--border);
+  border-radius: 24px;
+  box-shadow: 0 24px 70px rgba(0,0,0,.35);
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+.mindmap-modal-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 16px 20px;
+  border-bottom: 1px solid var(--border);
+  background: var(--panel);
+}
+.mindmap-modal-header h2 {
+  margin: 2px 0 0;
+  font-size: 1.25rem;
+}
+.mindmap-close-btn {
+  border: 1px solid var(--border);
+  background: var(--panel-2);
+  color: var(--text);
+  border-radius: 14px;
+  width: 44px;
+  height: 44px;
+  font-size: 1.8rem;
+  line-height: 1;
+  cursor: pointer;
+}
+.mindmap-close-btn:hover { border-color: var(--accent); }
+.mindmap-modal-body {
+  padding: 18px;
+  overflow: auto;
+  flex: 1;
+}
+.mindmap-modal-body .mm-page {
+  max-width: 1600px;
+  margin: 0 auto;
+}
+@media (max-width: 720px) {
+  .mindmap-launch-grid { grid-template-columns: 1fr; }
+  .mindmap-modal-panel { inset: 0; border-radius: 0; }
+  .mindmap-modal-body { padding: 12px; }
+}

@@ -212,8 +212,22 @@
   </main>
 
   <footer class="footer-note">
-    Phase 3 includes HTML mind maps, learning notes and a draft question bank. Use the mind maps as a learning and validation layer, then validate final exam wording against official ITIL Foundation Version 5 material before relying on it for final revision.
+    ITIL Foundation Version 5
   </footer>
+
+  <div id="mindMapModal" class="mindmap-modal" aria-hidden="true">
+    <div class="mindmap-modal-backdrop" data-mindmap-close></div>
+    <section class="mindmap-modal-panel" role="dialog" aria-modal="true" aria-labelledby="mindMapModalTitle">
+      <header class="mindmap-modal-header">
+        <div>
+          <span class="eyebrow">Mind map</span>
+          <h2 id="mindMapModalTitle">Mind map</h2>
+        </div>
+        <button id="mindMapCloseBtn" class="mindmap-close-btn" type="button" aria-label="Close mind map" data-mindmap-close>×</button>
+      </header>
+      <div id="mindMapModalBody" class="mindmap-modal-body"></div>
+    </section>
+  </div>
 
   <script src="content.js"></script>
   <script src="questions.js"></script>

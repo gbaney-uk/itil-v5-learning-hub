@@ -1,8 +1,8 @@
-/* ITIL V5 Learning Dashboard — Phase 3.1 app engine */
+/* ITIL V5 Learning Dashboard — Phase 4.2 app engine */
 (function () {
   "use strict";
 
-  const APP_VERSION = "4.1";
+  const APP_VERSION = "4.2";
   const STORAGE_PREFIX = "itil_v5_learning_phase4";
   const PASS_MARK = 65;
 
@@ -201,6 +201,18 @@
   }
 
 
+
+  function mindMapIcon(title) {
+    const value = String(title || "").toLowerCase();
+    if (value.includes("organization") || value.includes("organisation")) return "👥";
+    if (value.includes("information") || value.includes("technology")) return "💻";
+    if (value.includes("partner") || value.includes("supplier")) return "🤝";
+    if (value.includes("value streams") || value.includes("process")) return "🔄";
+    if (value.includes("external") || value.includes("pestle")) return "🌍";
+    if (value.includes("four dimensions")) return "🧭";
+    return "🧠";
+  }
+
   function renderMindMapTab(section) {
     const maps = (typeof MIND_MAPS !== "undefined" && MIND_MAPS[section.id]) ? MIND_MAPS[section.id] : [];
     if (!maps.length) {
@@ -213,35 +225,65 @@
     }
 
     return `
-      <div class="mindmap-intro">
-        <strong>🧠 Section mind maps</strong>
-        <span>These mind maps are recreated directly in HTML inside the app. This avoids GitHub 404 path issues while preserving the colour, structure and study detail more closely.</span>
+      <div class="mindmap-launch-grid">
+        ${maps.map((map, index) => `
+          <button class="mindmap-launch-card" type="button" data-mindmap-index="${index}">
+            <span class="mindmap-launch-icon">${mindMapIcon(map.title)}</span>
+            <span class="mindmap-launch-title">${escapeHtml(map.title)}</span>
+            <span class="mindmap-launch-subtitle">Open mind map</span>
+          </button>
+        `).join("")}
       </div>
-      ${maps.map((map) => {
-        if (map.html) {
-          return `<article class="mindmap-rich-card">${map.html}</article>`;
-        }
-        return `
-          <article class="mindmap-inline-card">
-            <div class="mindmap-inline-core">
-              <strong>${escapeHtml(map.title)}</strong>
-              ${map.subtitle ? `<span>${escapeHtml(map.subtitle)}</span>` : ""}
-            </div>
-            <div class="mindmap-inline-grid">
-              ${(map.branches || []).map((branch) => `
-                <section class="mindmap-inline-branch">
-                  <h4>${escapeHtml(branch.title)}</h4>
-                  <ul>
-                    ${(branch.items || []).map((item) => `<li>${escapeHtml(item)}</li>`).join("")}
-                  </ul>
-                </section>
-              `).join("")}
-            </div>
-            ${map.note ? `<div class="mindmap-inline-note">${escapeHtml(map.note)}</div>` : ""}
-          </article>
-        `;
-      }).join("")}
     `;
+  }
+
+
+  function renderFallbackMindMap(map) {
+    return `
+      <article class="mindmap-inline-card">
+        <div class="mindmap-inline-core">
+          <strong>${escapeHtml(map.title || "Mind map")}</strong>
+          ${map.subtitle ? `<span>${escapeHtml(map.subtitle)}</span>` : ""}
+        </div>
+        <div class="mindmap-inline-grid">
+          ${(map.branches || []).map((branch) => `
+            <section class="mindmap-inline-branch">
+              <h4>${escapeHtml(branch.title)}</h4>
+              <ul>
+                ${(branch.items || []).map((item) => `<li>${escapeHtml(item)}</li>`).join("")}
+              </ul>
+            </section>
+          `).join("")}
+        </div>
+        ${map.note ? `<div class="mindmap-inline-note">${escapeHtml(map.note)}</div>` : ""}
+      </article>
+    `;
+  }
+
+  function openMindMapModal(index) {
+    const maps = (typeof MIND_MAPS !== "undefined" && MIND_MAPS[state.currentSectionId]) ? MIND_MAPS[state.currentSectionId] : [];
+    const map = maps[index];
+    if (!map) return;
+
+    const modal = $("mindMapModal");
+    const title = $("mindMapModalTitle");
+    const body = $("mindMapModalBody");
+
+    title.textContent = map.title || "Mind map";
+    body.innerHTML = map.html ? map.html : renderFallbackMindMap(map);
+    modal.classList.add("show");
+    modal.setAttribute("aria-hidden", "false");
+    document.body.classList.add("modal-open");
+    $("mindMapCloseBtn").focus();
+  }
+
+  function closeMindMapModal() {
+    const modal = $("mindMapModal");
+    if (!modal || !modal.classList.contains("show")) return;
+    modal.classList.remove("show");
+    modal.setAttribute("aria-hidden", "true");
+    $("mindMapModalBody").innerHTML = "";
+    document.body.classList.remove("modal-open");
   }
 
 
@@ -636,6 +678,11 @@
         renderSectionDetail();
       }
 
+      const mindMapButton = event.target.closest("[data-mindmap-index]");
+      if (mindMapButton) openMindMapModal(Number(mindMapButton.dataset.mindmapIndex));
+
+      if (event.target.closest("[data-mindmap-close]")) closeMindMapModal();
+
       const answer = event.target.closest("[data-answer]");
       if (answer) selectAnswer(Number(answer.dataset.answer));
 
@@ -644,6 +691,10 @@
         state.currentQuestion = Number(goto.dataset.gotoQuestion);
         renderQuestion();
       }
+    });
+
+    window.addEventListener("keydown", (event) => {
+      if (event.key === "Escape") closeMindMapModal();
     });
 
     $("themeToggle").addEventListener("click", toggleTheme);
