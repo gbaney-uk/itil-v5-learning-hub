@@ -1,0 +1,27 @@
+{
+  "name": "ITIL V5 Learning Dashboard",
+  "short_name": "ITIL V5",
+  "description": "ITIL V5 learning dashboard with study sections, HTML mind maps, practice questions, flashcards, smart review, mock exams and local progress tracking.",
+  "lang": "en",
+  "id": "/itil-v5-learning/",
+  "categories": ["education", "productivity"],
+  "start_url": "./index.html",
+  "display": "standalone",
+  "orientation": "portrait",
+  "background_color": "#eef5fb",
+  "theme_color": "#123b66",
+  "icons": [
+    {
+      "src": "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 512 512'%3E%3Crect width='512' height='512' rx='110' fill='%23123b66'/%3E%3Ctext y='.86em' x='256' text-anchor='middle' font-size='330'%3E%F0%9F%8E%93%3C/text%3E%3C/svg%3E",
+      "sizes": "512x512",
+      "type": "image/svg+xml",
+      "purpose": "any"
+    },
+    {
+      "src": "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 512 512'%3E%3Crect width='512' height='512' rx='110' fill='%23123b66'/%3E%3Ctext y='.86em' x='256' text-anchor='middle' font-size='330'%3E%F0%9F%8E%93%3C/text%3E%3C/svg%3E",
+      "sizes": "512x512",
+      "type": "image/svg+xml",
+      "purpose": "maskable"
+    }
+  ]
+}
