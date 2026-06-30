@@ -1,8 +1,8 @@
-/* ITIL V5 Learning Dashboard — Phase 4.2 app engine */
+/* ITIL V5 Learning Dashboard — Phase 4.3 app engine */
 (function () {
   "use strict";
 
-  const APP_VERSION = "4.2";
+  const APP_VERSION = "4.3";
   const STORAGE_PREFIX = "itil_v5_learning_phase4";
   const PASS_MARK = 65;
 

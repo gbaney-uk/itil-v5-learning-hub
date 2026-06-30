@@ -1736,3 +1736,520 @@ const SECTIONS = [
 
   MIND_MAPS["service-value"] = [serviceValueMap].concat(remainingMaps);
 })();
+
+
+/* Phase 4.3 — Service Relationships redesign
+   Pattern mirrors Four Dimensions: one overview plus sub-topic mind maps in the modal viewer. */
+(function () {
+  const section = SECTIONS.find(function (item) { return item.id === "service-relationships"; });
+  if (section) {
+    section.short = "Provider-consumer relationships, request offerings, service journeys, service quality and service levels.";
+    section.intro = "Service Relationships explains how providers and consumers interact to co-create value. This section is split into Service Relationships, Request Offerings, Service Journey, Service Quality and Service Levels.";
+    section.overview = [
+      ["Service Relationships", "Explains the roles, interactions and relationship types between service providers and service consumers."],
+      ["Request Offerings", "Describes how standardised requestable services are presented to consumers so they can ask for goods, access to resources or service actions."],
+      ["Service Journey", "Shows the end-to-end activities and interactions a consumer experiences when fulfilling their role in a service relationship."],
+      ["Service Quality", "Considers whether the service meets agreed and expected needs from the consumer perspective, including outcomes and experience."],
+      ["Service Levels", "Defines measurable targets for expected or achieved quality, usually documented through service level agreements and related measures."]
+    ];
+    section.terms = [
+      ["Service relationship", "A cooperation between a service provider and service consumer that enables value co-creation."],
+      ["Service provider", "The party that offers, delivers and supports services."],
+      ["Service consumer", "The party that uses, receives or consumes services. This may include customer, user and sponsor roles."],
+      ["Customer", "The role that defines service requirements and takes responsibility for outcomes."],
+      ["User", "The role that uses the service directly."],
+      ["Sponsor", "The role that authorises budget for service consumption."],
+      ["Service offering", "A formal description of one or more services, designed to address the needs of a target consumer group."],
+      ["Request offering", "A standardised, requestable item or action presented to consumers, often through a portal or catalogue."],
+      ["Goods", "Tangible items transferred from provider to consumer as part of a service offering."],
+      ["Access to resources", "A service interaction where consumers use provider resources without taking ownership."],
+      ["Service actions", "Activities performed by the provider to address the consumer’s needs."],
+      ["Service journey", "The sequence of activities and interactions between provider and consumer across the relationship."],
+      ["Touchpoint", "A point of interaction between the consumer and provider during the service journey."],
+      ["Moment of truth", "A critical interaction that strongly shapes the consumer’s perception of the service."],
+      ["Service quality", "The degree to which a service meets agreed and expected requirements from the consumer perspective."],
+      ["Service level", "A measurable target or achieved level of service quality."]
+    ];
+    section.examFocus = [
+      "Know the difference between service provider, service consumer, customer, user and sponsor.",
+      "Recognise the three service offering interaction types: goods, access to resources and service actions.",
+      "Understand that request offerings should be standardised, clear and easy for consumers to request.",
+      "Understand the service journey as an end-to-end set of interactions and touchpoints.",
+      "Recognise that service quality is judged from the consumer perspective, not purely by internal technical metrics.",
+      "Understand service levels as measurable targets or achieved levels of service quality.",
+      "Be able to identify scenarios involving customers, users, sponsors, service offerings, touchpoints, quality issues and service-level measures."
+    ];
+    section.traps = [
+      ["Customer vs user", "The customer defines requirements and is responsible for outcomes; the user uses the service."],
+      ["Sponsor vs customer", "The sponsor authorises the budget; the customer defines requirements and owns outcomes."],
+      ["Request offering vs service offering", "A service offering describes what is available; a request offering is the standardised route for requesting a specific item or action."],
+      ["Access to resources vs goods", "Access to resources allows use without ownership transfer; goods are transferred to the consumer."],
+      ["Service quality vs service levels", "Service quality is the broader assessment of whether needs are met; service levels are measurable targets or results."],
+      ["Technical success vs consumer perception", "A technically available service can still have poor service quality if the consumer experience or outcome is poor."],
+      ["Service journey vs process", "A journey is the consumer-facing end-to-end experience; a process is a repeatable set of activities used to carry out work."]
+    ];
+  }
+
+  MIND_MAPS["service-relationships"] = [
+    {
+      title: "Service Relationships Overview",
+      html: `
+        <div class="mm-page">
+          <div class="mm-head">
+            <h2 class="mm-title">ITIL V5 Service Relationships</h2>
+            <p class="mm-subtitle">Colour mind map for revision: service relationships connect providers and consumers through roles, offerings, journeys, quality and service levels.</p>
+          </div>
+          <div class="mm-grid">
+            <section class="mm-box mm-blue">
+              <div class="mm-box-h"><span class="mm-icon">🎯</span>Core idea</div>
+              <div class="mm-box-b"><ul>
+                <li>Service relationships describe how service providers and service consumers cooperate to enable value co-creation.</li>
+                <li>They are not just contracts or transactions; they include roles, responsibilities, expectations, interactions and feedback.</li>
+                <li>Understanding service relationships helps explain how consumers request, use, experience and evaluate services.</li>
+              </ul></div>
+            </section>
+            <section class="mm-box mm-grey">
+              <div class="mm-box-h"><span class="mm-icon">🧭</span>This section contains</div>
+              <div class="mm-box-b">
+                <ol class="mm-numbers">
+                  <li><span class="mm-num" style="background:#7a5cff">1</span><strong>Service Relationships</strong></li>
+                  <li><span class="mm-num" style="background:#f28a07">2</span><strong>Request Offerings</strong></li>
+                  <li><span class="mm-num" style="background:#0db6c7">3</span><strong>Service Journey</strong></li>
+                  <li><span class="mm-num" style="background:#22a44f">4</span><strong>Service Quality</strong></li>
+                  <li><span class="mm-num" style="background:#e61b7d">5</span><strong>Service Levels</strong></li>
+                </ol>
+              </div>
+            </section>
+            <section class="mm-box mm-orange">
+              <div class="mm-box-h"><span class="mm-icon">👥</span>Key roles</div>
+              <div class="mm-box-b"><ul>
+                <li><strong>Service provider:</strong> offers, delivers and supports services.</li>
+                <li><strong>Service consumer:</strong> uses, receives or consumes services.</li>
+                <li><strong>Customer:</strong> defines requirements and is responsible for outcomes.</li>
+                <li><strong>User:</strong> uses the service.</li>
+                <li><strong>Sponsor:</strong> authorises budget for service consumption.</li>
+              </ul></div>
+            </section>
+            <section class="mm-box mm-purple">
+              <div class="mm-box-h"><span class="mm-icon">📦</span>Offerings and requests</div>
+              <div class="mm-box-b"><ul>
+                <li>Service offerings describe what is available to a target consumer group.</li>
+                <li>Request offerings make standard items or actions easy to request.</li>
+                <li>Offerings may include goods, access to resources and service actions.</li>
+              </ul></div>
+            </section>
+            <section class="mm-core">
+              <div class="mm-core-kicker">🔗</div>
+              <h3>Service<br>Relationships</h3>
+              <div class="mm-divider"></div>
+              <p>Service relationships connect provider and consumer roles through offerings, requests, journeys, quality expectations and service levels.</p>
+              <p class="mm-emphasis">Value is co-created through interaction, not simply delivered one-way by the provider.</p>
+            </section>
+            <section class="mm-box mm-red">
+              <div class="mm-box-h"><span class="mm-icon">🗺️</span>Journey and experience</div>
+              <div class="mm-box-b"><ul>
+                <li>The service journey includes the consumer’s activities and interactions across the relationship.</li>
+                <li>Touchpoints are interaction points between provider and consumer.</li>
+                <li>Moments of truth are critical touchpoints that strongly shape perception.</li>
+              </ul></div>
+            </section>
+            <section class="mm-box mm-teal">
+              <div class="mm-box-h"><span class="mm-icon">⭐</span>Quality and levels</div>
+              <div class="mm-box-b"><ul>
+                <li>Service quality reflects whether the service meets agreed and expected needs.</li>
+                <li>Quality should include the consumer perspective, not only internal technical metrics.</li>
+                <li>Service levels define measurable targets or achieved levels of service quality.</li>
+              </ul></div>
+            </section>
+          </div>
+          <div class="mm-exam"><div class="mm-exam-grid"><div class="mm-exam-label">🎓 Exam takeaway</div><ul>
+            <li>Know the roles: provider, consumer, customer, user and sponsor.</li>
+            <li>Understand service offerings and the interaction types: goods, access to resources and service actions.</li>
+            <li>Understand service journeys, touchpoints, service quality and service levels from the consumer perspective.</li>
+          </ul></div></div>
+        </div>`
+    },
+    {
+      title: "Service Relationships",
+      html: `
+        <div class="mm-page">
+          <div class="mm-head">
+            <h2 class="mm-title">Service Relationships</h2>
+            <p class="mm-subtitle">Colour mind map for revision: provider and consumer roles interact through service provision and service consumption.</p>
+          </div>
+          <div class="mm-grid">
+            <section class="mm-box mm-blue">
+              <div class="mm-box-h"><span class="mm-icon">🏢</span>Service provider</div>
+              <div class="mm-box-b"><ul>
+                <li>The service provider offers, delivers and supports services.</li>
+                <li>Providers contribute resources, capabilities and expertise.</li>
+                <li>Providers help consumers achieve outcomes while managing agreed costs and risks.</li>
+              </ul></div>
+            </section>
+            <section class="mm-box mm-grey">
+              <div class="mm-box-h"><span class="mm-icon">👤</span>Service consumer</div>
+              <div class="mm-box-b"><ul>
+                <li>The service consumer uses or receives services.</li>
+                <li>The consumer may include customer, user and sponsor roles.</li>
+                <li>These roles can be held by one person or by different people.</li>
+              </ul></div>
+            </section>
+            <section class="mm-box mm-orange">
+              <div class="mm-box-h"><span class="mm-icon">📋</span>Customer</div>
+              <div class="mm-box-b"><ul>
+                <li>Defines service requirements.</li>
+                <li>Takes responsibility for outcomes from service consumption.</li>
+                <li>May not be the same person as the user.</li>
+              </ul></div>
+            </section>
+            <section class="mm-box mm-purple">
+              <div class="mm-box-h"><span class="mm-icon">🧑‍💻</span>User</div>
+              <div class="mm-box-b"><ul>
+                <li>Uses the service directly.</li>
+                <li>Experiences the service through touchpoints and interactions.</li>
+                <li>Provides feedback that can support improvement.</li>
+              </ul></div>
+            </section>
+            <section class="mm-core">
+              <div class="mm-core-kicker">🔗</div>
+              <h3>Service<br>Relationships</h3>
+              <div class="mm-divider"></div>
+              <p>Service relationships are based on cooperation between a service provider and service consumer.</p>
+              <p class="mm-emphasis">Provider and consumer both contribute to value co-creation.</p>
+            </section>
+            <section class="mm-box mm-red">
+              <div class="mm-box-h"><span class="mm-icon">💷</span>Sponsor</div>
+              <div class="mm-box-b"><ul>
+                <li>Authorises budget for service consumption.</li>
+                <li>May be separate from the customer and user.</li>
+                <li>Supports the service financially rather than necessarily using it directly.</li>
+              </ul></div>
+            </section>
+            <section class="mm-box mm-teal">
+              <div class="mm-box-h"><span class="mm-icon">🔄</span>Service provision and consumption</div>
+              <div class="mm-box-b"><ul>
+                <li>Service provision covers the provider’s activities to deliver and support services.</li>
+                <li>Service consumption covers the consumer’s activities to receive, use and manage services.</li>
+                <li>The relationship works through ongoing interaction, feedback and shared understanding.</li>
+              </ul></div>
+            </section>
+            <section class="mm-box mm-green">
+              <div class="mm-box-h"><span class="mm-icon">🤝</span>Relationship types</div>
+              <div class="mm-box-b"><ul>
+                <li>Relationships may be basic, cooperative or collaborative.</li>
+                <li>Basic relationships are often standardised and transactional.</li>
+                <li>Cooperative relationships involve more communication and improvement.</li>
+                <li>Collaborative relationships are more strategic and may support innovation.</li>
+              </ul></div>
+            </section>
+          </div>
+          <div class="mm-exam"><div class="mm-exam-grid"><div class="mm-exam-label">🎓 Exam takeaway</div><ul>
+            <li>Customer defines requirements; user uses the service; sponsor authorises budget.</li>
+            <li>Do not assume one person always holds all consumer roles.</li>
+            <li>Service relationships are about interaction and co-creation, not one-way delivery.</li>
+          </ul></div></div>
+        </div>`
+    },
+    {
+      title: "Request Offerings",
+      html: `
+        <div class="mm-page">
+          <div class="mm-head">
+            <h2 class="mm-title">Request Offerings</h2>
+            <p class="mm-subtitle">Colour mind map for revision: request offerings make standard services, goods, access or actions clear and easy for consumers to request.</p>
+          </div>
+          <div class="mm-grid">
+            <section class="mm-box mm-blue">
+              <div class="mm-box-h"><span class="mm-icon">📦</span>Service offering</div>
+              <div class="mm-box-b"><ul>
+                <li>A service offering is a formal description of one or more services designed to address the needs of a target consumer group.</li>
+                <li>Offerings make service value visible and understandable to consumers.</li>
+                <li>They help consumers understand what they can obtain and under what conditions.</li>
+              </ul></div>
+            </section>
+            <section class="mm-box mm-grey">
+              <div class="mm-box-h"><span class="mm-icon">🛒</span>Request offering</div>
+              <div class="mm-box-b"><ul>
+                <li>A request offering is a standardised route for consumers to request a specific item or action.</li>
+                <li>It is often shown through a portal, catalogue or request form.</li>
+                <li>It should be clear, consistent and easy to use.</li>
+              </ul></div>
+            </section>
+            <section class="mm-box mm-orange">
+              <div class="mm-box-h"><span class="mm-icon">🎁</span>Goods</div>
+              <div class="mm-box-b"><ul>
+                <li>Goods are tangible items transferred from provider to consumer.</li>
+                <li>Example: a laptop, phone or physical access card transferred to the consumer.</li>
+                <li>Ownership or control may move to the consumer depending on the arrangement.</li>
+              </ul></div>
+            </section>
+            <section class="mm-box mm-purple">
+              <div class="mm-box-h"><span class="mm-icon">🔑</span>Access to resources</div>
+              <div class="mm-box-b"><ul>
+                <li>The consumer uses provider resources without owning them.</li>
+                <li>Example: cloud storage, SaaS application access or shared infrastructure.</li>
+                <li>The provider normally retains ownership and control of the resource.</li>
+              </ul></div>
+            </section>
+            <section class="mm-core">
+              <div class="mm-core-kicker">📝</div>
+              <h3>Request<br>Offerings</h3>
+              <div class="mm-divider"></div>
+              <p>Request offerings turn service options into clear requestable items for consumers.</p>
+              <p class="mm-emphasis">Good request offerings reduce ambiguity and improve the consumer experience.</p>
+            </section>
+            <section class="mm-box mm-red">
+              <div class="mm-box-h"><span class="mm-icon">🛠️</span>Service actions</div>
+              <div class="mm-box-b"><ul>
+                <li>Service actions are activities performed by the provider to meet consumer needs.</li>
+                <li>Examples include installing software, resetting access, providing support or performing a change.</li>
+                <li>The consumer receives the benefit of the action rather than a transferred item.</li>
+              </ul></div>
+            </section>
+            <section class="mm-box mm-teal">
+              <div class="mm-box-h"><span class="mm-icon">✅</span>Good request design</div>
+              <div class="mm-box-b"><ul>
+                <li>Use plain language that consumers understand.</li>
+                <li>Ask for only the information needed to fulfil the request.</li>
+                <li>Set expectations for approval, fulfilment and support.</li>
+                <li>Align request offerings with standard fulfilment routes where possible.</li>
+              </ul></div>
+            </section>
+            <section class="mm-box mm-green">
+              <div class="mm-box-h"><span class="mm-icon">⚠️</span>Common issues</div>
+              <div class="mm-box-b"><ul>
+                <li>Too many similar request options confuse users.</li>
+                <li>Technical wording can reduce adoption and increase errors.</li>
+                <li>Missing ownership, approval or fulfilment information delays delivery.</li>
+              </ul></div>
+            </section>
+          </div>
+          <div class="mm-exam"><div class="mm-exam-grid"><div class="mm-exam-label">🎓 Exam takeaway</div><ul>
+            <li>Service offerings may include goods, access to resources and service actions.</li>
+            <li>Request offerings should make standard requests clear, simple and consistent.</li>
+            <li>Do not confuse access to resources with transfer of goods.</li>
+          </ul></div></div>
+        </div>`
+    },
+    {
+      title: "Service Journey",
+      html: `
+        <div class="mm-page">
+          <div class="mm-head">
+            <h2 class="mm-title">Service Journey</h2>
+            <p class="mm-subtitle">Colour mind map for revision: a service journey shows the consumer’s end-to-end activities and interactions across the service relationship.</p>
+          </div>
+          <div class="mm-grid">
+            <section class="mm-box mm-blue">
+              <div class="mm-box-h"><span class="mm-icon">🗺️</span>Definition</div>
+              <div class="mm-box-b"><ul>
+                <li>The service journey is the set of activities and interactions between provider and consumer as they fulfil their roles.</li>
+                <li>It describes the consumer’s experience over time, not just one process step.</li>
+                <li>It can include requesting, receiving, using, getting support and giving feedback.</li>
+              </ul></div>
+            </section>
+            <section class="mm-box mm-grey">
+              <div class="mm-box-h"><span class="mm-icon">👣</span>Typical journey stages</div>
+              <div class="mm-box-b"><ul>
+                <li>Need or demand appears.</li>
+                <li>Consumer selects or requests a service.</li>
+                <li>Provider fulfils and enables use.</li>
+                <li>Consumer uses the service and interacts with support.</li>
+                <li>Feedback and improvement opportunities are identified.</li>
+              </ul></div>
+            </section>
+            <section class="mm-box mm-orange">
+              <div class="mm-box-h"><span class="mm-icon">🤝</span>Touchpoints</div>
+              <div class="mm-box-b"><ul>
+                <li>Touchpoints are specific interactions between consumer and provider.</li>
+                <li>Examples include a portal page, approval email, support call, fulfilment update or knowledge article.</li>
+                <li>Each touchpoint can improve or reduce the consumer’s perception of value.</li>
+              </ul></div>
+            </section>
+            <section class="mm-box mm-purple">
+              <div class="mm-box-h"><span class="mm-icon">⭐</span>Moments of truth</div>
+              <div class="mm-box-b"><ul>
+                <li>Moments of truth are critical interactions that strongly shape the consumer’s perception.</li>
+                <li>Examples include first contact, failed fulfilment, outage communication or urgent support.</li>
+                <li>They should be managed carefully because they affect trust and satisfaction.</li>
+              </ul></div>
+            </section>
+            <section class="mm-core">
+              <div class="mm-core-kicker">🗺️</div>
+              <h3>Service<br>Journey</h3>
+              <div class="mm-divider"></div>
+              <p>The service journey shows the consumer-facing flow of interactions across the service relationship.</p>
+              <p class="mm-emphasis">It helps organisations see the service through the consumer’s eyes.</p>
+            </section>
+            <section class="mm-box mm-red">
+              <div class="mm-box-h"><span class="mm-icon">👁️</span>Consumer perspective</div>
+              <div class="mm-box-b"><ul>
+                <li>The journey highlights what the consumer experiences, not only what internal teams do.</li>
+                <li>It helps identify friction, delays, unclear communication and poor handoffs.</li>
+                <li>It connects service quality to real interactions and outcomes.</li>
+              </ul></div>
+            </section>
+            <section class="mm-box mm-teal">
+              <div class="mm-box-h"><span class="mm-icon">🔄</span>Feedback and improvement</div>
+              <div class="mm-box-b"><ul>
+                <li>Feedback from the journey helps identify improvement opportunities.</li>
+                <li>Repeated issues at touchpoints can reveal bottlenecks or design weaknesses.</li>
+                <li>Improvement should focus on the overall journey, not only individual internal steps.</li>
+              </ul></div>
+            </section>
+          </div>
+          <div class="mm-exam"><div class="mm-exam-grid"><div class="mm-exam-label">🎓 Exam takeaway</div><ul>
+            <li>A service journey is broader than a process; it shows the consumer’s end-to-end experience.</li>
+            <li>Touchpoints are interactions; moments of truth are critical interactions.</li>
+            <li>Use the journey to identify friction, quality issues and improvement opportunities.</li>
+          </ul></div></div>
+        </div>`
+    },
+    {
+      title: "Service Quality",
+      html: `
+        <div class="mm-page">
+          <div class="mm-head">
+            <h2 class="mm-title">Service Quality</h2>
+            <p class="mm-subtitle">Colour mind map for revision: quality is judged by whether the service meets agreed and expected needs from the consumer perspective.</p>
+          </div>
+          <div class="mm-grid">
+            <section class="mm-box mm-blue">
+              <div class="mm-box-h"><span class="mm-icon">⭐</span>Definition</div>
+              <div class="mm-box-b"><ul>
+                <li>Service quality is the degree to which a service meets requirements, expectations and intended outcomes.</li>
+                <li>It includes more than technical performance.</li>
+                <li>It must be understood from the perspective of consumers and stakeholders.</li>
+              </ul></div>
+            </section>
+            <section class="mm-box mm-grey">
+              <div class="mm-box-h"><span class="mm-icon">👤</span>Consumer perception</div>
+              <div class="mm-box-b"><ul>
+                <li>A service can meet internal targets but still feel poor to the consumer.</li>
+                <li>Consumer perception is shaped by outcomes, experience, communication and reliability.</li>
+                <li>Quality should reflect what matters to the consumer.</li>
+              </ul></div>
+            </section>
+            <section class="mm-box mm-orange">
+              <div class="mm-box-h"><span class="mm-icon">🎯</span>Outcomes and expectations</div>
+              <div class="mm-box-b"><ul>
+                <li>Quality is linked to whether consumers achieve their desired outcomes.</li>
+                <li>Expectations may include speed, clarity, ease of use, reliability and support.</li>
+                <li>Unclear expectations make quality difficult to judge.</li>
+              </ul></div>
+            </section>
+            <section class="mm-box mm-purple">
+              <div class="mm-box-h"><span class="mm-icon">📊</span>Measurement</div>
+              <div class="mm-box-b"><ul>
+                <li>Quality can be measured through service levels, feedback, complaints, satisfaction and outcome measures.</li>
+                <li>Technical measures should be combined with experience and value measures.</li>
+                <li>Measurement should guide improvement, not just reporting.</li>
+              </ul></div>
+            </section>
+            <section class="mm-core">
+              <div class="mm-core-kicker">⭐</div>
+              <h3>Service<br>Quality</h3>
+              <div class="mm-divider"></div>
+              <p>Service quality reflects whether a service is good enough for the consumer’s needs, expectations and outcomes.</p>
+              <p class="mm-emphasis">Quality is not only internal performance; it includes the consumer’s experience of value.</p>
+            </section>
+            <section class="mm-box mm-red">
+              <div class="mm-box-h"><span class="mm-icon">⚠️</span>Common quality failures</div>
+              <div class="mm-box-b"><ul>
+                <li>Meeting uptime targets while users remain dissatisfied.</li>
+                <li>Fast fulfilment with unclear communication.</li>
+                <li>Good technical design but poor usability.</li>
+                <li>Support processes that close tickets without solving consumer needs.</li>
+              </ul></div>
+            </section>
+            <section class="mm-box mm-teal">
+              <div class="mm-box-h"><span class="mm-icon">🔄</span>Quality and improvement</div>
+              <div class="mm-box-b"><ul>
+                <li>Quality information should feed continual improvement.</li>
+                <li>Feedback and performance data help identify where quality is weak.</li>
+                <li>Improvement should address root causes across the journey and value stream.</li>
+              </ul></div>
+            </section>
+          </div>
+          <div class="mm-exam"><div class="mm-exam-grid"><div class="mm-exam-label">🎓 Exam takeaway</div><ul>
+            <li>Do not measure service quality only through technical metrics.</li>
+            <li>Consumer perception, outcomes and experience are essential quality inputs.</li>
+            <li>Quality data should drive continual improvement.</li>
+          </ul></div></div>
+        </div>`
+    },
+    {
+      title: "Service Levels",
+      html: `
+        <div class="mm-page">
+          <div class="mm-head">
+            <h2 class="mm-title">Service Levels</h2>
+            <p class="mm-subtitle">Colour mind map for revision: service levels define measurable targets or achieved quality for services.</p>
+          </div>
+          <div class="mm-grid">
+            <section class="mm-box mm-blue">
+              <div class="mm-box-h"><span class="mm-icon">📏</span>Definition</div>
+              <div class="mm-box-b"><ul>
+                <li>A service level is a measurable target or achieved level of service quality.</li>
+                <li>Service levels help make expectations clear and measurable.</li>
+                <li>They support monitoring, reporting and improvement.</li>
+              </ul></div>
+            </section>
+            <section class="mm-box mm-grey">
+              <div class="mm-box-h"><span class="mm-icon">📄</span>Service level agreement</div>
+              <div class="mm-box-b"><ul>
+                <li>A service level agreement is a documented agreement between provider and customer.</li>
+                <li>It identifies services and agreed service levels.</li>
+                <li>It should be clear, measurable and aligned with what matters to the consumer.</li>
+              </ul></div>
+            </section>
+            <section class="mm-box mm-orange">
+              <div class="mm-box-h"><span class="mm-icon">📊</span>Service level measures</div>
+              <div class="mm-box-b"><ul>
+                <li>Measures may include availability, response times, resolution times, capacity, continuity or security.</li>
+                <li>They may also include experience and satisfaction measures.</li>
+                <li>Measures should support value and outcomes, not just internal activity.</li>
+              </ul></div>
+            </section>
+            <section class="mm-box mm-purple">
+              <div class="mm-box-h"><span class="mm-icon">🎯</span>Targets and actuals</div>
+              <div class="mm-box-b"><ul>
+                <li>Targets describe the expected or agreed level.</li>
+                <li>Actuals show what was achieved.</li>
+                <li>Comparing targets and actuals helps identify service gaps and improvement priorities.</li>
+              </ul></div>
+            </section>
+            <section class="mm-core">
+              <div class="mm-core-kicker">📏</div>
+              <h3>Service<br>Levels</h3>
+              <div class="mm-divider"></div>
+              <p>Service levels turn quality expectations into measurable targets and results.</p>
+              <p class="mm-emphasis">Good service levels measure what matters to the consumer, not only what is easy for the provider to count.</p>
+            </section>
+            <section class="mm-box mm-red">
+              <div class="mm-box-h"><span class="mm-icon">⚠️</span>Common mistakes</div>
+              <div class="mm-box-b"><ul>
+                <li>Using only technical measures while ignoring consumer experience.</li>
+                <li>Creating targets that do not reflect business outcomes.</li>
+                <li>Measuring too many things without clear purpose.</li>
+                <li>Treating service level reports as the goal rather than using them for improvement.</li>
+              </ul></div>
+            </section>
+            <section class="mm-box mm-teal">
+              <div class="mm-box-h"><span class="mm-icon">🔄</span>Link to continual improvement</div>
+              <div class="mm-box-b"><ul>
+                <li>Service-level results should inform improvement decisions.</li>
+                <li>Trends can show whether quality is improving or deteriorating.</li>
+                <li>Missed targets should trigger investigation into causes, not only reporting.</li>
+              </ul></div>
+            </section>
+          </div>
+          <div class="mm-exam"><div class="mm-exam-grid"><div class="mm-exam-label">🎓 Exam takeaway</div><ul>
+            <li>Service levels define measurable quality targets or achieved quality.</li>
+            <li>A service level agreement documents services and agreed levels between provider and customer.</li>
+            <li>Good service levels should support consumer value, outcomes and continual improvement.</li>
+          </ul></div></div>
+        </div>`
+    }
+  ];
+})();
