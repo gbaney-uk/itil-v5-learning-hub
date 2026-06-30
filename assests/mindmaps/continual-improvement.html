@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Continual Improvement</title>
+<style>
+:root {
+  --bg:#eef7fb; --card:#ffffff; --ink:#102a43; --muted:#5b7083; --line:#8ecae6;
+  --blue:#1f6fa9; --teal:#2aa6a1; --purple:#7a5cff; --orange:#d97706; --green:#0f766e;
+}
+*{box-sizing:border-box}
+body{margin:0;font-family:Arial,Helvetica,sans-serif;background:linear-gradient(135deg,#eef7fb,#f8fbff);color:var(--ink);padding:22px}
+.wrapper{max-width:1180px;margin:0 auto}
+.header{text-align:center;margin-bottom:18px}
+.header h1{margin:0;color:var(--blue);font-size:clamp(1.35rem,3vw,2.15rem)}
+.header p{margin:8px auto 0;max-width:860px;color:var(--muted);line-height:1.45}
+.map{display:grid;grid-template-columns:repeat(2,minmax(260px,1fr));gap:16px;align-items:stretch}
+.core{grid-column:1/-1;background:linear-gradient(135deg,var(--blue),var(--teal));color:#fff;border-radius:20px;padding:22px;text-align:center;box-shadow:0 12px 28px rgba(31,111,169,.18)}
+.core strong{font-size:1.45rem;display:block;margin-bottom:6px}
+.branch{position:relative;background:var(--card);border:2px solid #d7e8f2;border-left:8px solid var(--blue);border-radius:16px;padding:16px;box-shadow:0 8px 20px rgba(16,42,67,.08)}
+.branch:nth-child(3n){border-left-color:var(--teal)}
+.branch:nth-child(4n){border-left-color:var(--purple)}
+.branch:nth-child(5n){border-left-color:var(--orange)}
+.branch:nth-child(6n){border-left-color:var(--green)}
+.branch h2{margin:0 0 8px;font-size:1.05rem;color:var(--ink)}
+.branch ul{margin:0;padding-left:19px;color:var(--muted);line-height:1.48}
+.branch li{margin:4px 0}
+.note{margin-top:16px;background:#fff7ed;border:1px solid #fed7aa;border-radius:14px;padding:13px 15px;color:#7c2d12;line-height:1.45}
+@media(max-width:760px){body{padding:14px}.map{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+<div class="wrapper">
+  <div class="header"><h1>Continual Improvement</h1><p>Ongoing improvement across products, services and practices.</p></div>
+  <section class="map" aria-label="Mind map">
+    <div class="core"><strong>Continual Improvement</strong><span>Ongoing improvement across products, services and practices.</span></div>
+    <article class="branch"><h2>Purpose</h2><ul><li>Improve value, performance and outcomes.</li><li>Applies at all organisational levels.</li></ul></article>
+    <article class="branch"><h2>Model</h2><ul><li>What is the vision?</li><li>Where are we now?</li><li>Where do we want to be?</li><li>How do we get there?</li><li>Take action and evaluate results.</li></ul></article>
+    <article class="branch"><h2>Register</h2><ul><li>Capture improvement ideas.</li><li>Track opportunities and actions.</li><li>Prioritise based on value.</li></ul></article>
+    <article class="branch"><h2>Measurement</h2><ul><li>Use baselines and targets.</li><li>Measure before and after changes.</li><li>Use evidence to confirm improvement.</li></ul></article>
+  </section>
+  <div class="note"><strong>Validation note:</strong> Use this as a learning aid and as a first validation layer for related practice questions.</div>
+</div>
+</body>
+</html>
