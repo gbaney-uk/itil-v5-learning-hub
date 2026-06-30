@@ -209,6 +209,8 @@
     if (value.includes("partner") || value.includes("supplier")) return "🤝";
     if (value.includes("value streams") || value.includes("process")) return "🔄";
     if (value.includes("external") || value.includes("pestle")) return "🌍";
+    if (value.includes("service value") || value.includes("co-creation") || value === "service value") return "💎";
+    if (value.includes("product") || value.includes("service")) return "📦";
     if (value.includes("four dimensions")) return "🧭";
     return "🧠";
   }

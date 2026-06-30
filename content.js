@@ -1599,3 +1599,130 @@ const SECTIONS = [
   ];
   MIND_MAPS["four-dimensions"] = richMaps;
 })();
+
+
+/* Phase 4.2 — richer HTML recreation: Service Value and Value Co-Creation */
+(function () {
+  const existingServiceValueMaps = Array.isArray(MIND_MAPS["service-value"]) ? MIND_MAPS["service-value"] : [];
+  const remainingMaps = existingServiceValueMaps.filter(function (map) {
+    return String(map.title || "").toLowerCase() !== "service value and co-creation";
+  });
+
+  const serviceValueMap = {
+    title: "Service Value and Value Co-Creation",
+    html: `
+      <div class="mm-page">
+        <div class="mm-head">
+          <h2 class="mm-title">ITIL V5: Service Value</h2>
+          <p class="mm-subtitle">Colour mind map for revision: value is perceived, co-created, and shaped by outcomes, experience, costs, and risks.</p>
+        </div>
+
+        <div class="mm-grid">
+          <section class="mm-box mm-blue">
+            <div class="mm-box-h"><span class="mm-icon">💡</span>Introduction / core idea</div>
+            <div class="mm-box-b"><ul>
+              <li>The purpose of managing digital products and services is to enable value creation.</li>
+              <li>Services help organizations and individuals achieve what matters to them, while reducing the effort, cost, and risk they would otherwise need to manage themselves.</li>
+              <li>Understanding service value is fundamental to understanding ITIL.</li>
+              <li>A service may be well designed and efficiently operated, yet still fail to create value if it does not meet the expectations or needs of the service consumer.</li>
+            </ul></div>
+          </section>
+
+          <section class="mm-box mm-grey">
+            <div class="mm-box-h"><span class="mm-icon">🔢</span>The key concepts are</div>
+            <div class="mm-box-b">
+              <ol class="mm-numbers">
+                <li><span class="mm-num" style="background:#1b74e8">1</span><strong>Value</strong></li>
+                <li><span class="mm-num" style="background:#8a4ce1">2</span><strong>Service value</strong></li>
+                <li><span class="mm-num" style="background:#0db6c7">3</span><strong>Perceived value</strong></li>
+                <li><span class="mm-num" style="background:#f28a07">4</span><strong>Value co-creation</strong></li>
+                <li><span class="mm-num" style="background:#e53935">5</span><strong>Dynamic value</strong></li>
+              </ol>
+              <p>This topic provides the foundation for the related concepts of outcomes, costs, and risks.</p>
+            </div>
+          </section>
+
+          <section class="mm-box mm-orange">
+            <div class="mm-box-h"><span class="mm-icon">🎯</span>Why value matters</div>
+            <div class="mm-box-b"><ul>
+              <li>Value does not exist on its own or get delivered in isolation.</li>
+              <li>Value only emerges when a service is actually used and its effects are perceived as beneficial.</li>
+              <li>What is valuable depends on the perspective of the stakeholder.</li>
+              <li>Changes in business priorities, operating conditions, or external circumstances can influence how value is perceived.</li>
+            </ul></div>
+          </section>
+
+          <section class="mm-box mm-purple">
+            <div class="mm-box-h"><span class="mm-icon">📋</span>Definition: Value</div>
+            <div class="mm-box-b"><ul>
+              <li>Value is the perceived benefits, usefulness, and importance of something.</li>
+              <li>Value is perceived, not absolute.</li>
+              <li>The same service can be perceived very differently by different consumers, or even by the same consumer at different moments in time.</li>
+            </ul></div>
+          </section>
+
+          <section class="mm-core">
+            <h3>Service Value</h3>
+            <div class="mm-divider"></div>
+            <p>Service value focuses specifically on how a service contributes to what the service consumer is trying to achieve.</p>
+            <p class="mm-emphasis">Service value is the perceived benefits, usefulness, and importance of a service.</p>
+            <div class="mm-divider"></div>
+            <p class="mm-emphasis">A service creates value when it supports desired outcomes and when its positive effects outweigh any negative effects experienced by the consumer.</p>
+          </section>
+
+          <section class="mm-box mm-red">
+            <div class="mm-box-h"><span class="mm-icon">👥</span>Value co-creation</div>
+            <div class="mm-box-b"><ul>
+              <li>Service value is closely connected to value co-creation.</li>
+              <li>Value is not produced by the service provider alone.</li>
+              <li>It emerges through the interaction between the service provider and the service consumer within a service relationship.</li>
+              <li>How a service is used, experienced, and integrated into the consumer's activities influences the resulting value.</li>
+            </ul></div>
+          </section>
+
+          <section class="mm-box mm-teal">
+            <div class="mm-box-h"><span class="mm-icon">📊</span>Factors influencing service value</div>
+            <div class="mm-box-b"><ul>
+              <li>The extent to which the service enables desired outcomes.</li>
+              <li>How easy and reliable the service is to use.</li>
+              <li>The experience of interacting with the service and the provider.</li>
+              <li>The costs incurred and risks accepted when consuming the service.</li>
+            </ul></div>
+          </section>
+
+          <section class="mm-box mm-green">
+            <div class="mm-box-h"><span class="mm-icon">🔄</span>Dynamic nature of value</div>
+            <div class="mm-box-b"><ul>
+              <li>These factors can change over time.</li>
+              <li>Service value is dynamic rather than fixed.</li>
+              <li>Effective service management requires continual attention to how services are perceived.</li>
+              <li>It also requires attention to how well services continue to support value creation.</li>
+            </ul></div>
+          </section>
+
+          <section class="mm-box mm-gold">
+            <div class="mm-box-h"><span class="mm-icon">📘</span>Related concepts</div>
+            <div class="mm-box-b"><ul>
+              <li>This understanding of service value provides the foundation for the related concepts of outcomes, costs, and risks.</li>
+              <li>These concepts are explored in the following parts of the module.</li>
+            </ul></div>
+          </section>
+        </div>
+
+        <div class="mm-support">
+          <strong>Connected ideas</strong>
+          <span class="mm-inline-links"><span>Value creation</span><span class="mm-dot">•</span><span>Service relationship</span><span class="mm-dot">•</span><span>Outcomes</span><span class="mm-dot">•</span><span>Costs</span><span class="mm-dot">•</span><span>Risks</span></span>
+        </div>
+
+        <div class="mm-exam"><div class="mm-exam-grid"><div class="mm-exam-label">🎓 Exam takeaway</div><ul>
+          <li>Value is perceived, not absolute.</li>
+          <li>Service value is the perceived benefits, usefulness, and importance of a service.</li>
+          <li>Service value is co-created through the interaction between provider and consumer.</li>
+          <li>Service value is shaped by outcomes, ease of use, experience, costs, and risks.</li>
+          <li>Service value is dynamic and can change over time.</li>
+        </ul></div></div>
+      </div>`
+  };
+
+  MIND_MAPS["service-value"] = [serviceValueMap].concat(remainingMaps);
+})();
