@@ -2,7 +2,7 @@
 (function () {
   "use strict";
 
-  const APP_VERSION = "4.0";
+  const APP_VERSION = "4.1";
   const STORAGE_PREFIX = "itil_v5_learning_phase4";
   const PASS_MARK = 65;
 
@@ -375,7 +375,8 @@
     $("questionBox").innerHTML = `
       <div class="question-meta">
         <span class="badge">${escapeHtml(section.title)}</span>
-        <span class="badge ${question.status === "validated" ? "validated" : question.status === "needs-review" ? "review" : "draft"}">${statusLabel(question.status)}</span>
+        <span class="badge ${statusClass(question.status)}">${statusLabel(question.status)}</span>
+        ${question.source ? `<span class="badge source">Source: ${escapeHtml(question.source)}</span>` : ""}
       </div>
       <div class="question-text">${escapeHtml(question.question)}</div>
       <div class="option-list">
@@ -390,7 +391,7 @@
           </button>`;
         }).join("")}
       </div>
-      ${reveal ? `<div class="explanation"><strong>Explanation</strong><br>${escapeHtml(question.explanation)}</div>` : ""}
+      ${reveal ? `<div class="explanation"><strong>Explanation</strong><br>${escapeHtml(question.explanation)}${question.source ? `<div class="source-line">🧠 ${escapeHtml(question.source)}</div>` : ""}</div>` : ""}
     `;
 
     $("prevQuestionBtn").disabled = state.currentQuestion === 0;
@@ -400,9 +401,16 @@
   }
 
   function statusLabel(status) {
+    if (status === "mindmap-validated") return "Mind map validated";
     if (status === "validated") return "Validated";
     if (status === "needs-review") return "Needs Review";
     return "Draft";
+  }
+
+  function statusClass(status) {
+    if (status === "mindmap-validated" || status === "validated") return "validated";
+    if (status === "needs-review") return "review";
+    return "draft";
   }
 
   function selectAnswer(index) {
@@ -493,6 +501,7 @@
           <p>Your answer: ${escapeHtml(userAnswer)}</p>
           <p>Correct answer: ${escapeHtml(correctAnswer)}</p>
           <p>${escapeHtml(question.explanation)}</p>
+          ${question.source ? `<p class="source-line">🧠 ${escapeHtml(question.source)}</p>` : ""}
         </div>
       `;
     }).join("");

@@ -1,4 +1,4 @@
-const CACHE_NAME = 'itil-v5-learning-phase4-rich-v1';
+const CACHE_NAME = 'itil-v5-learning-phase4-four-dimensions-validated-v1';
 const ASSETS = [
   './',
   './index.html',

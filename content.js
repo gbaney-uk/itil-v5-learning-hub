@@ -1,6 +1,6 @@
 /* ITIL V5 Learning Dashboard — Phase 3 content file
    Learning content is intentionally separate from app logic. */
-const CONTENT_VERSION = "4.0";
+const CONTENT_VERSION = "4.1";
 
 
 const MIND_MAPS = {
@@ -10,7 +10,7 @@ const MIND_MAPS = {
       "subtitle": "A holistic view of product and service management.",
       "branches": [
         {
-          "title": "Organization and People",
+          "title": "Organizations and People",
           "items": [
             "Culture, roles, responsibilities and skills.",
             "Training and adoption affect service success.",
@@ -52,7 +52,7 @@ const MIND_MAPS = {
       "note": "Validation note: Use this as a learning aid and as a first validation layer for related practice questions."
     },
     {
-      "title": "Organization and People",
+      "title": "Organizations and People",
       "subtitle": "Culture, roles, responsibilities, skills and working practices.",
       "branches": [
         {
@@ -806,14 +806,14 @@ const SECTIONS = [
     color: "#1f6fa9",
     intro: "The four dimensions help avoid narrow thinking. A service can fail if it only focuses on technology and ignores people, suppliers, processes or external factors.",
     overview: [
-      ["Organization and People", "Covers structure, culture, roles, skills, responsibilities and how people work together."],
+      ["Organizations and People", "Covers structure, culture, roles, skills, responsibilities and how people work together."],
       ["Information and Technology", "Covers information, knowledge, data, applications, infrastructure and supporting technology."],
       ["Partners and Suppliers", "Covers relationships with third parties, suppliers, sourcing choices and contracts."],
       ["Value Streams and Processes", "Covers how work flows from demand to value, including activities, handoffs and process design."],
       ["External factors", "Political, economic, social, technological, legal and environmental factors can affect all four dimensions."],
     ],
     terms: [
-      ["Organization and People", "The dimension focused on people, culture, skills, roles and structure."],
+      ["Organizations and People", "The dimension focused on people, culture, skills, roles and structure."],
       ["Information and Technology", "The dimension focused on data, information, knowledge, tools and technology."],
       ["Partners and Suppliers", "The dimension focused on sourcing and third-party relationships."],
       ["Value Streams and Processes", "The dimension focused on how activities are organised to create and deliver value."],
@@ -822,7 +822,7 @@ const SECTIONS = [
     examFocus: [
       "Know the full names of the four dimensions.",
       "Avoid choosing technology-only answers when the question asks for a holistic approach.",
-      "Recognise staff training and culture as Organization and People.",
+      "Recognise staff training and culture as Organizations and People.",
       "Recognise data, tools and systems as Information and Technology.",
       "Recognise third-party contracts and sourcing as Partners and Suppliers.",
     ],

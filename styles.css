@@ -337,6 +337,7 @@ body.dark .flash-card {
 }
 .badge.draft { color: var(--warning); }
 .badge.validated { color: var(--success); }
+.badge.source { color: var(--primary); max-width: 100%; white-space: normal; }
 .badge.review { color: var(--danger); }
 .question-text { font-size: 1.15rem; color: var(--text); margin-bottom: 16px; }
 .option-list { display: grid; gap: 10px; }
@@ -843,3 +844,5 @@ body.dark .flash-card {
   .mm-core { min-height: 0; }
   .mm-exam-label { font-size: 1.3rem; }
 }
+
+.source-line { margin-top: 10px; color: var(--muted); font-size: .9rem; }
