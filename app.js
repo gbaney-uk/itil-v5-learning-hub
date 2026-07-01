@@ -2,7 +2,7 @@
 (function () {
   "use strict";
 
-  const APP_VERSION = "4.7";
+  const APP_VERSION = "4.8";
   const STORAGE_PREFIX = "itil_v5_learning_phase4";
   const PASS_MARK = 65;
 
@@ -446,13 +446,14 @@
 
   function statusLabel(status) {
     if (status === "mindmap-validated") return "Mind map validated";
+    if (status === "source-validated") return "Source validated";
     if (status === "validated") return "Validated";
     if (status === "needs-review") return "Needs Review";
     return "Draft";
   }
 
   function statusClass(status) {
-    if (status === "mindmap-validated" || status === "validated") return "validated";
+    if (status === "mindmap-validated" || status === "source-validated" || status === "validated") return "validated";
     if (status === "needs-review") return "review";
     return "draft";
   }
