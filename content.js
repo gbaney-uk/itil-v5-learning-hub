@@ -1,6 +1,6 @@
 /* ITIL V5 Learning Dashboard — Phase 3 content file
    Learning content is intentionally separate from app logic. */
-const CONTENT_VERSION = "4.1";
+const CONTENT_VERSION = "4.5";
 
 
 const MIND_MAPS = {
@@ -1611,7 +1611,7 @@ const SECTIONS = [
 })();
 
 
-/* Phase 4.2 — richer HTML recreation: Service Value and Value Co-Creation */
+/* Phase 4.5 — richer HTML recreation: Service Value and Value Co-Creation */
 (function () {
   const existingServiceValueMaps = Array.isArray(MIND_MAPS["service-value"]) ? MIND_MAPS["service-value"] : [];
   const remainingMaps = existingServiceValueMaps.filter(function (map) {
@@ -1738,7 +1738,7 @@ const SECTIONS = [
 })();
 
 
-/* Phase 4.3 — Service Relationships redesign
+/* Phase 4.5 — Service Relationships redesign
    Pattern mirrors Four Dimensions: one overview plus sub-topic mind maps in the modal viewer. */
 (function () {
   const section = SECTIONS.find(function (item) { return item.id === "service-relationships"; });
@@ -2255,7 +2255,7 @@ const SECTIONS = [
 })();
 
 
-/* Phase 4.4 — Service Value and Co-Creation restructure
+/* Phase 4.5 — Service Value and Co-Creation restructure
    Pattern mirrors Four Dimensions and Service Relationships: one overview plus sub-topic mind maps in the modal viewer. */
 (function () {
   const section = SECTIONS.find(function (item) { return item.id === "service-value"; });
@@ -2462,4 +2462,258 @@ const SECTIONS = [
         </div>`
     }
   ];
+})();
+
+
+/* Phase 4.5 — Correct Service Relationships mind map blocks
+   Only four modal mind map buttons should appear: Service Relationships, Service Offerings,
+   Service Journey, and Service Quality and Service Levels. */
+(function () {
+  const section = SECTIONS.find(function (item) { return item.id === "service-relationships"; });
+  if (section) {
+    section.short = "Provider-consumer relationships, service offerings, journeys, quality and service levels.";
+    section.intro = "Service Relationships explains how providers and consumers interact to co-create value. This section is split into Service Relationships, Service Offerings, the Service Journey, and Service Quality and Service Levels.";
+    section.overview = [
+      ["Service Relationships", "Explains the roles, interactions and relationship types between service providers and service consumers."],
+      ["Service Offerings", "Explains how services are packaged and presented to consumers, including goods, access to resources, service actions and requestable options."],
+      ["The Service Journey", "Shows the end-to-end activities, touchpoints and interactions a consumer experiences across the service relationship."],
+      ["Service Quality and Service Levels", "Explains how services are judged from the consumer perspective and how measurable service levels set expectations and targets."]
+    ];
+    section.terms = [
+      ["Service relationship", "A cooperation between a service provider and service consumer that enables value co-creation."],
+      ["Service provider", "The party that offers, delivers and supports services."],
+      ["Service consumer", "The party that uses, receives or consumes services. This may include customer, user and sponsor roles."],
+      ["Customer", "The role that defines service requirements and takes responsibility for outcomes."],
+      ["User", "The role that uses the service directly."],
+      ["Sponsor", "The role that authorises budget for service consumption."],
+      ["Service offering", "A formal description of one or more services, designed to address the needs of a target consumer group."],
+      ["Goods", "Tangible items transferred from provider to consumer as part of a service offering."],
+      ["Access to resources", "A service interaction where consumers use provider resources without taking ownership."],
+      ["Service actions", "Activities performed by the provider to address the consumer’s needs."],
+      ["Request offering", "A clear, standardised option that allows consumers to request a specific item or service action."],
+      ["Service journey", "The sequence of activities and interactions between provider and consumer across the relationship."],
+      ["Touchpoint", "A point of interaction between the consumer and provider during the service journey."],
+      ["Moment of truth", "A critical interaction that strongly shapes the consumer’s perception of the service."],
+      ["Service quality", "The degree to which a service meets agreed and expected requirements from the consumer perspective."],
+      ["Service level", "A measurable target or achieved level of service quality."]
+    ];
+    section.examFocus = [
+      "Know the difference between service provider, service consumer, customer, user and sponsor.",
+      "Recognise service offerings and the three interaction types: goods, access to resources and service actions.",
+      "Understand that request offerings are part of making service offerings easy to request and consume.",
+      "Understand the service journey as an end-to-end set of interactions and touchpoints.",
+      "Recognise that service quality is judged from the consumer perspective, not purely by internal technical metrics.",
+      "Understand service levels as measurable targets or achieved levels of service quality.",
+      "Be able to identify scenarios involving customers, users, sponsors, service offerings, touchpoints, quality issues and service-level measures."
+    ];
+    section.traps = [
+      ["Customer vs user", "The customer defines requirements and is responsible for outcomes; the user uses the service."],
+      ["Sponsor vs customer", "The sponsor authorises the budget; the customer defines requirements and owns outcomes."],
+      ["Service offering vs request offering", "A service offering describes what is available; a request offering is a standardised way to request a specific item or action."],
+      ["Access to resources vs goods", "Access to resources allows use without ownership transfer; goods are transferred to the consumer."],
+      ["Service quality vs service levels", "Service quality is the broader assessment of whether needs are met; service levels are measurable targets or results."],
+      ["Technical success vs consumer perception", "A technically available service can still have poor service quality if the consumer experience or outcome is poor."],
+      ["Service journey vs process", "A journey is the consumer-facing end-to-end experience; a process is a repeatable set of activities used to carry out work."]
+    ];
+  }
+
+  const existing = MIND_MAPS["service-relationships"] || [];
+  const findMap = function (title) {
+    return existing.find(function (map) { return map && map.title === title; });
+  };
+
+  const serviceRelationshipsMap = findMap("Service Relationships");
+  const serviceJourneyMap = findMap("Service Journey");
+
+  const serviceOfferingsMap = {
+    title: "Service Offerings",
+    html: `
+      <div class="mm-page">
+        <div class="mm-head">
+          <h2 class="mm-title">Service Offerings</h2>
+          <p class="mm-subtitle">Colour mind map for revision: service offerings package services for a target consumer group and may include goods, access to resources, service actions and requestable options.</p>
+        </div>
+        <div class="mm-grid">
+          <section class="mm-box mm-blue">
+            <div class="mm-box-h"><span class="mm-icon">💡</span>Overview</div>
+            <div class="mm-box-b"><ul>
+              <li>A service offering is a formal description of one or more services.</li>
+              <li>It is designed to address the needs of a target consumer group.</li>
+              <li>It explains what is available and how the consumer can gain value from the service.</li>
+              <li>Service offerings help consumers understand what can be requested, accessed, received or used.</li>
+            </ul></div>
+          </section>
+          <section class="mm-box mm-purple">
+            <div class="mm-box-h"><span class="mm-icon">📘</span>Key terms</div>
+            <div class="mm-box-b"><ul>
+              <li><strong>Service offering:</strong> a formal description of one or more services, designed for a target consumer group.</li>
+              <li><strong>Goods:</strong> tangible items transferred from provider to consumer.</li>
+              <li><strong>Access to resources:</strong> consumer use of provider resources without ownership transfer.</li>
+              <li><strong>Service actions:</strong> activities performed by the provider to meet consumer needs.</li>
+              <li><strong>Request offering:</strong> a standard option that lets consumers request a specific item or action.</li>
+            </ul></div>
+          </section>
+          <section class="mm-box mm-orange">
+            <div class="mm-box-h"><span class="mm-icon">📦</span>Goods</div>
+            <div class="mm-box-b"><ul>
+              <li>Goods are transferred from the provider to the consumer.</li>
+              <li>The consumer takes responsibility for their future use.</li>
+              <li>Examples include equipment, devices, printed materials or other physical items.</li>
+              <li>Goods are different from access because ownership or responsibility moves to the consumer.</li>
+            </ul></div>
+          </section>
+          <section class="mm-box mm-red">
+            <div class="mm-box-h"><span class="mm-icon">🔐</span>Access to resources</div>
+            <div class="mm-box-b"><ul>
+              <li>The consumer is given access to a provider resource.</li>
+              <li>The provider usually retains ownership and control of the resource.</li>
+              <li>Examples include access to an application, shared platform, workspace, system or data source.</li>
+              <li>The consumer gains value through use, not ownership.</li>
+            </ul></div>
+          </section>
+          <section class="mm-core">
+            <div class="mm-core-kicker">🧾</div>
+            <h3>Service<br>Offerings</h3>
+            <div class="mm-divider"></div>
+            <p>Service offerings make services understandable, consumable and requestable for a target consumer group.</p>
+            <p class="mm-emphasis">They describe what is available and how the consumer can interact with the service.</p>
+          </section>
+          <section class="mm-box mm-teal">
+            <div class="mm-box-h"><span class="mm-icon">🛠️</span>Service actions</div>
+            <div class="mm-box-b"><ul>
+              <li>Service actions are activities performed by the provider for the consumer.</li>
+              <li>Examples include resolving an incident, installing software, changing access, or providing advice.</li>
+              <li>The consumer receives the benefit of the action rather than receiving ownership of a product.</li>
+            </ul></div>
+          </section>
+          <section class="mm-box mm-green">
+            <div class="mm-box-h"><span class="mm-icon">📝</span>Requestable options</div>
+            <div class="mm-box-b"><ul>
+              <li>Request offerings make common service interactions clear and easy to request.</li>
+              <li>They should use language that consumers understand.</li>
+              <li>They should ask only for information needed to fulfil the request.</li>
+              <li>They should set expectations for approval, fulfilment and support.</li>
+            </ul></div>
+          </section>
+          <section class="mm-box mm-gold">
+            <div class="mm-box-h"><span class="mm-icon">🎓</span>Exam focus</div>
+            <div class="mm-box-b"><ul>
+              <li>Recognise the three service offering interaction types: goods, access to resources and service actions.</li>
+              <li>Do not confuse access to resources with transfer of goods.</li>
+              <li>Remember that request offerings are a way of presenting clear, requestable service options.</li>
+              <li>Service offerings are designed for a target consumer group.</li>
+            </ul></div>
+          </section>
+          <section class="mm-box mm-red">
+            <div class="mm-box-h"><span class="mm-icon">⚠️</span>Common traps</div>
+            <div class="mm-box-b"><ul>
+              <li>Thinking all service offerings are physical goods.</li>
+              <li>Calling access to a system a transfer of goods.</li>
+              <li>Confusing a full service offering with one requestable option.</li>
+              <li>Using provider technical language instead of consumer-friendly wording.</li>
+            </ul></div>
+          </section>
+        </div>
+        <div class="mm-exam"><div class="mm-exam-grid"><div class="mm-exam-label">🎓 Exam takeaway</div><ul>
+          <li>Service offerings describe services for a target consumer group.</li>
+          <li>They may include goods, access to resources and service actions.</li>
+          <li>Request offerings are standard requestable options that make consumption easier.</li>
+        </ul></div></div>
+      </div>`
+  };
+
+  const serviceQualityLevelsMap = {
+    title: "Service Quality and Service Levels",
+    html: `
+      <div class="mm-page">
+        <div class="mm-head">
+          <h2 class="mm-title">Service Quality and Service Levels</h2>
+          <p class="mm-subtitle">Colour mind map for revision: service quality is the consumer-centred assessment of whether needs are met; service levels define measurable targets or achieved performance.</p>
+        </div>
+        <div class="mm-grid">
+          <section class="mm-box mm-blue">
+            <div class="mm-box-h"><span class="mm-icon">⭐</span>Service quality</div>
+            <div class="mm-box-b"><ul>
+              <li>Service quality is the degree to which a service meets requirements, expectations and intended outcomes.</li>
+              <li>It includes more than technical performance.</li>
+              <li>It should be understood from the perspective of consumers and stakeholders.</li>
+              <li>Quality is shaped by outcomes, experience, communication, reliability and ease of use.</li>
+            </ul></div>
+          </section>
+          <section class="mm-box mm-purple">
+            <div class="mm-box-h"><span class="mm-icon">📊</span>Service levels</div>
+            <div class="mm-box-b"><ul>
+              <li>Service levels are measurable targets or achieved levels of service quality.</li>
+              <li>They may include availability, response time, resolution time, throughput, capacity or other agreed measures.</li>
+              <li>Service levels help set expectations and enable performance assessment.</li>
+              <li>They should be meaningful to the consumer, not just convenient for internal reporting.</li>
+            </ul></div>
+          </section>
+          <section class="mm-box mm-orange">
+            <div class="mm-box-h"><span class="mm-icon">👤</span>Consumer perspective</div>
+            <div class="mm-box-b"><ul>
+              <li>A service can meet internal targets but still feel poor to the consumer.</li>
+              <li>Consumer perception is shaped by whether the service helps achieve outcomes.</li>
+              <li>Clear communication, support experience and ease of interaction affect quality.</li>
+              <li>Feedback helps reveal whether quality is actually being experienced.</li>
+            </ul></div>
+          </section>
+          <section class="mm-box mm-red">
+            <div class="mm-box-h"><span class="mm-icon">🎯</span>Targets and agreements</div>
+            <div class="mm-box-b"><ul>
+              <li>Service levels may be documented in service level agreements or similar expectations.</li>
+              <li>Targets should be achievable, clear and aligned to consumer needs.</li>
+              <li>Unclear or unrealistic service levels can damage trust.</li>
+              <li>Useful service levels support both management control and value-focused improvement.</li>
+            </ul></div>
+          </section>
+          <section class="mm-core">
+            <div class="mm-core-kicker">📈</div>
+            <h3>Service Quality<br>and Service Levels</h3>
+            <div class="mm-divider"></div>
+            <p>Service quality answers whether the service is good enough for the consumer’s needs and outcomes.</p>
+            <p class="mm-emphasis">Service levels make quality measurable, but measures must still reflect value and experience.</p>
+          </section>
+          <section class="mm-box mm-teal">
+            <div class="mm-box-h"><span class="mm-icon">🔍</span>Measurement</div>
+            <div class="mm-box-b"><ul>
+              <li>Combine technical metrics with consumer feedback and outcome measures.</li>
+              <li>Use data to understand whether services are meeting agreed expectations.</li>
+              <li>Measures should support improvement, not just reporting.</li>
+              <li>Repeated service-level failures can indicate quality or design issues.</li>
+            </ul></div>
+          </section>
+          <section class="mm-box mm-green">
+            <div class="mm-box-h"><span class="mm-icon">🎓</span>Exam focus</div>
+            <div class="mm-box-b"><ul>
+              <li>Recognise service quality as broader than meeting a technical target.</li>
+              <li>Understand service levels as measurable targets or achieved performance.</li>
+              <li>Look for the consumer perspective in quality questions.</li>
+              <li>Understand that service levels should support value, expectations and improvement.</li>
+            </ul></div>
+          </section>
+          <section class="mm-box mm-gold">
+            <div class="mm-box-h"><span class="mm-icon">⚠️</span>Common traps</div>
+            <div class="mm-box-b"><ul>
+              <li>Assuming service quality equals availability only.</li>
+              <li>Thinking a service is high quality just because internal targets were met.</li>
+              <li>Confusing the broad concept of quality with the narrower measurable service level.</li>
+              <li>Using measures that do not matter to the consumer.</li>
+            </ul></div>
+          </section>
+        </div>
+        <div class="mm-exam"><div class="mm-exam-grid"><div class="mm-exam-label">🎓 Exam takeaway</div><ul>
+          <li>Service quality is judged from the consumer and stakeholder perspective.</li>
+          <li>Service levels are measurable targets or achieved levels of service quality.</li>
+          <li>Technical performance alone does not prove that service quality is good.</li>
+        </ul></div></div>
+      </div>`
+  };
+
+  MIND_MAPS["service-relationships"] = [
+    serviceRelationshipsMap,
+    serviceOfferingsMap,
+    serviceJourneyMap,
+    serviceQualityLevelsMap
+  ].filter(Boolean);
 })();
