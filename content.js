@@ -1,6 +1,6 @@
 /* ITIL V5 Learning Dashboard — Phase 3 content file
    Learning content is intentionally separate from app logic. */
-const CONTENT_VERSION = "5.2-guiding-principles-start-optimize";
+const CONTENT_VERSION = "5.3-guiding-principles-all-modals-fixed";
 
 
 const MIND_MAPS = {
@@ -3790,11 +3790,58 @@ const SECTIONS = [
       </div>`
   };
 
-  if (window.MIND_MAPS && Array.isArray(MIND_MAPS["guiding-principles"])) {
-    const existingTitles = MIND_MAPS["guiding-principles"].map(function (m) { return m.title; });
-    if (!existingTitles.includes(startWhereYouAreMap.title)) MIND_MAPS["guiding-principles"].push(startWhereYouAreMap);
-    if (!existingTitles.includes(optimizeAndAutomateMap.title)) MIND_MAPS["guiding-principles"].push(optimizeAndAutomateMap);
-  } else {
-    MIND_MAPS["guiding-principles"] = [startWhereYouAreMap, optimizeAndAutomateMap];
+  function placeholderGuidingMap(title, summary) {
+    return {
+      title: title,
+      html: `
+        <div class="mm-page">
+          <div class="mm-head">
+            <h2 class="mm-title">ITIL V5: ${title}</h2>
+            <p class="mm-subtitle">Guiding principle modal placeholder ready for the confirmed source content and mind map.</p>
+          </div>
+          <div class="mm-grid">
+            <section class="mm-core"><div class="mm-core-kicker">🧭</div><h3>${title}</h3><div class="mm-divider"></div>
+              <p>${summary}</p>
+              <p>This modal button is intentionally visible now so the ITIL Guiding Principles section shows the full structure.</p>
+              <p>The detailed mind map and validated questions will be added when the matching source screenshots and/or confirmed mind map are supplied.</p>
+            </section>
+          </div>
+          <div class="mm-support"><strong>Connected ideas</strong><span class="mm-inline-links"><span>Guiding principles</span><span class="mm-dot">•</span><span>ITIL Value System</span><span class="mm-dot">•</span><span>Decision-making</span><span class="mm-dot">•</span><span>Value creation</span></span></div>
+        </div>`
+    };
   }
+
+  if (!Array.isArray(MIND_MAPS["guiding-principles"])) {
+    MIND_MAPS["guiding-principles"] = [];
+  }
+
+  const byTitle = {};
+  MIND_MAPS["guiding-principles"].forEach(function (m) { byTitle[m.title.toLowerCase()] = m; });
+  byTitle[startWhereYouAreMap.title.toLowerCase()] = startWhereYouAreMap;
+  byTitle[optimizeAndAutomateMap.title.toLowerCase()] = optimizeAndAutomateMap;
+
+  const placeholderMaps = [
+    placeholderGuidingMap("Progress iteratively with feedback", "Make progress in manageable steps, using feedback to learn, adjust and improve as work proceeds."),
+    placeholderGuidingMap("Collaborate and promote visibility", "Work together across relevant stakeholders and make work, priorities, progress and risks visible."),
+    placeholderGuidingMap("Think and work holistically", "Understand how parts of the organization, products, services and value streams interact as a whole system."),
+    placeholderGuidingMap("Keep it simple and practical", "Use the minimum number of steps and controls needed to achieve the desired outcome effectively.")
+  ];
+  placeholderMaps.forEach(function (m) {
+    if (!byTitle[m.title.toLowerCase()]) byTitle[m.title.toLowerCase()] = m;
+  });
+
+  const requiredOrder = [
+    "Guiding Principles Overview",
+    "Focus on value",
+    "Start where you are",
+    "Progress iteratively with feedback",
+    "Collaborate and promote visibility",
+    "Think and work holistically",
+    "Keep it simple and practical",
+    "Optimize and automate"
+  ];
+
+  MIND_MAPS["guiding-principles"] = requiredOrder
+    .map(function (title) { return byTitle[title.toLowerCase()]; })
+    .filter(Boolean);
 })();

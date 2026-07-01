@@ -1,4 +1,4 @@
-const CACHE_NAME = "itil-v5-learning-5.2-start-optimize";
+const CACHE_NAME = "itil-v5-learning-guiding-all-modals-v5-3";
 const ASSETS = [
   './',
   './index.html',
