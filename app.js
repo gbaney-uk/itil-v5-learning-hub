@@ -83,8 +83,19 @@
       .replace(/'/g, "&#039;");
   }
 
+
+  const VALID_QUESTION_STATUSES = ["mindmap-validated", "source-validated", "mindmap-and-source-validated", "validated"];
+
+  function isVisibleQuestion(question) {
+    return VALID_QUESTION_STATUSES.includes(question.status);
+  }
+
+  function visibleQuestions() {
+    return QUESTION_BANK.filter(isVisibleQuestion);
+  }
+
   function sectionQuestions(sectionId) {
-    return QUESTION_BANK.filter((question) => question.sectionId === sectionId);
+    return visibleQuestions().filter((question) => question.sectionId === sectionId);
   }
 
   function showView(viewId) {
@@ -116,12 +127,12 @@
     const data = progress();
     const attempts = data.history.length;
     const best = attempts ? Math.max(...data.history.map((entry) => entry.scorePct)) : 0;
-    const questionTotal = QUESTION_BANK.length;
+    const questionTotal = visibleQuestions().length;
     const sectionTotal = SECTIONS.length;
 
     const stats = [
       ["📚", sectionTotal, "Study sections"],
-      ["❓", questionTotal, "Draft questions"],
+      ["❓", questionTotal, "Validated questions"],
       ["🧪", attempts, "Attempts"],
       ["🏆", `${best}%`, "Best score"],
     ];
@@ -326,7 +337,7 @@
   }
 
   function startMockExam() {
-    const count = Math.min(40, QUESTION_BANK.length);
+    const count = Math.min(40, visibleQuestions().length);
     const questions = balancedMockQuestions(count);
     startExam({
       questions,
@@ -341,7 +352,7 @@
     const perSection = Math.max(1, Math.floor(count / SECTIONS.length));
     const selected = [];
     SECTIONS.forEach((section) => selected.push(...shuffle(sectionQuestions(section.id)).slice(0, perSection)));
-    const remaining = shuffle(QUESTION_BANK.filter((question) => !selected.some((picked) => picked.id === question.id)));
+    const remaining = shuffle(visibleQuestions().filter((question) => !selected.some((picked) => picked.id === question.id)));
     while (selected.length < count && remaining.length) selected.push(remaining.shift());
     return shuffle(selected).slice(0, count);
   }
@@ -352,8 +363,8 @@
       .filter(([, stat]) => stat.attempts > 0 && stat.correct < stat.attempts)
       .sort((a, b) => (a[1].correct / a[1].attempts) - (b[1].correct / b[1].attempts))
       .map(([id]) => id);
-    const weak = weakIds.map((id) => QUESTION_BANK.find((question) => question.id === id)).filter(Boolean);
-    const fallback = shuffle(QUESTION_BANK).slice(0, Math.min(15, QUESTION_BANK.length));
+    const weak = weakIds.map((id) => visibleQuestions().find((question) => question.id === id)).filter(Boolean);
+    const fallback = shuffle(visibleQuestions()).slice(0, Math.min(15, visibleQuestions().length));
     const questions = weak.length ? weak.slice(0, 20) : fallback;
     startExam({
       questions,
@@ -449,6 +460,7 @@
     if (status === "source-validated") return "Source validated";
     if (status === "validated") return "Validated";
     if (status === "needs-review") return "Needs Review";
+    if (status === "invalid-version-4") return "Invalid — ITIL 4";
     return "Draft";
   }
 
@@ -537,7 +549,7 @@
     const result = state.lastResult;
     if (!result) return;
     $("reviewArea").innerHTML = result.questions.map((entry, index) => {
-      const question = QUESTION_BANK.find((item) => item.id === entry.id);
+      const question = visibleQuestions().find((item) => item.id === entry.id);
       const userAnswer = entry.answer === null ? "Unanswered" : question.options[entry.answer];
       const correctAnswer = question.options[question.answer];
       return `

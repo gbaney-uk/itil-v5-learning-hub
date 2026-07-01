@@ -1,7 +1,7 @@
 /* ITIL V5 Learning Dashboard — Phase 4.1 question bank
    Questions are separated from the app engine so they can be reviewed and expanded safely.
-   status values: draft, needs-review, validated */
-const QUESTIONS_VERSION = "4.8-validated-banks";
+   status values: mindmap-validated, source-validated, invalid-version-4, draft */
+const QUESTIONS_VERSION = "4.9-v5-value-chain-cleaned";
 
 const QUESTION_BANK_PLACEHOLDER = { next: 1 };
 
@@ -135,7 +135,7 @@ const QUESTION_BANK = [
   item("product-service-lifecycle", "Which activity moves a product or service into live use in a controlled way?", ["Transition", "Discover", "Support", "Engage"], 0, "Transition moves services or products into live use in a controlled way."),
   item("product-service-lifecycle", "What is the main difference between acquire and build?", ["Acquire is external; build is internal", "Acquire is always cheaper", "Build only means buying hardware", "There is no difference"], 0, "Acquire means obtaining externally; build means creating or configuring internally."),
 
-  item("value-chain-practices", "Which service value chain activity understands stakeholder needs and maintains relationships?", ["Plan", "Engage", "Improve", "Obtain/build"], 1, "Engage is about stakeholders, needs and relationships."),
+  item("value-chain-practices", "Which service value chain activity understands stakeholder needs and maintains relationships?", ["Plan", "Engage", "Improve", "Obtain/build"], 1, "Invalid for ITIL V5: this uses the ITIL 4 service value chain activity 'Engage'. ITIL V5 value chain activities are Discover, Design, Acquire, Build, Transition, Operate, Deliver, and Support.", "invalid-version-4", "Value chain review — ITIL 4 service value chain activity wording"),
   item("value-chain-practices", "Which practice acts as the single point of contact for users?", ["Service desk", "Problem management", "Deployment management", "Supplier management"], 0, "The service desk is the single point of contact between provider and users."),
   item("value-chain-practices", "What is the purpose of problem management?", ["Restore service as quickly as possible", "Reduce likelihood and impact of incidents by managing causes", "Authorize every change", "Create all service requests"], 1, "Problem management manages causes of incidents and reduces likelihood and impact."),
   item("value-chain-practices", "What is the purpose of incident management?", ["Restore normal service operation as quickly as possible", "Document supplier contracts", "Approve all releases", "Create the business strategy"], 0, "Incident management restores normal service operation as quickly as possible."),

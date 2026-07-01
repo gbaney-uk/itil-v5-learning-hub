@@ -557,10 +557,17 @@ const MIND_MAPS = {
           ]
         },
         {
-          "title": "Acquire and Build",
+          "title": "Acquire",
           "items": [
-            "Acquire from third parties where appropriate.",
-            "Build, configure and test internally where appropriate."
+            "Acquire components, resources or capabilities where appropriate.",
+            "Use partners and suppliers where they support the required value."
+          ]
+        },
+        {
+          "title": "Build",
+          "items": [
+            "Build, configure and test internally where appropriate.",
+            "Ensure the created components are ready to support the intended product or service."
           ]
         },
         {
@@ -574,8 +581,8 @@ const MIND_MAPS = {
           "title": "Operate, Deliver and Support",
           "items": [
             "Operate keeps services running.",
-            "Deliver makes services available.",
-            "Support handles issues and requests."
+            "Deliver makes services available to consumers.",
+            "Support handles issues, requests and consumer assistance."
           ]
         }
       ],
@@ -631,13 +638,14 @@ const MIND_MAPS = {
   "value-chain-practices": [
     {
       "title": "Value Chain and Practices",
-      "subtitle": "How value chain activities and practices work together.",
+      "subtitle": "How ITIL V5 value chain activities and practices work together.",
       "branches": [
         {
           "title": "Value Chain Activities",
           "items": [
-            "Plan, improve, engage, design and transition, obtain/build, deliver and support.",
-            "Activities are flexible, not strictly linear."
+            "Discover, Design, Acquire, Build, Transition, Operate, Deliver, Support.",
+            "ITIL V5 value chain activities are flexible and non-linear.",
+            "Do not use the ITIL 4 activity set: Plan, Improve, Engage, Design and Transition, Obtain/Build, Deliver and Support."
           ]
         },
         {
