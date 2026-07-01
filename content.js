@@ -1,6 +1,6 @@
 /* ITIL V5 Learning Dashboard — Phase 3 content file
    Learning content is intentionally separate from app logic. */
-const CONTENT_VERSION = "4.8";
+const CONTENT_VERSION = "5.0-governance";
 
 
 const MIND_MAPS = {
@@ -437,42 +437,58 @@ const MIND_MAPS = {
   "governance": [
     {
       "title": "Governance",
-      "subtitle": "Evaluate, direct and monitor the organisation.",
+      "subtitle": "Direction, oversight, accountability and stakeholder alignment within the ITIL Value System.",
       "branches": [
         {
-          "title": "Evaluate",
+          "title": "Definition",
           "items": [
-            "Assess strategy, risk and current position.",
-            "Understand stakeholder needs.",
-            "Consider options before direction is set."
+            "Governance is the system by which an organization is directed and controlled.",
+            "It is concerned with setting direction, making decisions and ensuring accountability.",
+            "It operates at the highest level of an organization."
           ]
         },
         {
-          "title": "Direct",
+          "title": "Purpose",
           "items": [
-            "Set policy, priorities and decision boundaries.",
-            "Provide organisational direction.",
-            "Guide management activity."
+            "Ensure the organization achieves its objectives while balancing stakeholder needs.",
+            "Direct priorities and evaluate organizational performance.",
+            "Ensure that risks are managed and obligations are met."
           ]
         },
         {
-          "title": "Monitor",
+          "title": "Governance activities",
           "items": [
-            "Check performance and compliance.",
-            "Confirm direction is being followed.",
-            "Use evidence to oversee outcomes."
+            "Evaluate organizational performance and options.",
+            "Direct priorities, policies and boundaries.",
+            "Monitor performance, compliance, risks and outcomes."
+          ]
+        },
+        {
+          "title": "Within the ITIL Value System",
+          "items": [
+            "Governance provides oversight across all other components.",
+            "It ensures guiding principles are applied consistently.",
+            "It ensures the service value chain, practices and continual improvement align with strategic objectives."
           ]
         },
         {
           "title": "Governance vs Management",
           "items": [
-            "Governance gives direction and oversight.",
-            "Management plans and executes.",
-            "Do not confuse oversight with day-to-day operation."
+            "Governance focuses on direction and control.",
+            "Management focuses on planning, execution and coordination.",
+            "Governance asks whether the organization is doing the right things; management asks whether it is doing things right."
+          ]
+        },
+        {
+          "title": "Stakeholders",
+          "items": [
+            "Stakeholders may include customers, users, employees, partners, regulators and shareholders.",
+            "Governance bodies balance competing priorities and make decisions that reflect purpose, values and long-term objectives.",
+            "Clear accountability supports transparency and trust."
           ]
         }
       ],
-      "note": "Validation note: Use this as a learning aid and as a first validation layer for related practice questions."
+      "note": "Validated from the supplied Governance source screenshots and confirmed Governance mind map."
     }
   ],
   "guiding-principles": [
@@ -949,28 +965,35 @@ const SECTIONS = [
     order: 5,
     emoji: "🏛️",
     title: "Governance",
-    short: "How direction, policy, monitoring and accountability are applied.",
+    short: "How organizations are directed, controlled, overseen and held accountable.",
     color: "#b45309",
-    intro: "Governance ensures the organization is evaluated, directed and monitored. Management then plans and executes under that direction.",
+    intro: "Governance provides direction, oversight and accountability within the ITIL Value System. It ensures objectives are set, performance and compliance are monitored, risks are managed, and stakeholder needs are balanced.",
     overview: [
-      ["Evaluate", "Assess strategy, risks, current state, options and stakeholder needs."],
-      ["Direct", "Set direction, policies, priorities and decision boundaries."],
-      ["Monitor", "Check performance, compliance and progress against direction."],
-      ["Governance vs management", "Governance sets direction and oversight; management plans and executes."],
+      ["Definition", "The system by which an organization is directed and controlled."],
+      ["Purpose", "Ensure the organization achieves its objectives while balancing stakeholder needs."],
+      ["Evaluate", "Assess organizational performance, risk, options and outcomes."],
+      ["Direct", "Set direction, priorities, policies, boundaries and major decisions."],
+      ["Monitor", "Check performance, compliance, progress, risks and outcomes."],
+      ["Governance vs management", "Governance focuses on direction and control; management focuses on planning, execution and coordination."],
     ],
     terms: [
-      ["Evaluate", "Governance activity that assesses context and options."],
-      ["Direct", "Governance activity that sets policies, priorities and direction."],
-      ["Monitor", "Governance activity that checks performance and compliance."],
-      ["Accountability", "Responsibility for decisions, performance and outcomes."],
+      ["Governance", "The system by which an organization is directed and controlled."],
+      ["Governance of digital technology", "A human-based system by which current and future use of digital technology is governed."],
+      ["Direction", "The setting of priorities, boundaries and decisions that guide management activity."],
+      ["Oversight", "The review of performance, compliance, risks and outcomes."],
+      ["Accountability", "Responsibility for decisions, outcomes and the consequences of organizational decisions."],
+      ["Stakeholders", "People or groups whose interests must be considered, such as customers, users, employees, partners, regulators and shareholders."],
     ],
     examFocus: [
-      "Remember evaluate, direct and monitor.",
-      "Do not confuse governance with day-to-day management.",
-      "Governance applies to areas such as risk, sustainability, ethics and AI."],
+      "Governance is about directing and controlling, not doing the operational work.",
+      "Governance operates at the highest organizational level.",
+      "Governance provides direction, oversight and accountability.",
+      "Management plans and executes within the boundaries set by governance.",
+      "Within the ITIL Value System, governance oversees the other components and maintains alignment with strategic objectives."],
     traps: [
-      ["Governance does not run the service desk", "Operational execution is management, not governance."],
-      ["Monitor is not monitoring events", "Governance monitoring is oversight of direction and performance."],
+      ["Governance does not perform the work", "It sets expectations, evaluates outcomes and allows management to plan and execute."],
+      ["Governance is not the same as management", "Governance asks whether the organization is doing the right things; management asks whether it is doing things right."],
+      ["ITIL does not prescribe one governance structure", "Governance structures, models and decision-making mechanisms may vary by organization."],
     ],
   },
   {
@@ -3348,4 +3371,94 @@ const SECTIONS = [
       </div>`
   };
   MIND_MAPS["itil-value-system"] = [itilValueSystemMap];
+})();
+
+/* Phase 5.0 — confirmed Governance mind map */
+(function () {
+  const governanceMap = {
+    title: "Governance",
+    html: `
+      <div class="mm-page">
+        <div class="mm-head">
+          <h2 class="mm-title">ITIL V5: Governance</h2>
+          <p class="mm-subtitle">Colour mind map for revision: governance sets direction, ensures accountability, engages stakeholders, and oversees value creation.</p>
+        </div>
+        <div class="mm-grid">
+          <section class="mm-box mm-blue"><div class="mm-box-h"><span class="mm-icon">💡</span>Introduction / core idea</div><div class="mm-box-b"><ul>
+            <li>Within the ITIL Value System, governance provides oversight of all other components.</li>
+            <li>It ensures guiding principles are applied consistently.</li>
+            <li>It ensures the service value chain operates within agreed boundaries.</li>
+            <li>It ensures continual improvement aligns with strategic objectives.</li>
+            <li>Governance does not perform the work itself.</li>
+            <li>Instead, it sets expectations and evaluates outcomes, allowing management to focus on planning and execution.</li>
+          </ul></div></section>
+          <section class="mm-box mm-grey"><div class="mm-box-h"><span class="mm-icon">🎯</span>The key concepts are</div><div class="mm-box-b">
+            <ol class="mm-numbers">
+              <li><span class="mm-num" style="background:#1b74e8">1</span><strong>Governance</strong></li>
+              <li><span class="mm-num" style="background:#7a42d9">2</span><strong>Direction</strong></li>
+              <li><span class="mm-num" style="background:#0f95a3">3</span><strong>Oversight</strong></li>
+              <li><span class="mm-num" style="background:#f28a07">4</span><strong>Accountability</strong></li>
+              <li><span class="mm-num" style="background:#e53935">5</span><strong>Stakeholder interests</strong></li>
+            </ol>
+            <p>Governance within ITIL explains how organizations are directed and controlled.</p>
+          </div></section>
+          <section class="mm-box mm-orange"><div class="mm-box-h"><span class="mm-icon">🎯</span>Why governance matters</div><div class="mm-box-b"><ul>
+            <li>Effective management of digital products and services requires clear direction, oversight and accountability.</li>
+            <li>Without governance, organizations risk misalignment between strategic intent and operational execution.</li>
+            <li>Governance evaluates organizational performance, directs priorities, and ensures that risks are managed and obligations are met.</li>
+            <li>Clear governance supports transparency and trust.</li>
+          </ul></div></section>
+          <section class="mm-box mm-purple"><div class="mm-box-h"><span class="mm-icon">📋</span>Definition: Governance</div><div class="mm-box-b"><ul>
+            <li><strong>Governance</strong> is the system by which an organization is directed and controlled.</li>
+            <li>Governance is concerned with setting direction, making decisions and ensuring accountability.</li>
+            <li>It operates at the highest level of an organization.</li>
+            <li>It provides the framework within which management activities are planned, executed and controlled.</li>
+          </ul></div></section>
+          <section class="mm-core"><div class="mm-core-kicker">⚖️</div><h3>Governance</h3><div class="mm-divider"></div>
+            <p>Governance provides clear direction, oversight, and accountability.</p>
+            <p>It ensures an organization's objectives are set, direction is established, and performance and compliance are monitored.</p>
+            <p>Governance is about setting direction, making decisions, and ensuring accountability, not performing day-to-day operational activities.</p>
+            <p class="mm-emphasis">Governance supports value creation within the ITIL Value System.</p>
+          </section>
+          <section class="mm-box mm-red"><div class="mm-box-h"><span class="mm-icon">👥</span>Governance and stakeholders</div><div class="mm-box-b"><ul>
+            <li>Governance exists to serve the interests of stakeholders.</li>
+            <li>Stakeholders may include customers, users, employees, partners, regulators, and shareholders.</li>
+            <li>Governance bodies balance competing priorities and make decisions that reflect the organization's purpose, values, and long-term objectives.</li>
+            <li>Clear accountability for decisions and outcomes supports transparency and trust, both internally and externally.</li>
+          </ul></div></section>
+          <section class="mm-box mm-teal"><div class="mm-box-h"><span class="mm-icon">📊</span>Purpose of governance</div><div class="mm-box-b"><ul>
+            <li>Ensure the organization achieves its objectives while balancing the needs of different stakeholders.</li>
+            <li>Direct priorities.</li>
+            <li>Evaluate organizational performance.</li>
+            <li>Ensure that risks are managed and obligations are met.</li>
+          </ul></div></section>
+          <section class="mm-box mm-green"><div class="mm-box-h"><span class="mm-icon">🔺</span>Governance model</div><div class="mm-box-b">
+            <div class="mm-mini-visual">
+              <div class="mm-mini-visual-grid">
+                <div class="mm-mini-pill">Engage stakeholders</div>
+                <div class="mm-mini-pill">Evaluate</div>
+                <div class="mm-mini-pill">Direct</div>
+                <div class="mm-mini-pill">Monitor</div>
+              </div>
+              <div class="mm-mini-center">Governance provides direction, oversight and accountability.</div>
+              <div class="mm-footer-small">Evaluate, direct and monitor are the core governance activities shown in the source.</div>
+            </div>
+          </div></section>
+          <section class="mm-box mm-gold"><div class="mm-box-h"><span class="mm-icon">📖</span>Position within ITIL Foundation</div><div class="mm-box-b"><ul>
+            <li>Governance is introduced as a core concept explaining how organizations are directed and controlled.</li>
+            <li>More detailed governance structures, models, and decision-making mechanisms may vary between organizations and are not prescribed by ITIL.</li>
+            <li>This introduction provides the basis for understanding how governance interacts with management and supports value creation within the ITIL Value System.</li>
+          </ul></div></section>
+        </div>
+        <div class="mm-support"><strong>Connected ideas</strong><span class="mm-inline-links"><span>ITIL Value System</span><span class="mm-dot">•</span><span>Direction</span><span class="mm-dot">•</span><span>Oversight</span><span class="mm-dot">•</span><span>Accountability</span><span class="mm-dot">•</span><span>Stakeholders</span><span class="mm-dot">•</span><span>Value creation</span></span></div>
+        <div class="mm-exam"><div class="mm-exam-grid"><div class="mm-exam-label">🎓 Exam takeaway</div><ul>
+          <li>Governance is about directing and controlling, not doing the work.</li>
+          <li>It provides direction, oversight, and accountability.</li>
+          <li>It operates at the highest organizational level.</li>
+          <li>It supports value creation by aligning activities with objectives and stakeholder needs.</li>
+          <li>In the ITIL Value System, governance oversees the other components.</li>
+        </ul></div></div>
+      </div>`
+  };
+  MIND_MAPS["governance"] = [governanceMap];
 })();

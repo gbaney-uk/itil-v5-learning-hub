@@ -1,4 +1,4 @@
-const CACHE_NAME = "itil-v5-learning-v49-value-chain-cleaned";
+const CACHE_NAME = "itil-v5-learning-v50-governance-updated";
 const ASSETS = [
   './',
   './index.html',
