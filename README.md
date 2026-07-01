@@ -1,10 +1,9 @@
-# ITIL V5 Learning App — Guiding Principles Update
+# ITIL V5 Learning App — Start Where You Are and Optimize and Automate updated
 
 Updates included:
-- Added ITIL Guiding Principles Overview modal mind map.
-- Added Focus on Value modal mind map.
-- Updated ITIL Guiding Principles section content using supplied screenshots and mind maps.
-- Added 20 validated Guiding Principles / Focus on Value questions.
-- Kept visible question pool restricted to validated statuses only.
-- Kept correct-answer positions balanced across A, B, C and D.
-- Confirmed value-chain content uses ITIL V5 activity names: Discover, Design, Acquire, Build, Transition, Operate, Deliver, Support.
+- Added Start Where You Are modal mind map.
+- Added Optimize and Automate modal mind map.
+- Updated the ITIL Guiding Principles section content for these two principles.
+- Added 20 validated guiding-principle questions based on the supplied screenshots and mind maps.
+- Kept hidden statuses out of the visible question pool.
+- Kept visible validated answer positions balanced across A, B, C, and D.

@@ -1,6 +1,6 @@
 /* ITIL V5 Learning Dashboard — Phase 3 content file
    Learning content is intentionally separate from app logic. */
-const CONTENT_VERSION = "5.1-guiding-principles-overview-focus";
+const CONTENT_VERSION = "5.2-guiding-principles-start-optimize";
 
 
 const MIND_MAPS = {
@@ -1010,18 +1010,22 @@ const SECTIONS = [
       ["Practical", "They help people make real decisions instead of prescribing detailed procedures for every situation."],
       ["Enduring", "They remain useful even when technology, structure and working practices change."],
       ["Focus on value", "All activities should link directly or indirectly to value for the organization, its customers and other stakeholders."],
-      ["Start where you are", "One of the seven guiding principles; detailed source content will be added when provided."],
+      ["Start where you are", "Do not start from scratch without considering what is already available to be leveraged; use the current state as the baseline for improvement."],
       ["Progress iteratively with feedback", "One of the seven guiding principles; detailed source content will be added when provided."],
       ["Collaborate and promote visibility", "One of the seven guiding principles; detailed source content will be added when provided."],
       ["Think and work holistically", "One of the seven guiding principles; detailed source content will be added when provided."],
       ["Keep it simple and practical", "One of the seven guiding principles; detailed source content will be added when provided."],
-      ["Optimize and automate", "One of the seven guiding principles; detailed source content will be added when provided."],
+      ["Optimize and automate", "Ensure services, practices and processes are efficient and effective before applying automation, then automate where it supports value creation."],
     ],
     terms: [
       ["Guiding principle", "A recommendation that can guide an organization in all circumstances."],
       ["Focus on value", "Value should be the primary consideration in all organizational activities and decisions."],
       ["Stakeholder perspective", "Different stakeholders may perceive value differently, so value requires understanding stakeholders and expected outcomes."],
       ["Feedback on value", "Feedback should be collected on an ongoing basis, not only at the beginning of the service relationship."],
+      ["Current state", "Products, services and practices should be understood in reality before deciding what to reuse, alter or build upon."],
+      ["Measurement and observation", "Metrics, reports and dashboards can help, but they should support observation and judgement, not replace them."],
+      ["Optimize before automation", "Automation should be applied after workflows have been understood, simplified and optimized."],
+      ["Responsible automation", "Automation and AI should be guided by value, appropriate metrics, governance, ethics, privacy and information security."],
       ["Organizational culture", "Guiding principles encourage behaviours that support collaboration, transparency and continual learning."],
     ],
     examFocus: [
@@ -1031,12 +1035,20 @@ const SECTIONS = [
       "Understand that they influence all components of the ITIL Value System.",
       "For Focus on value, link work to stakeholder outcomes and perceived benefits.",
       "For Focus on value, remember that value is perceived differently by different stakeholders.",
+      "For Start where you are, do not assume the best solution is to start again; assess and use what already exists where appropriate.",
+      "For Start where you are, measurement should support observation and judgement, not replace them.",
+      "For Optimize and automate, optimize the work first and then automate selectively where it adds value.",
+      "For Optimize and automate, automation for its own sake can increase cost, risk and reduce resilience.",
     ],
     traps: [
       ["Rules vs recommendations", "Guiding principles are not rules or detailed procedures; they guide judgement."],
       ["Provider-only value", "Focus on value requires understanding value for the organization, customers and other stakeholders."],
       ["Start-only feedback", "Feedback on value should be collected throughout the service relationship."],
       ["Project-only value", "Focus on value applies during normal operations and improvement work, not only exciting projects."],
+      ["Starting from scratch", "Start where you are means first understanding what already exists and what can be reused, adapted or improved."],
+      ["Metrics-only view", "Measurement can introduce bias and must not replace direct observation and judgement."],
+      ["Blind automation", "Optimize and automate does not mean automating ineffective or overly complex activities."],
+      ["Automation as the goal", "Automation should support value creation; it should not become an end in itself."],
     ],
   },
   {
@@ -3636,4 +3648,153 @@ const SECTIONS = [
   };
 
   MIND_MAPS["guiding-principles"] = [guidingOverviewMap, focusOnValueMap];
+})();
+
+
+/* Phase 5.2 — confirmed ITIL Guiding Principles: Start Where You Are and Optimize and Automate */
+(function () {
+  const startWhereYouAreMap = {
+    title: "Start where you are",
+    html: `
+      <div class="mm-page">
+        <div class="mm-head">
+          <h2 class="mm-title">ITIL V5: Start Where You Are</h2>
+          <p class="mm-subtitle">Colour mind map for revision: improve by understanding and leveraging the current state before deciding what to change, reuse, or replace.</p>
+        </div>
+        <div class="mm-grid">
+          <section class="mm-box mm-blue"><div class="mm-box-h"><span class="mm-icon">💡</span>1 Introduction / core idea</div><div class="mm-box-b"><ul>
+            <li>Do not start from scratch without considering what is already available to be leveraged.</li>
+            <li>Removing everything done in the past and building something completely new is rarely necessary or wise.</li>
+            <li>This approach can waste time and lose existing capabilities, competencies, people, and tools.</li>
+            <li>Do not start over without first considering what is already available.</li>
+          </ul></div></section>
+          <section class="mm-box mm-purple"><div class="mm-box-h"><span class="mm-icon">📖</span>2 Understanding the principle</div><div class="mm-box-b"><ul>
+            <li>Organizations often have a strong tendency to discard existing methods, services, or practices and replace them with something entirely new.</li>
+            <li>ITIL emphasizes that this is rarely necessary or wise.</li>
+            <li>Existing products, services, practices, skills and tools frequently contain valuable elements that can be reused or adapted.</li>
+            <li>The current state should be used as a baseline to decide what to retain, improve, or replace.</li>
+          </ul></div></section>
+          <section class="mm-box mm-teal"><div class="mm-box-h"><span class="mm-icon">🔎</span>3 Assessing the current state</div><div class="mm-box-b"><ul>
+            <li>Organizations must understand how products, services and practices actually perform in reality.</li>
+            <li>This requires both measurement and direct observation.</li>
+            <li>Reports and dashboards can provide useful information, but they may not always reflect what truly happens in day-to-day operations.</li>
+            <li>Direct observation can reveal gaps between documented processes and real behaviour.</li>
+            <li>People less familiar with the service or practice may notice issues that insiders no longer question.</li>
+          </ul></div></section>
+          <section class="mm-box mm-red"><div class="mm-box-h"><span class="mm-icon">📊</span>4 The influence of measurement</div><div class="mm-box-b"><ul>
+            <li>Measurement plays an important role in understanding the current state, but it must be used carefully.</li>
+            <li>Over-reliance on metrics and reports can introduce bias and unintended consequences.</li>
+            <li>When people are measured against specific targets, behaviour may change to optimize the metric rather than the outcome.</li>
+            <li>Measurement should support observation and judgement, not replace them.</li>
+            <li>Metrics should be meaningful, aligned with desired outcomes, and used as part of a broader understanding of performance.</li>
+          </ul></div></section>
+          <section class="mm-core"><div class="mm-core-kicker">🎯</div><h3>Start Where You Are</h3><div class="mm-divider"></div>
+            <p>Do not start from scratch without considering what is already available to be leveraged.</p>
+            <p>Existing products, services, practices, skills, tools, and capabilities may contain valuable elements that can be reused or adapted.</p>
+            <p>The principle encourages a clear and realistic understanding of the current state.</p>
+            <p>It helps avoid unnecessary waste, reduce risk, and preserve organizational knowledge and capabilities.</p>
+            <p>Starting where you are does not mean accepting poor performance or avoiding change.</p>
+          </section>
+          <section class="mm-box mm-orange"><div class="mm-box-h"><span class="mm-icon">🧾</span>5 Applying the principle</div><div class="mm-box-b"><ul>
+            <li><strong>Evaluate the current state:</strong> look at what exists as objectively as possible, using the customer or desired outcome as the starting point.</li>
+            <li><strong>Identify and build on successful existing practices:</strong> reuse or adapt what already works where possible.</li>
+            <li><strong>Apply risk management skills:</strong> consider both the risks of making and not making a change.</li>
+            <li><strong>Leverage AI:</strong> AI-driven analytics can help assess existing practices, processes, and historical performance data.</li>
+            <li><strong>Recognize that sometimes nothing can be reused:</strong> these situations can occur, but they are very rare.</li>
+          </ul></div></section>
+          <section class="mm-box mm-green"><div class="mm-box-h"><span class="mm-icon">⭐</span>6 Key takeaway</div><div class="mm-box-b"><ul>
+            <li>Start Where You Are ensures improvement efforts are grounded in reality.</li>
+            <li>By understanding and leveraging what already exists, organizations reduce waste and manage risk more effectively.</li>
+            <li>This creates a stronger foundation for sustainable improvement.</li>
+          </ul></div></section>
+          <section class="mm-box mm-blue"><div class="mm-box-h"><span class="mm-icon">📌</span>7 Why it matters</div><div class="mm-box-b"><ul>
+            <li>Grounds improvement in reality.</li>
+            <li>Encourages reuse before replacement.</li>
+            <li>Reduces waste and unnecessary effort.</li>
+            <li>Preserves knowledge, capabilities and tools.</li>
+            <li>Supports better risk-aware improvement decisions.</li>
+          </ul></div></section>
+        </div>
+        <div class="mm-support"><strong>Connected ideas</strong><span class="mm-inline-links"><span>Guiding principles</span><span class="mm-dot">•</span><span>Current state</span><span class="mm-dot">•</span><span>Improvement</span><span class="mm-dot">•</span><span>Measurement</span><span class="mm-dot">•</span><span>Observation</span><span class="mm-dot">•</span><span>Risk management</span><span class="mm-dot">•</span><span>Reuse and adaptation</span><span class="mm-dot">•</span><span>Service quality</span></span></div>
+        <div class="mm-exam"><div class="mm-exam-grid"><div class="mm-exam-label">🎓 Exam takeaway</div><ul>
+          <li>Do not assume the best solution is to start again.</li>
+          <li>First understand the current state through measurement, observation and judgement.</li>
+          <li>Reuse, adapt, or build on what already works where possible.</li>
+          <li>Consider both the risks of reuse and the risks of introducing something new.</li>
+          <li>Starting where you are supports sustainable improvement and reduces waste.</li>
+        </ul></div></div>
+      </div>`
+  };
+
+  const optimizeAndAutomateMap = {
+    title: "Optimize and automate",
+    html: `
+      <div class="mm-page">
+        <div class="mm-head">
+          <h2 class="mm-title">ITIL V5: Optimize and Automate</h2>
+          <p class="mm-subtitle">Colour mind map for revision: optimize the work first, then automate where it adds value.</p>
+        </div>
+        <div class="mm-grid">
+          <section class="mm-box mm-blue"><div class="mm-box-h"><span class="mm-icon">📣</span>Key message</div><div class="mm-box-b"><ul>
+            <li>Ensure services, practices and processes are efficient and effective before applying automation.</li>
+            <li>Then use automation where it supports value creation.</li>
+            <li>Technology can help organizations scale up and take on more tasks, allowing people to do more complex decision-making.</li>
+            <li>Use of technology, especially generative AI, should be subject to governance, ethical and compliance policies and controls.</li>
+            <li>Automation for automation’s sake can increase costs, introduce risks, and reduce resilience.</li>
+          </ul></div></section>
+          <section class="mm-box mm-purple"><div class="mm-box-h"><span class="mm-icon">📖</span>Understanding the principle</div><div class="mm-box-b"><ul>
+            <li>Automation should not be applied blindly.</li>
+            <li>Automating ineffective or overly complex activities will often increase inefficiency rather than reduce it.</li>
+            <li>Organizations should first understand, simplify, and optimize their workflows before deciding where automation can add value.</li>
+            <li>Automation can improve consistency, speed, scalability and reliability when it supports well-designed processes and clear outcomes.</li>
+          </ul></div></section>
+          <section class="mm-box mm-orange"><div class="mm-box-h"><span class="mm-icon">📈</span>Optimization before automation</div><div class="mm-box-b"><ul>
+            <li>Optimization involves analysing existing workflows, removing unnecessary steps, and improving efficiency.</li>
+            <li>This creates a strong foundation for automation.</li>
+            <li>Without optimization, automation risks reinforcing poor practices or embedding waste into systems.</li>
+            <li>Automation should be applied selectively based on value, metrics, and effective governance.</li>
+          </ul></div></section>
+          <section class="mm-core"><div class="mm-core-kicker">🎯</div><h3>Optimize and Automate</h3><div class="mm-divider"></div>
+            <p>Automation should not be applied blindly.</p>
+            <p>Organizations should first understand, simplify, and optimize workflows before deciding where automation can add value.</p>
+            <p class="mm-emphasis">First improve how work is done, then automate where it supports value creation.</p>
+          </section>
+          <section class="mm-box mm-red"><div class="mm-box-h"><span class="mm-icon">⚙️</span>Applying the principle</div><div class="mm-box-b"><ul>
+            <li><strong>Simplify and/or optimize before automating:</strong> map standard and repeating workflows and streamline where possible.</li>
+            <li><strong>Define your metrics:</strong> evaluate intended and actual results using appropriate outcome-based metrics.</li>
+            <li><strong>Use the other guiding principles:</strong> optimization and automation should be considered alongside the other principles.</li>
+            <li><strong>Progress iteratively with feedback:</strong> iterative optimization makes progress visible and increases stakeholder buy-in.</li>
+            <li><strong>Keep it simple and practical:</strong> use simplicity together with optimization when selecting improvements.</li>
+          </ul></div></section>
+          <section class="mm-box mm-teal"><div class="mm-box-h"><span class="mm-icon">🔄</span>Applying the principle continued</div><div class="mm-box-b"><ul>
+            <li><strong>Focus on value:</strong> choose what to optimize and automate based on what will create the best value.</li>
+            <li><strong>Start where you are:</strong> use existing technology, features and functionality that may be under-used.</li>
+            <li><strong>Leverage AI:</strong> AI can automate routine activities and support ongoing service improvement.</li>
+            <li><strong>Ensure effective governance of digital technology:</strong> consider sustainability, ethics, privacy and information security.</li>
+          </ul></div></section>
+          <section class="mm-box mm-green"><div class="mm-box-h"><span class="mm-icon">👥</span>Position and takeaways</div><div class="mm-box-b"><ul>
+            <li>Optimize and Automate supports effective governance, efficient value chain activities and continual improvement.</li>
+            <li>Combining optimization with responsible automation increases efficiency while maintaining control, quality and alignment.</li>
+            <li>Automation should be applied deliberately and responsibly.</li>
+            <li>By first improving how work is done and then automating where it adds value, organizations achieve sustainable efficiency and better service outcomes.</li>
+          </ul></div></section>
+        </div>
+        <div class="mm-support"><strong>Connected ideas</strong><span class="mm-inline-links"><span>Focus on value</span><span class="mm-dot">•</span><span>Keep it simple and practical</span><span class="mm-dot">•</span><span>Progress iteratively with feedback</span><span class="mm-dot">•</span><span>Start where you are</span><span class="mm-dot">•</span><span>Governance</span><span class="mm-dot">•</span><span>Metrics</span><span class="mm-dot">•</span><span>AI</span></span></div>
+        <div class="mm-exam"><div class="mm-exam-grid"><div class="mm-exam-label">🎓 Exam takeaway</div><ul>
+          <li>Do not automate poor or overly complex work.</li>
+          <li>Optimize first, then automate selectively.</li>
+          <li>Use metrics, feedback and governance to guide decisions.</li>
+          <li>Automation should support value creation, not become an end in itself.</li>
+          <li>AI can help, but it must be used responsibly.</li>
+        </ul></div></div>
+      </div>`
+  };
+
+  if (window.MIND_MAPS && Array.isArray(MIND_MAPS["guiding-principles"])) {
+    const existingTitles = MIND_MAPS["guiding-principles"].map(function (m) { return m.title; });
+    if (!existingTitles.includes(startWhereYouAreMap.title)) MIND_MAPS["guiding-principles"].push(startWhereYouAreMap);
+    if (!existingTitles.includes(optimizeAndAutomateMap.title)) MIND_MAPS["guiding-principles"].push(optimizeAndAutomateMap);
+  } else {
+    MIND_MAPS["guiding-principles"] = [startWhereYouAreMap, optimizeAndAutomateMap];
+  }
 })();
