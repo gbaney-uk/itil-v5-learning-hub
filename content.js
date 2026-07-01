@@ -1,6 +1,6 @@
 /* ITIL V5 Learning Dashboard — Phase 3 content file
    Learning content is intentionally separate from app logic. */
-const CONTENT_VERSION = "5.3-guiding-principles-all-modals-fixed";
+const CONTENT_VERSION = "5.4-guiding-principles-keep-simple-practical";
 
 
 const MIND_MAPS = {
@@ -1014,7 +1014,7 @@ const SECTIONS = [
       ["Progress iteratively with feedback", "One of the seven guiding principles; detailed source content will be added when provided."],
       ["Collaborate and promote visibility", "One of the seven guiding principles; detailed source content will be added when provided."],
       ["Think and work holistically", "One of the seven guiding principles; detailed source content will be added when provided."],
-      ["Keep it simple and practical", "One of the seven guiding principles; detailed source content will be added when provided."],
+      ["Keep it simple and practical", "Minimize unnecessary complexity; keep only what contributes to value and design practical solutions people can use."],
       ["Optimize and automate", "Ensure services, practices and processes are efficient and effective before applying automation, then automate where it supports value creation."],
     ],
     terms: [
@@ -1026,6 +1026,8 @@ const SECTIONS = [
       ["Measurement and observation", "Metrics, reports and dashboards can help, but they should support observation and judgement, not replace them."],
       ["Optimize before automation", "Automation should be applied after workflows have been understood, simplified and optimized."],
       ["Responsible automation", "Automation and AI should be guided by value, appropriate metrics, governance, ethics, privacy and information security."],
+      ["Simplicity", "Complexity should only exist where it genuinely adds value; simplicity supports clarity, usability and adoption."],
+      ["Practical solution", "A solution people can actually apply in daily work, even in complex and changing environments."],
       ["Organizational culture", "Guiding principles encourage behaviours that support collaboration, transparency and continual learning."],
     ],
     examFocus: [
@@ -1037,6 +1039,8 @@ const SECTIONS = [
       "For Focus on value, remember that value is perceived differently by different stakeholders.",
       "For Start where you are, do not assume the best solution is to start again; assess and use what already exists where appropriate.",
       "For Start where you are, measurement should support observation and judgement, not replace them.",
+      "For Keep it simple and practical, remove steps, controls, actions or metrics that do not contribute to value.",
+      "For Keep it simple and practical, simplicity does not mean cutting corners or lowering quality.",
       "For Optimize and automate, optimize the work first and then automate selectively where it adds value.",
       "For Optimize and automate, automation for its own sake can increase cost, risk and reduce resilience.",
     ],
@@ -1047,6 +1051,8 @@ const SECTIONS = [
       ["Project-only value", "Focus on value applies during normal operations and improvement work, not only exciting projects."],
       ["Starting from scratch", "Start where you are means first understanding what already exists and what can be reused, adapted or improved."],
       ["Metrics-only view", "Measurement can introduce bias and must not replace direct observation and judgement."],
+      ["Simplicity as low quality", "Keep it simple and practical does not mean cutting corners; it means focusing effort where it matters most."],
+      ["Adding controls by default", "Extra steps and controls can introduce waste when they do not increase value or produce a useful outcome."],
       ["Blind automation", "Optimize and automate does not mean automating ineffective or overly complex activities."],
       ["Automation as the goal", "Automation should support value creation; it should not become an end in itself."],
     ],
@@ -3790,6 +3796,84 @@ const SECTIONS = [
       </div>`
   };
 
+
+  const keepItSimplePracticalMap = {
+    title: "Keep it simple and practical",
+    html: `
+      <div class="mm-page">
+        <div class="mm-head">
+          <h2 class="mm-title">ITIL V5: Keep It Simple and Practical</h2>
+          <p class="mm-subtitle">Colour mind map for revision: reduce unnecessary complexity, focus on value, and design practical solutions people can use.</p>
+        </div>
+        <div class="mm-grid">
+          <section class="mm-box mm-blue"><div class="mm-box-h"><span class="mm-icon">💡</span>Introduction / core idea</div><div class="mm-box-b"><ul>
+            <li>Processes, services, practices and methods should be designed to achieve objectives efficiently.</li>
+            <li>Always aim to minimize the number of steps needed to accomplish an objective.</li>
+            <li>Apply outcome-based thinking to produce practical solutions.</li>
+            <li>If a process, product, service, action or metric fails to increase value or produce a useful outcome, eliminate it.</li>
+          </ul></div></section>
+          <section class="mm-box mm-purple"><div class="mm-box-h"><span class="mm-icon">📋</span>The key concepts are</div><div class="mm-box-b">
+            <ol class="mm-numbers">
+              <li><span class="mm-num" style="background:#1b74e8">1</span><strong>Keep It Simple and Practical</strong></li>
+              <li><span class="mm-num" style="background:#7a42d9">2</span><strong>Complexity only where it adds value</strong></li>
+              <li><span class="mm-num" style="background:#0f95a3">3</span><strong>Simplicity supports effectiveness, usability and adoption</strong></li>
+              <li><span class="mm-num" style="background:#f28a07">4</span><strong>Remove what does not contribute to value</strong></li>
+              <li><span class="mm-num" style="background:#e53935">5</span><strong>Practical solutions must be usable in daily work</strong></li>
+            </ol>
+            <p>The principle supports value realization by reducing unnecessary complexity and improving focus.</p>
+          </div></section>
+          <section class="mm-box mm-orange"><div class="mm-box-h"><span class="mm-icon">🎯</span>Why simplicity matters</div><div class="mm-box-b"><ul>
+            <li>Overly complex processes, controls or solutions often increase cost, reduce clarity and slow down value creation.</li>
+            <li>Simplicity supports effectiveness, usability and adoption.</li>
+            <li>Reducing unnecessary complexity enables faster decision-making, better outcomes and higher engagement from people involved in service delivery and consumption.</li>
+            <li>Simplicity does not mean cutting corners or lowering quality.</li>
+          </ul></div></section>
+          <section class="mm-box mm-purple"><div class="mm-box-h"><span class="mm-icon">📖</span>Understanding the principle</div><div class="mm-box-b"><ul>
+            <li>Complexity should only exist where it genuinely adds value.</li>
+            <li>Organizations should critically evaluate activities, rules and procedures, and remove anything that does not contribute to value.</li>
+            <li>Simplicity means focusing effort where it matters most.</li>
+            <li>Design solutions that are easy to understand, use and maintain.</li>
+          </ul></div></section>
+          <section class="mm-core"><div class="mm-core-kicker">🎯</div><h3>Keep It Simple and Practical</h3><div class="mm-divider"></div>
+            <p>The guiding principle Keep It Simple and Practical emphasizes that complexity should only exist where it genuinely adds value.</p>
+            <p class="mm-emphasis">Focus effort where it matters most.</p>
+            <p class="mm-emphasis">Design solutions that are easy to understand, use and maintain.</p>
+            <p class="mm-emphasis">Remove anything that does not contribute to value.</p>
+          </section>
+          <section class="mm-box mm-red"><div class="mm-box-h"><span class="mm-icon">👥</span>Simplicity in practice</div><div class="mm-box-b"><ul>
+            <li>Keeping things simple often requires discipline and deliberate design.</li>
+            <li>Adding steps or controls can feel safer, but it frequently introduces waste.</li>
+            <li>Practical solutions are those that people can actually apply in their daily work, even in complex and changing environments.</li>
+          </ul></div></section>
+          <section class="mm-box mm-teal"><div class="mm-box-h"><span class="mm-icon">📊</span>Applying the principle</div><div class="mm-box-b"><ul>
+            <li><strong>Ensure value:</strong> every activity should contribute to the creation of value.</li>
+            <li><strong>Simplicity is the ultimate sophistication:</strong> it may seem harder to simplify, but it is often more effective.</li>
+            <li><strong>Do fewer things but do them better:</strong> minimize activities to include only those with value for one or more stakeholders, allowing more focus on the quality of those actions.</li>
+            <li><strong>Empower people through trust, autonomy and resources:</strong> this is more effective than overcomplicated procedures and controls, especially in complex situations.</li>
+            <li><strong>Simplicity encourages adoption:</strong> to embed a new practice or increase adoption of a product, make sure it is easy to use.</li>
+          </ul></div></section>
+          <section class="mm-box mm-green"><div class="mm-box-h"><span class="mm-icon">⚙️</span>Using AI and practical application</div><div class="mm-box-b"><ul>
+            <li>AI helps identify inefficiencies, redundancies or overly complex procedures through detailed analytics and pattern recognition.</li>
+            <li>It streamlines and automates routine and repetitive tasks within service management, allowing staff to focus on more strategic activities, thereby simplifying workflows and enhancing practicality.</li>
+          </ul></div></section>
+          <section class="mm-box mm-gold"><div class="mm-box-h"><span class="mm-icon">📘</span>Position and takeaways</div><div class="mm-box-b"><ul>
+            <li><strong>Position within the ITIL Value System:</strong> the principle supports efficient governance, effective value chain activities and continual improvement.</li>
+            <li>By reducing unnecessary complexity, organizations improve focus, execution and value realization.</li>
+            <li><strong>Key takeaway:</strong> effort should be spent on what truly matters.</li>
+            <li>Simplicity improves clarity, adoption and effectiveness, enabling organizations to deliver value more reliably.</li>
+          </ul></div></section>
+        </div>
+        <div class="mm-support"><strong>Connected ideas</strong><span class="mm-inline-links"><span>Value creation</span><span class="mm-dot">•</span><span>Adoption</span><span class="mm-dot">•</span><span>Simplicity</span><span class="mm-dot">•</span><span>Practicality</span><span class="mm-dot">•</span><span>Governance</span><span class="mm-dot">•</span><span>Continual improvement</span></span></div>
+        <div class="mm-exam"><div class="mm-exam-grid"><div class="mm-exam-label">🎓 Exam takeaway</div><ul>
+          <li>Complexity should exist only where it adds value.</li>
+          <li>Simplicity does not mean lower quality.</li>
+          <li>Remove activities that do not contribute to value.</li>
+          <li>Practical solutions must be usable in daily work.</li>
+          <li>The principle improves focus, execution and value realization.</li>
+        </ul></div></div>
+      </div>`
+  };
+
   function placeholderGuidingMap(title, summary) {
     return {
       title: title,
@@ -3818,6 +3902,7 @@ const SECTIONS = [
   const byTitle = {};
   MIND_MAPS["guiding-principles"].forEach(function (m) { byTitle[m.title.toLowerCase()] = m; });
   byTitle[startWhereYouAreMap.title.toLowerCase()] = startWhereYouAreMap;
+  byTitle[keepItSimplePracticalMap.title.toLowerCase()] = keepItSimplePracticalMap;
   byTitle[optimizeAndAutomateMap.title.toLowerCase()] = optimizeAndAutomateMap;
 
   const placeholderMaps = [
