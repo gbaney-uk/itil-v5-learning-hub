@@ -1,6 +1,6 @@
 /* ITIL V5 Learning Dashboard — Phase 3 content file
    Learning content is intentionally separate from app logic. */
-const CONTENT_VERSION = "4.5";
+const CONTENT_VERSION = "4.8";
 
 
 const MIND_MAPS = {
@@ -2716,4 +2716,628 @@ const SECTIONS = [
     serviceJourneyMap,
     serviceQualityLevelsMap
   ].filter(Boolean);
+})();
+
+
+/* Phase 4.6 — confirmed Service Relationships + Service Offerings mind maps from uploaded originals */
+(function () {
+  const section = SECTIONS.find(function (item) { return item.id === "service-relationships"; });
+  if (section) {
+    section.short = "Service provider/consumer roles, service offerings, service journeys, service quality and service levels.";
+    section.intro = "Service Relationships explains how value is realized through collaboration between providers, consumers and other stakeholders. This section contains Service Relationships, Service Offerings, The Service Journey, and Service Quality and Service Levels.";
+    section.overview = [
+      ["Service Relationships", "Explains how service providers, service consumers and other stakeholders interact to realize value through the service lifecycle."],
+      ["Service Offerings", "Explains what a service provides through goods, access to resources, service actions and service interactions."],
+      ["The Service Journey", "Shows the end-to-end flow of activities, interactions and touchpoints that shape the consumer experience."],
+      ["Service Quality and Service Levels", "Explains how consumers judge service quality and how service levels define measurable expectations and achieved performance."]
+    ];
+    section.terms = [
+      ["Service provider", "An organization that provides services to one or more service consumers."],
+      ["Service consumer", "An organization that consumes services."],
+      ["Other stakeholders", "Parties that influence or are affected by the service relationship without directly consuming the service."],
+      ["Customer", "The role that defines service requirements and takes responsibility for outcomes of service consumption."],
+      ["User", "The role that uses the service."],
+      ["Sponsor", "The role that authorizes budget for service consumption."],
+      ["Service offering", "A formal description of one or more services designed to address the needs of a target consumer group."],
+      ["Goods", "Material or digital items transferred to the consumer."],
+      ["Access to resources", "A service interaction where the consumer uses provider resources without ownership transfer."],
+      ["Service actions", "Activities performed by the service provider."],
+      ["Service interaction", "An interaction between a service provider and service consumer that contributes to value co-creation."],
+      ["Basic / cooperative / collaborative relationship", "Increasing levels of engagement between provider and consumer that shape how value is co-created."],
+      ["Service quality", "The degree to which a service meets needs, expectations and intended outcomes from the consumer perspective."],
+      ["Service level", "A measurable target or achieved level of service quality."]
+    ];
+    section.examFocus = [
+      "Know the roles in a service relationship: service provider, service consumer, customer, user and sponsor.",
+      "Understand that service relationships explain how value is realized through collaboration and actual service use.",
+      "Recognize the parts of a service offering: goods, access to resources and service actions.",
+      "Understand service interactions and relationship types: basic, cooperative and collaborative.",
+      "Recognize that service quality is judged from the consumer perspective, while service levels define measurable expectations or achieved performance.",
+      "Be able to identify scenarios involving consumers, offerings, interactions, quality issues and service-level measures."
+    ];
+    section.traps = [
+      ["Customer vs user", "The customer defines requirements and takes responsibility for outcomes; the user actually uses the service."],
+      ["Sponsor vs customer", "The sponsor authorizes budget; the customer defines requirements and is accountable for outcomes."],
+      ["Service offering vs one component", "A service offering may include goods, access to resources and service actions working together."],
+      ["Service interaction vs service action", "A service interaction is the broader exchange between provider and consumer; a service action is an activity performed by the provider."],
+      ["Basic vs collaborative relationship", "The more collaborative the relationship, the more interaction, transparency and shared value co-creation are expected."],
+      ["Quality vs service level", "Service quality is broader and consumer-centred; a service level is a measurable target or achieved result."],
+      ["Technical success vs realized value", "A technically sound service only realizes value when it is actually used to support desired outcomes."]
+    ];
+  }
+
+  const existing = MIND_MAPS["service-relationships"] || [];
+  const findMap = function (titles) {
+    return existing.find(function (map) { return map && titles.indexOf(map.title) !== -1; });
+  };
+  let serviceJourneyMap = findMap(["The Service Journey", "Service Journey"]);
+  if (serviceJourneyMap) serviceJourneyMap = Object.assign({}, serviceJourneyMap, { title: "The Service Journey" });
+  let serviceQualityLevelsMap = findMap(["Service Quality and Service Levels"]);
+
+  const serviceRelationshipsMap = {
+    title: "Service Relationships",
+    html: `
+      <div class="mm-page">
+        <div class="mm-head">
+          <h2 class="mm-title">ITIL V5: Service Relationships</h2>
+          <p class="mm-subtitle">Colour mind map for revision: value is realized through collaboration between service providers, service consumers, and other stakeholders.</p>
+        </div>
+        <div class="mm-grid">
+          <section class="mm-box mm-blue">
+            <div class="mm-box-h"><span class="mm-icon">💡</span>Introduction / core idea</div>
+            <div class="mm-box-b"><ul>
+              <li>Services do not exist in isolation.</li>
+              <li>To understand how value is co-created through services, it is essential to understand who is involved in these relationships and how their roles influence service outcomes.</li>
+              <li>Expectations, responsibilities, and interactions shape how services are designed, experienced, and how value is perceived over time.</li>
+              <li>Understanding service relationships provides the foundation for explaining how collaboration enables value co-creation throughout the service lifecycle.</li>
+            </ul></div>
+          </section>
+          <section class="mm-box mm-grey">
+            <div class="mm-box-h"><span class="mm-icon">🔢</span>The key concepts are</div>
+            <div class="mm-box-b">
+              <ol class="mm-numbers">
+                <li><span class="mm-num" style="background:#1b74e8">1</span><strong>Service provider</strong></li>
+                <li><span class="mm-num" style="background:#7a42d9">2</span><strong>Service consumer</strong></li>
+                <li><span class="mm-num" style="background:#0f95a3">3</span><strong>Other stakeholders</strong></li>
+                <li><span class="mm-num" style="background:#f28a07">4</span><strong>Customer</strong></li>
+                <li><span class="mm-num" style="background:#f35454">5</span><strong>User</strong></li>
+                <li><span class="mm-num" style="background:#f2b317">6</span><strong>Sponsor</strong></li>
+              </ol>
+              <p>Service relationships explain how value co-creation happens throughout the service lifecycle.</p>
+            </div>
+          </section>
+          <section class="mm-box mm-orange">
+            <div class="mm-box-h"><span class="mm-icon">🎯</span>Why service relationships matter</div>
+            <div class="mm-box-b"><ul>
+              <li>Roles are specific to each service relationship.</li>
+              <li>When an organization defines its purpose and strategy, it also determines the roles it will assume within service relationships.</li>
+              <li>An organization may act as a service provider in one relationship while serving as a service consumer in another.</li>
+              <li>In practice, all organizations operate as both service providers and service consumers, and many also take on the role of product vendor.</li>
+            </ul></div>
+          </section>
+          <section class="mm-box mm-purple">
+            <div class="mm-box-h"><span class="mm-icon">👥</span>Service provider, service consumer, and other stakeholders</div>
+            <div class="mm-box-b"><ul>
+              <li><strong>Service provider:</strong> an organization that provides services to one or more service consumers. Responsible for designing, building, delivering, and supporting services, including managing resources, capabilities, and risks related to service delivery.</li>
+              <li><strong>Service consumer:</strong> an organization that consumes services. Service consumers use services to achieve specific outcomes and actively participate in value co-creation.</li>
+              <li><strong>Other stakeholders</strong> may influence or be affected by a service relationship without directly consuming the service, such as regulators, suppliers, partners, internal support teams, or shareholders.</li>
+            </ul></div>
+          </section>
+          <section class="mm-core">
+            <div class="mm-core-kicker">👥</div>
+            <h3>Service Relationships</h3>
+            <div class="mm-divider"></div>
+            <p>Services are created, delivered, used, and improved within a network of relationships between different parties.</p>
+            <p>In ITIL, value is realized through collaboration between service providers, service consumers, and other stakeholders.</p>
+            <p class="mm-emphasis">A service may be well-designed and technically reliable, but its value will only be realized when it is actually used to support desired outcomes.</p>
+          </section>
+          <section class="mm-box mm-red">
+            <div class="mm-box-h"><span class="mm-icon">🧑</span>Roles representing a service consumer organization</div>
+            <div class="mm-box-b"><ul>
+              <li><strong>Customer:</strong> defines the requirements for a service and takes responsibility for the outcomes of service consumption. <strong>Customer focus:</strong> whether a service enables business objectives and delivers expected outcomes.</li>
+              <li><strong>User:</strong> uses services. User experience strongly influences perceptions of service quality, usability, and reliability, and user feedback often drives improvement initiatives.</li>
+              <li><strong>Sponsor:</strong> authorizes budget for service consumption. Sponsor ensures investments in services are justified and aligned with organizational priorities and connects financial decisions to expected value and outcomes.</li>
+            </ul></div>
+          </section>
+          <section class="mm-box mm-teal">
+            <div class="mm-box-h"><span class="mm-icon">➡️</span>Service relationship flow</div>
+            <div class="mm-box-b">
+              <div class="mm-mini-visual">
+                <div class="mm-mini-visual-grid" style="grid-template-columns:repeat(4,minmax(0,1fr));">
+                  <div class="mm-mini-pill" style="border-color:#6bd5df;color:#0f95a3;">Technology<br>resources</div>
+                  <div class="mm-mini-pill" style="border-color:#86c6ff;color:#1b64d1;">Digital<br>products</div>
+                  <div class="mm-mini-pill" style="border-color:#6bd5df;color:#0f95a3;">Service<br>offerings</div>
+                  <div class="mm-mini-pill" style="border-color:#86c6ff;color:#1b64d1;">Digital<br>services</div>
+                </div>
+                <div class="mm-footer-small">Consumer impacts digital products → negotiates and accepts service offerings → consumes digital services.</div>
+              </div>
+            </div>
+          </section>
+          <section class="mm-box mm-gold">
+            <div class="mm-box-h"><span class="mm-icon">📖</span>Value in service relationships</div>
+            <div class="mm-box-b"><ul>
+              <li>Value is realized through collaboration between providers, service consumers, and other stakeholders.</li>
+              <li>Service consumption is not passive; service consumers contribute requirements, feedback, and operational knowledge.</li>
+              <li>Different roles may have different, and sometimes conflicting, expectations from services and different definitions of value.</li>
+              <li>These roles also have different service journeys and service experiences.</li>
+              <li>Considering these perspectives helps prevent risks and supports sustainable service collaboration.</li>
+            </ul></div>
+          </section>
+        </div>
+        <div class="mm-support"><strong>Connected ideas</strong><span class="mm-inline-links"><span>Service provider</span><span class="mm-dot">•</span><span>Service consumer</span><span class="mm-dot">•</span><span>Other stakeholders</span><span class="mm-dot">•</span><span>Customer</span><span class="mm-dot">•</span><span>User</span><span class="mm-dot">•</span><span>Sponsor</span><span class="mm-dot">•</span><span>Value co-creation</span></span></div>
+        <div class="mm-exam"><div class="mm-exam-grid"><div class="mm-exam-label">🎓 Exam takeaway</div><ul>
+          <li>Service relationships explain how value is realized through collaboration between different parties.</li>
+          <li>Service providers provide services, service consumers consume services, and other stakeholders can influence or be affected by the relationship.</li>
+          <li>Within a service consumer organization, customers define requirements, users use services, and sponsors authorize budgets.</li>
+          <li>Roles are specific to the relationship and may vary across contexts.</li>
+          <li>A service realizes intended value only when it is actually used to support desired outcomes.</li>
+        </ul></div></div>
+      </div>`
+  };
+
+  const serviceOfferingsMap = {
+    title: "Service Offerings",
+    html: `
+      <div class="mm-page">
+        <div class="mm-head">
+          <h2 class="mm-title">ITIL V5: Service Offerings</h2>
+          <p class="mm-subtitle">Colour mind map for revision: service offerings explain what a service provides, service interactions shape experience, and relationship type affects value co-creation.</p>
+        </div>
+        <div class="mm-grid">
+          <section class="mm-box mm-blue">
+            <div class="mm-box-h"><span class="mm-icon">💡</span>Introduction / core idea</div>
+            <div class="mm-box-b"><ul>
+              <li>A service offering is a formal description of one or more services designed to address the needs of a target consumer group.</li>
+              <li>It helps service consumers understand what they can expect, how the service supports their outcomes, and what is included in the relationship with the service provider.</li>
+              <li>A service offering typically combines different components that together form a coherent service.</li>
+              <li>For example, a customer support service offering may include access to a support portal, the ability to submit requests, and assistance provided by support staff.</li>
+            </ul></div>
+          </section>
+          <section class="mm-box mm-grey">
+            <div class="mm-box-h"><span class="mm-icon">🔢</span>The key concepts are</div>
+            <div class="mm-box-b">
+              <ol class="mm-numbers">
+                <li><span class="mm-num" style="background:#1b74e8">1</span><strong>Service offering</strong></li>
+                <li><span class="mm-num" style="background:#7a42d9">2</span><strong>Goods</strong></li>
+                <li><span class="mm-num" style="background:#0f95a3">3</span><strong>Access to resources</strong></li>
+                <li><span class="mm-num" style="background:#f28a07">4</span><strong>Service actions</strong></li>
+                <li><span class="mm-num" style="background:#f35454">5</span><strong>Service interaction</strong></li>
+                <li><span class="mm-num" style="background:#123b66">6</span><strong>Basic / cooperative / collaborative relationship</strong></li>
+              </ol>
+              <p>The value of an offering depends on how its components work together and how the relationship is experienced.</p>
+            </div>
+          </section>
+          <section class="mm-box mm-orange">
+            <div class="mm-box-h"><span class="mm-icon">🎯</span>Why service offerings matter</div>
+            <div class="mm-box-b"><ul>
+              <li>They explain what a service provides.</li>
+              <li>They help service consumers understand what to expect.</li>
+              <li>They show how the service supports outcomes.</li>
+              <li>They show what is included in the relationship with the service provider.</li>
+              <li>Clear service offerings support transparency, expectation management, and effective value co-creation.</li>
+            </ul></div>
+          </section>
+          <section class="mm-box mm-purple">
+            <div class="mm-box-h"><span class="mm-icon">🧾</span>Definition: service offering</div>
+            <div class="mm-box-b"><ul>
+              <li>A formal description of one or more services designed to address the needs of a target consumer group.</li>
+              <li>A service offering may include goods, access to resources, and service actions.</li>
+              <li>Goods can be physical or digital items transferred to the consumer.</li>
+              <li>Access to resources can include applications, infrastructure, or platforms.</li>
+              <li>Service actions are activities performed by the service provider.</li>
+              <li>Individually, these components may have limited value. Together, they form a coherent service that supports consumer outcomes.</li>
+            </ul></div>
+          </section>
+          <section class="mm-core">
+            <div class="mm-core-kicker">🧩</div>
+            <h3>Service Offerings</h3>
+            <div class="mm-divider"></div>
+            <p>A service offering explains what a service provides and how it enables value creation for a specific group of consumers.</p>
+            <p>A service offering may include goods, access to resources, and service actions.</p>
+            <p>The value of the offering is not in any single component, but in how these elements work together to support consumer outcomes.</p>
+            <p class="mm-emphasis">Clear service offerings support transparency, expectation management, and effective value co-creation.</p>
+          </section>
+          <section class="mm-box mm-red">
+            <div class="mm-box-h"><span class="mm-icon">🤝</span>Service interactions</div>
+            <div class="mm-box-b"><ul>
+              <li>A service interaction is an interaction between a service provider and a service consumer that contributes to value co-creation.</li>
+              <li>Service interactions occur whenever service consumers engage with the service provider, for example when requesting a service, using a digital product, receiving support, participating in a review meeting, or providing feedback.</li>
+              <li>Each interaction directly influences how the service is experienced and how value is perceived.</li>
+              <li>Positive interactions increase trust, satisfaction, and confidence in the provider. Negative interactions can significantly reduce perceived value and weaken the overall relationship.</li>
+              <li>Well-designed service interactions must be clear and transparent, consistent and reliable, aligned with agreed expectations, and supportive of value co-creation.</li>
+            </ul></div>
+          </section>
+          <section class="mm-box mm-teal">
+            <div class="mm-box-h"><span class="mm-icon">➡️</span>Service offering flow</div>
+            <div class="mm-box-b">
+              <div class="mm-mini-visual">
+                <div class="mm-mini-visual-grid" style="grid-template-columns:repeat(4,minmax(0,1fr));">
+                  <div class="mm-mini-pill" style="border-color:#ff9ec9;color:#d70b74;">Technology<br>resources</div>
+                  <div class="mm-mini-pill" style="border-color:#c9a7ff;color:#7a42d9;">Digital<br>products</div>
+                  <div class="mm-mini-pill" style="border-color:#ff9ec9;color:#d70b74;">Service<br>offerings</div>
+                  <div class="mm-mini-pill" style="border-color:#c9a7ff;color:#7a42d9;">Digital<br>services</div>
+                </div>
+                <div class="mm-footer-small">Technology resources compose digital products → enable and support service offerings → describe digital services.</div>
+              </div>
+            </div>
+          </section>
+          <section class="mm-box mm-green">
+            <div class="mm-box-h"><span class="mm-icon">🌱</span>Levels of engagement</div>
+            <div class="mm-box-b"><ul>
+              <li>Service relationships involve sharing resources, data, responsibilities, and sometimes reputation.</li>
+              <li>Three core relationship types are Basic relationship, Cooperative relationship, and Collaborative relationship.</li>
+              <li><strong>Basic relationship:</strong> focuses primarily on support and efficiency; services are usually commodity or highly standardized; contracts and SLAs define expectations; interaction is limited to service delivery and issue resolution; the focus is on reliability and cost-efficiency.</li>
+              <li><strong>Cooperative relationship:</strong> involves a higher level of interaction and alignment; services are often customized; operational and tactical levels are involved; agreements may include advanced SLAs or experience-based measures; improvement initiatives are jointly discussed.</li>
+              <li><strong>Collaborative relationship:</strong> represents the highest level of engagement; the focus is on innovation, growth, and strategic alignment; operational, tactical, and strategic levels are involved; services may be bespoke and outcome-based; trust and transparency are essential; goals and risks may be shared.</li>
+            </ul></div>
+          </section>
+          <section class="mm-box mm-gold">
+            <div class="mm-box-h"><span class="mm-icon">⚖️</span>Why alignment matters</div>
+            <div class="mm-box-b"><ul>
+              <li>Successful value co-creation depends on both parties aiming at the same type of relationship.</li>
+              <li>Each relationship type creates different expectations regarding level of involvement, transparency, innovation, sharing, flexibility and responsiveness, innovation and improvement, and contractual control versus trust.</li>
+              <li>If the service consumer expects a collaborative partnership, but the provider operates as if the relationship is basic and transactional, dissatisfaction can arise even if contractual targets are met.</li>
+              <li>Misalignment can result in perceived underperformance, frustration despite SLA compliance, conflicts over responsibilities, reduced trust, and breakdown of value perception.</li>
+              <li><strong>Key insight:</strong> the more collaborative the relationship, the more interactions become strategic, transparent, and co-creative. The more basic the relationship, the more interactions are standardized and efficiency-focused.</li>
+              <li>Understanding the relationship type helps organizations design appropriate interaction models, define realistic agreements, align expectations early, prevent dissatisfaction, and strengthen long-term value co-creation.</li>
+            </ul></div>
+          </section>
+        </div>
+        <div class="mm-support"><strong>Connected ideas</strong><span class="mm-inline-links"><span>Goods</span><span class="mm-dot">•</span><span>Access to resources</span><span class="mm-dot">•</span><span>Service actions</span><span class="mm-dot">•</span><span>Service interaction</span><span class="mm-dot">•</span><span>Value co-creation</span><span class="mm-dot">•</span><span>Basic relationship</span><span class="mm-dot">•</span><span>Collaborative relationship</span></span></div>
+        <div class="mm-exam"><div class="mm-exam-grid"><div class="mm-exam-label">🎓 Exam takeaway</div><ul>
+          <li>A service offering is a formal description of one or more services designed for a target consumer group.</li>
+          <li>A service offering may include goods, access to resources, and service actions.</li>
+          <li>Service interactions directly influence the service experience and perceived value.</li>
+          <li>Service relationships can be basic, cooperative, or collaborative.</li>
+          <li>Value co-creation is strongest when provider and consumer align on the type of relationship and expectations.</li>
+        </ul></div></div>
+      </div>`
+  };
+
+  MIND_MAPS["service-relationships"] = [
+    serviceRelationshipsMap,
+    serviceOfferingsMap,
+    serviceJourneyMap,
+    serviceQualityLevelsMap
+  ].filter(Boolean);
+})();
+
+
+/* Phase 4.7 — confirmed Service Relationships maps: The Service Journey and Service Quality and Service Levels */
+(function () {
+  const section = SECTIONS.find(function (item) { return item.id === "service-relationships"; });
+  if (section) {
+    section.short = "Provider-consumer relationships, service offerings, the service journey, service quality and service levels.";
+    section.intro = "Service Relationships explains how value is co-created through interaction between service providers and service consumers. This section contains four confirmed mind maps: Service Relationships, Service Offerings, The Service Journey, and Service Quality and Service Levels.";
+    section.overview = [
+      ["Service Relationships", "Explains how providers, consumers and other stakeholders collaborate to realize value through services."],
+      ["Service Offerings", "Explains how services are formally described for target consumer groups, including goods, access to resources, service actions and service interactions."],
+      ["The Service Journey", "Explains how service relationships evolve through activities and interactions over time, including explore, engage, offer, agree, onboard, co-create and reflect."],
+      ["Service Quality and Service Levels", "Explains how service quality is perceived and how service levels, SLAs and measurements make expectations clear and accountable."]
+    ];
+    section.terms = [
+      ["Service relationship", "A relationship between a service provider and service consumer that supports value co-creation."],
+      ["Service provider", "An organization that provides services to one or more service consumers."],
+      ["Service consumer", "An organization that consumes services. This may include customer, user and sponsor roles."],
+      ["Customer", "The role that defines service requirements and is accountable for outcomes of service consumption."],
+      ["User", "The role that uses the service."],
+      ["Sponsor", "The role that authorizes budget for service consumption."],
+      ["Service offering", "A formal description of one or more services designed to address the needs of a target consumer group."],
+      ["Goods", "Physical or digital items transferred to the service consumer."],
+      ["Access to resources", "Access to provider resources such as applications, infrastructure or platforms without ownership transfer."],
+      ["Service actions", "Activities performed by the service provider to meet consumer needs."],
+      ["Service interaction", "An interaction between service provider and service consumer that contributes to value co-creation."],
+      ["Service journey", "The sum of activities and interactions performed by organizations engaged in service relationships to fulfil their roles as provider and consumer."],
+      ["Line of visibility", "The boundary between what is visible and not visible between organizations during a service relationship."],
+      ["Band of visibility", "The sum of the consumer aspects visible to the provider and provider aspects visible to the consumer."],
+      ["Service quality", "The sum of the characteristics of a service that are relevant to its ability to satisfy stated and implied needs."],
+      ["Service level", "A set of metrics that define expected or achieved service quality."],
+      ["Service level agreement", "A documented agreement between a service provider and customer that identifies the services provided and the agreed level of each service."]
+    ];
+    section.examFocus = [
+      "Know the service consumer roles: customer defines requirements, user uses services, and sponsor authorizes budget.",
+      "Know that a service offering may include goods, access to resources and service actions.",
+      "Understand that service interactions directly influence perceived value and the service experience.",
+      "Know the service journey steps: Explore, Engage, Offer, Agree, Onboard, Co-create and Reflect.",
+      "Remember that the journey steps are not strictly linear and are not a fixed mandatory sequence.",
+      "Understand the band of visibility as what each organization can see about the other during the relationship.",
+      "Know that service quality is perceived and includes both technical characteristics and experiential aspects.",
+      "Understand that service levels make service quality expectations measurable.",
+      "Know that an SLA documents the services provided and the agreed level of each service."
+    ];
+    section.traps = [
+      ["Customer vs user", "The customer defines requirements and is accountable for outcomes; the user uses the service."],
+      ["Sponsor vs customer", "The sponsor authorizes budget; the customer defines requirements and outcomes."],
+      ["One-way value", "Value is co-created through service interactions, not simply handed over by the provider."],
+      ["Journey as fixed process", "The service journey is described as steps, but the steps are not strictly linear or mandatory."],
+      ["Hidden provider work", "Not all aspects of each organization are visible to the other; the band of visibility depends on the relationship."],
+      ["Technical quality only", "Service quality includes technical characteristics and experiential aspects."],
+      ["Quality vs service level", "Service quality is the broader perception of how needs are satisfied; service levels are measurable targets or results."],
+      ["Static SLAs", "Service level agreements are not static; they must be reviewed and adapted as services and environments change."]
+    ];
+  }
+
+  const existing = Array.isArray(MIND_MAPS["service-relationships"]) ? MIND_MAPS["service-relationships"] : [];
+  const findExisting = function (titles) {
+    return existing.find(function (map) { return map && titles.indexOf(map.title) !== -1; });
+  };
+
+  const serviceRelationshipsMap = findExisting(["Service Relationships"]);
+  const serviceOfferingsMap = findExisting(["Service Offerings"]);
+
+  const serviceJourneyMap = {
+    title: "The Service Journey",
+    html: `
+      <div class="mm-page">
+        <div class="mm-head">
+          <h2 class="mm-title">ITIL V5: The Service Journey</h2>
+          <p class="mm-subtitle">Colour mind map for revision: service relationships evolve through a service journey of activities and interactions that support value co-creation over time.</p>
+        </div>
+        <div class="mm-grid">
+          <section class="mm-box mm-blue"><div class="mm-box-h"><span class="mm-icon">💡</span>Introduction / core idea</div><div class="mm-box-b"><ul>
+            <li>Service relationships between organizations are not static.</li>
+            <li>They evolve as organizations explore opportunities, establish relationships, deliver services, and assess value.</li>
+            <li>The service journey explains how value is co-created over time through a sequence of activities and interactions.</li>
+            <li>It applies to all types of service relationships, from simple transactional arrangements to close strategic partnerships.</li>
+            <li>Understanding the service journey supports clearer expectations, better collaboration, and more effective value realization.</li>
+          </ul></div></section>
+          <section class="mm-box mm-grey"><div class="mm-box-h"><span class="mm-icon">🔢</span>The key concepts are</div><div class="mm-box-b">
+            <ol class="mm-numbers">
+              <li><span class="mm-num" style="background:#d70b74">1</span><strong>Service journey</strong></li>
+              <li><span class="mm-num" style="background:#1b74e8">2</span><strong>Explore</strong></li>
+              <li><span class="mm-num" style="background:#0f95a3">3</span><strong>Engage</strong></li>
+              <li><span class="mm-num" style="background:#f28a07">4</span><strong>Offer</strong></li>
+              <li><span class="mm-num" style="background:#22a44f">5</span><strong>Agree</strong></li>
+              <li><span class="mm-num" style="background:#7a42d9">6</span><strong>Onboard</strong></li>
+              <li><span class="mm-num" style="background:#0f95a3">7</span><strong>Co-create</strong></li>
+              <li><span class="mm-num" style="background:#f28a07">8</span><strong>Reflect</strong></li>
+            </ol>
+            <p>The steps provide orientation and clarity, but they do not represent a fixed or mandatory sequence.</p>
+          </div></section>
+          <section class="mm-box mm-orange"><div class="mm-box-h"><span class="mm-icon">🎯</span>Why the service journey matters</div><div class="mm-box-b"><ul>
+            <li>The service journey provides a shared model for understanding how service relationships develop and how value is realized over time.</li>
+            <li>It helps organizations align expectations, clarify roles, and identify opportunities for improvement.</li>
+            <li>By viewing services through the lens of the service journey, organizations gain better insight into how interactions contribute to outcomes.</li>
+            <li>It helps strengthen relationships to support sustainable value co-creation.</li>
+          </ul></div></section>
+          <section class="mm-box mm-purple"><div class="mm-box-h"><span class="mm-icon">📘</span>Definition and structure</div><div class="mm-box-b"><ul>
+            <li>A service journey is the sum of activities and interactions performed by organizations engaged in service relationships.</li>
+            <li>It fulfils roles as both service provider and service consumer.</li>
+            <li>The service journey is presented as a series of steps that help structure and explain how a service relationship develops over time.</li>
+            <li>These steps provide orientation and clarity, but are not a fixed or mandatory sequence.</li>
+            <li>Steps may occur in a different order, take place simultaneously, include loops, or skip certain steps.</li>
+          </ul></div></section>
+          <section class="mm-core"><div class="mm-core-kicker">🗺️</div><h3>The Service Journey</h3><div class="mm-divider"></div>
+            <p>Service relationships between organizations are not static. They evolve over time as organizations explore opportunities, establish relationships, deliver services, and assess value.</p>
+            <p class="mm-emphasis">Definition: A service journey is the sum of activities and interactions performed by organizations engaged in service relationships to fulfil their roles as a service provider and a service consumer.</p>
+            <p>The service journey is described as a sequence of steps, but these steps are not strictly linear.</p>
+            <p>It is useful to treat the service journey as a set of stepping stones rather than a predefined process.</p>
+          </section>
+          <section class="mm-box mm-teal"><div class="mm-box-h"><span class="mm-icon">👁️</span>Band of visibility</div><div class="mm-box-b"><ul>
+            <li>Not all aspects of each organization are visible to the other party.</li>
+            <li>The band of visibility is the sum of the aspects of the service consumer organization visible to the service provider, and the aspects of the service provider organization visible to the service consumer.</li>
+            <li>The width of the band of visibility depends on the type of service relationship.</li>
+            <li>The closer and more collaborative the relationship, the wider the band of visibility.</li>
+            <li>This affects trust, coordination, and the ability to co-create value effectively.</li>
+          </ul></div></section>
+          <section class="mm-box mm-green"><div class="mm-box-h"><span class="mm-icon">🔍</span>Steps 1–3</div><div class="mm-box-b"><ul>
+            <li><strong>Explore:</strong> understand markets and stakeholders; explore needs, opportunities, and capabilities.</li>
+            <li><strong>Engage:</strong> foster relationships; establish initial connections, build trust, and clarify intentions.</li>
+            <li><strong>Offer:</strong> shape demand and service offerings; align demand and supply, and shape requirements and service offerings.</li>
+          </ul></div></section>
+          <section class="mm-box mm-gold"><div class="mm-box-h"><span class="mm-icon">👥</span>Service consumer and provider perspective</div><div class="mm-box-b"><ul>
+            <li>The journey involves both the service consumer and the service provider.</li>
+            <li>Value is co-created through activities and interactions performed by both parties.</li>
+            <li>The visual model should show both perspectives, connected through service interaction and visibility concepts.</li>
+            <li>The service consumer and service provider each perform activities across the journey.</li>
+          </ul></div></section>
+          <section class="mm-box mm-red"><div class="mm-box-h"><span class="mm-icon">🔁</span>Service interaction model</div><div class="mm-box-b">
+            <div class="mm-mini-visual">
+              <div class="mm-mini-visual-grid" style="grid-template-columns:repeat(7,minmax(0,1fr));">
+                <div class="mm-mini-pill">Explore</div><div class="mm-mini-pill">Engage</div><div class="mm-mini-pill">Offer</div><div class="mm-mini-pill">Agree</div><div class="mm-mini-pill">Onboard</div><div class="mm-mini-pill">Co-create</div><div class="mm-mini-pill">Reflect</div>
+              </div>
+              <div class="mm-footer-small">Service consumer and service provider interact across the journey. The line and band of visibility show what each party can see.</div>
+            </div>
+          </div></section>
+        </div>
+        <div class="mm-support"><strong>Connected ideas</strong><span class="mm-inline-links"><span>Service relationships</span><span class="mm-dot">•</span><span>Service offerings</span><span class="mm-dot">•</span><span>Service interaction</span><span class="mm-dot">•</span><span>Service provider</span><span class="mm-dot">•</span><span>Service consumer</span><span class="mm-dot">•</span><span>Value co-creation</span><span class="mm-dot">•</span><span>Band of visibility</span></span></div>
+        <div class="mm-exam"><div class="mm-exam-grid"><div class="mm-exam-label">🎓 Exam takeaway</div><ul>
+          <li>Service relationships evolve through a service journey rather than a single fixed transaction.</li>
+          <li>The journey includes Explore, Engage, Offer, Agree, Onboard, Co-create, and Reflect.</li>
+          <li>The steps are not strictly linear.</li>
+          <li>The band of visibility explains how much of each organization is visible to the other.</li>
+          <li>Understanding the service journey helps align expectations and improve value co-creation.</li>
+        </ul></div></div>
+      </div>`
+  };
+
+  const serviceQualityLevelsMap = {
+    title: "Service Quality and Service Levels",
+    html: `
+      <div class="mm-page">
+        <div class="mm-head">
+          <h2 class="mm-title">ITIL V5: Service Quality and Service Levels</h2>
+          <p class="mm-subtitle">Colour mind map for revision: service quality is perceived, service levels make expectations measurable, and SLAs align provider and consumer expectations.</p>
+        </div>
+        <div class="mm-grid">
+          <section class="mm-box mm-blue"><div class="mm-box-h"><span class="mm-icon">💡</span>Service quality</div><div class="mm-box-b"><ul>
+            <li>Service quality is the sum of the characteristics of a service that are relevant to its ability to satisfy stated and implied needs.</li>
+            <li>Service quality reflects how well a service supports the service consumer in achieving desired outcomes.</li>
+            <li>It is shaped by both what is delivered and how the service is experienced.</li>
+            <li>It includes technical characteristics and experiential aspects.</li>
+          </ul></div></section>
+          <section class="mm-box mm-grey"><div class="mm-box-h"><span class="mm-icon">🔢</span>The key concepts are</div><div class="mm-box-b">
+            <ol class="mm-numbers">
+              <li><span class="mm-num" style="background:#1b74e8">1</span><strong>Service quality</strong></li>
+              <li><span class="mm-num" style="background:#7a42d9">2</span><strong>Technical characteristics</strong></li>
+              <li><span class="mm-num" style="background:#0f95a3">3</span><strong>Experiential aspects</strong></li>
+              <li><span class="mm-num" style="background:#f28a07">4</span><strong>Service level</strong></li>
+              <li><span class="mm-num" style="background:#e53935">5</span><strong>Service level agreement (SLA)</strong></li>
+              <li><span class="mm-num" style="background:#22a44f">6</span><strong>Transparency and accountability</strong></li>
+            </ol>
+            <p>These concepts help define, measure, and align expectations about service quality.</p>
+          </div></section>
+          <section class="mm-box mm-orange"><div class="mm-box-h"><span class="mm-icon">🎯</span>Why service quality matters</div><div class="mm-box-b"><ul>
+            <li>Different stakeholders may have different expectations.</li>
+            <li>Service quality is inherently perceived rather than absolute.</li>
+            <li>It influences satisfaction, trust, and the willingness of service consumers to continue or expand the relationship.</li>
+            <li>Service levels and SLAs make quality expectations explicit and observable.</li>
+          </ul></div></section>
+          <section class="mm-box mm-purple"><div class="mm-box-h"><span class="mm-icon">📘</span>Technical and experiential aspects</div><div class="mm-box-b"><ul>
+            <li>Technical characteristics may include performance, availability, reliability, and accuracy.</li>
+            <li>Experiential aspects relate to ease of use, responsiveness, and consistency.</li>
+            <li>Both dimensions shape perceived service quality.</li>
+          </ul></div></section>
+          <section class="mm-core"><div class="mm-core-kicker">✅</div><h3>Service Quality<br>and Service Levels</h3><div class="mm-divider"></div>
+            <p>Service quality reflects how well a service supports the service consumer in achieving desired outcomes.</p>
+            <p>Service quality includes both technical characteristics and experiential aspects.</p>
+            <p>Service levels translate expectations about service quality into measurable terms.</p>
+            <p>An SLA documents the services provided and the agreed level of each service.</p>
+            <p class="mm-emphasis">Service quality and service levels support transparency, accountability, trust, alignment, and value co-creation.</p>
+          </section>
+          <section class="mm-box mm-blue"><div class="mm-box-h"><span class="mm-icon">📊</span>Service level</div><div class="mm-box-b"><ul>
+            <li>A service level is a set of metrics that define expected or achieved service quality.</li>
+            <li>Service levels translate expectations about service quality into measurable terms.</li>
+            <li>They provide a shared reference point for service providers and service consumers.</li>
+            <li>Defining service levels clarifies what good service means in practice.</li>
+            <li>Monitoring achieved service levels helps assess whether expectations are being met and where gaps exist.</li>
+          </ul></div></section>
+          <section class="mm-box mm-teal"><div class="mm-box-h"><span class="mm-icon">🧾</span>Service level agreement (SLA)</div><div class="mm-box-b"><ul>
+            <li>An SLA is a documented agreement between a service provider and a customer that identifies the services provided and the agreed level of each service.</li>
+            <li>An SLA formalizes mutual expectations within a service relationship.</li>
+            <li>It defines which services are provided, how service quality is measured, and which responsibilities apply to each party.</li>
+            <li>By documenting these elements, an SLA reduces ambiguity and supports transparency and accountability.</li>
+          </ul></div></section>
+          <section class="mm-box mm-green"><div class="mm-box-h"><span class="mm-icon">👥</span>Consumer and provider perspective</div><div class="mm-box-b"><ul>
+            <li>For a service consumer organization, an SLA clarifies what level of service can be expected and how the service contributes to desired outcomes.</li>
+            <li>It helps customers and sponsors assess whether the service delivers sufficient value and whether investments are justified.</li>
+            <li>For a service provider organization, an SLA establishes priorities and boundaries.</li>
+            <li>It helps the provider focus resources on what matters most to consumers and manage expectations realistically and measurably.</li>
+          </ul></div></section>
+          <section class="mm-box mm-gold"><div class="mm-box-h"><span class="mm-icon">🛡️</span>Using SLAs effectively</div><div class="mm-box-b"><ul>
+            <li>Service level agreements are not static.</li>
+            <li>As services, business needs, and environments evolve, SLAs must be reviewed and adapted.</li>
+            <li>When used effectively, SLAs support trust, continual alignment, and value co-creation within service relationships.</li>
+            <li>SLAs for digital services should describe utility, warranty, and sustainability.</li>
+            <li>When services are consumed by users, user experience metrics should also be included.</li>
+            <li>Managing service levels and SLAs is supported by the Service Level Management practice.</li>
+          </ul></div></section>
+        </div>
+        <div class="mm-support"><strong>Connected ideas</strong><span class="mm-inline-links"><span>Service relationships</span><span class="mm-dot">•</span><span>Service quality</span><span class="mm-dot">•</span><span>Service levels</span><span class="mm-dot">•</span><span>SLA</span><span class="mm-dot">•</span><span>Utility</span><span class="mm-dot">•</span><span>Warranty</span><span class="mm-dot">•</span><span>Sustainability</span><span class="mm-dot">•</span><span>User experience</span><span class="mm-dot">•</span><span>Value co-creation</span></span></div>
+        <div class="mm-exam"><div class="mm-exam-grid"><div class="mm-exam-label">🎓 Exam takeaway</div><ul>
+          <li>Service quality is the sum of characteristics relevant to satisfying stated and implied needs.</li>
+          <li>Service quality is perceived and includes both technical and experiential aspects.</li>
+          <li>Service levels make expectations about service quality measurable.</li>
+          <li>An SLA documents the services provided and the agreed level of each service.</li>
+          <li>Effective SLAs reduce ambiguity and support transparency, accountability, alignment, and improvement.</li>
+        </ul></div></div>
+      </div>`
+  };
+
+  MIND_MAPS["service-relationships"] = [
+    serviceRelationshipsMap,
+    serviceOfferingsMap,
+    serviceJourneyMap,
+    serviceQualityLevelsMap
+  ].filter(Boolean);
+})();
+
+
+/* Phase 4.8 — confirmed ITIL Value System mind map */
+(function () {
+  const itilValueSystemMap = {
+    title: "ITIL Value System (ITIL VS)",
+    html: `
+      <div class="mm-page">
+        <div class="mm-head">
+          <h2 class="mm-title">ITIL V5: ITIL Value System (ITIL VS)</h2>
+          <p class="mm-subtitle">Colour mind map for revision: the ITIL Value System shows how interconnected components transform opportunity and demand into value.</p>
+        </div>
+        <div class="mm-grid">
+          <section class="mm-box mm-blue"><div class="mm-box-h"><span class="mm-icon">💡</span>Introduction / core idea</div><div class="mm-box-b"><ul>
+            <li>Managing digital products and services requires a coherent system.</li>
+            <li>ITIL addresses this need through the ITIL Value System (ITIL VS).</li>
+            <li>It shows how components and activities work together as a system.</li>
+            <li>It applies to all organizations, regardless of size, structure, or industry.</li>
+            <li>It supports tailored application while maintaining alignment with organizational objectives.</li>
+          </ul></div></section>
+          <section class="mm-box mm-grey"><div class="mm-box-h"><span class="mm-icon">🎯</span>The key concepts are</div><div class="mm-box-b">
+            <ol class="mm-numbers">
+              <li><span class="mm-num" style="background:#1b74e8">1</span><strong>Management system</strong></li>
+              <li><span class="mm-num" style="background:#7a42d9">2</span><strong>ITIL Value System (ITIL VS)</strong></li>
+              <li><span class="mm-num" style="background:#0f95a3">3</span><strong>Opportunity and demand</strong></li>
+              <li><span class="mm-num" style="background:#f28a07">4</span><strong>Value</strong></li>
+              <li><span class="mm-num" style="background:#e53935">5</span><strong>Guiding principles</strong></li>
+              <li><span class="mm-num" style="background:#7a42d9">6</span><strong>Governance</strong></li>
+              <li><span class="mm-num" style="background:#0f95a3">7</span><strong>Service value chain</strong></li>
+              <li><span class="mm-num" style="background:#22a44f">8</span><strong>Practices</strong></li>
+              <li><span class="mm-num" style="background:#f5a400">9</span><strong>Continual improvement</strong></li>
+            </ol>
+            <p>Together, these concepts show how the ITIL Value System functions as an integrated whole.</p>
+          </div></section>
+          <section class="mm-box mm-orange"><div class="mm-box-h"><span class="mm-icon">🔁</span>From opportunity and demand to value</div><div class="mm-box-b"><ul>
+            <li>The ITIL Value System shows how governance and management systems work together to create value.</li>
+            <li>Inputs are opportunity and demand.</li>
+            <li>These may arise from customer needs, market changes, technological developments, or internal improvement initiatives.</li>
+            <li>The system transforms these inputs through coordinated organizational activities.</li>
+            <li>Outputs are the achievement of organizational objectives and the creation of value for the organization, its customers, and other stakeholders.</li>
+          </ul></div></section>
+          <section class="mm-box mm-purple"><div class="mm-box-h"><span class="mm-icon">📋</span>Definition: Management system</div><div class="mm-box-b"><ul>
+            <li>A system of interconnected elements that establish policy and objectives and enable the achievement of those objectives.</li>
+            <li>It establishes policies, defines objectives, and determines how those objectives are achieved.</li>
+            <li>It provides a structured approach to directing decision-making and organizing activities for value delivery.</li>
+            <li>It helps build capabilities needed to perform and manage work.</li>
+            <li>It supports ongoing alignment with evolving stakeholder needs.</li>
+          </ul></div></section>
+          <section class="mm-core"><div class="mm-core-kicker">🏆</div><h3>ITIL Value System<br>(ITIL VS)</h3><div class="mm-divider"></div>
+            <p>The ITIL Value System provides a holistic view of how an organization creates value.</p>
+            <p>It aligns strategic direction, governance, management activities, and continual improvement.</p>
+            <p>It helps transform opportunity and demand into value for customers and other stakeholders.</p>
+            <p class="mm-emphasis">It supports flexibility, adaptability, and coordinated value creation.</p>
+          </section>
+          <section class="mm-box mm-red"><div class="mm-box-h"><span class="mm-icon">👥</span>The five components</div><div class="mm-box-b"><ul>
+            <li><strong>Guiding principles</strong> influence decision-making across the organization.</li>
+            <li><strong>Governance</strong> provides direction, oversight, and accountability.</li>
+            <li><strong>The service value chain</strong> structures the activities required to create and deliver value.</li>
+            <li><strong>Practices</strong> provide the capabilities needed to perform work effectively.</li>
+            <li><strong>Continual improvement</strong> ensures ongoing alignment with changing needs and conditions.</li>
+          </ul></div></section>
+          <section class="mm-box mm-teal"><div class="mm-box-h"><span class="mm-icon">🧱</span>Structure of the ITIL Value System</div><div class="mm-box-b">
+            <div class="mm-mini-visual">
+              <div class="mm-mini-visual-grid">
+                <div class="mm-mini-pill">Guiding principles</div>
+                <div class="mm-mini-pill">Governance</div>
+                <div class="mm-mini-pill">Value chain</div>
+                <div class="mm-mini-pill">Practices</div>
+                <div class="mm-mini-pill">Continual improvement</div>
+              </div>
+              <div class="mm-mini-center">Opportunity / Demand → Value</div>
+              <div class="mm-footer-small">The five interrelated components work together as a system.</div>
+            </div>
+          </div></section>
+          <section class="mm-box mm-green"><div class="mm-box-h"><span class="mm-icon">♻️</span>Interaction and adaptability</div><div class="mm-box-b"><ul>
+            <li>The strength of the ITIL Value System lies in its adaptability.</li>
+            <li>Organizations can tailor how they apply each component based on context while maintaining coherence and alignment.</li>
+            <li>Working together as a system, the components ensure value creation is coordinated, repeatable, and responsive to change.</li>
+            <li>The focus is on understanding how the ITIL Value System functions as an integrated whole.</li>
+          </ul></div></section>
+          <section class="mm-box mm-gold"><div class="mm-box-h"><span class="mm-icon">🌐</span>Ecosystem perspective</div><div class="mm-box-b"><ul>
+            <li>An organization's value system does not exist in isolation.</li>
+            <li>Organizations interact with customers, partners, suppliers, and other stakeholders, forming a broader service ecosystem.</li>
+            <li>Organizations influence and depend on one another to facilitate value.</li>
+            <li>Value is co-created, not delivered unilaterally.</li>
+            <li>Effective value creation requires coordination both within and across organizational boundaries.</li>
+          </ul></div></section>
+        </div>
+        <div class="mm-support"><strong>Connected ideas</strong><span class="mm-inline-links"><span>Governance</span><span class="mm-dot">•</span><span>Guiding principles</span><span class="mm-dot">•</span><span>Service value chain</span><span class="mm-dot">•</span><span>Practices</span><span class="mm-dot">•</span><span>Continual improvement</span><span class="mm-dot">•</span><span>Opportunity</span><span class="mm-dot">•</span><span>Demand</span><span class="mm-dot">•</span><span>Value</span><span class="mm-dot">•</span><span>Service ecosystem</span></span></div>
+        <div class="mm-exam"><div class="mm-exam-grid"><div class="mm-exam-label">🎓 Exam takeaway</div><ul>
+          <li>The ITIL Value System is a holistic management system for value creation.</li>
+          <li>It transforms opportunity and demand into value.</li>
+          <li>It is made up of five interrelated components.</li>
+          <li>The components reinforce one another and operate as a system.</li>
+          <li>It supports adaptability, alignment, and sustainable value co-creation.</li>
+        </ul></div></div>
+      </div>`
+  };
+  MIND_MAPS["itil-value-system"] = [itilValueSystemMap];
 })();
