@@ -458,6 +458,7 @@
   function statusLabel(status) {
     if (status === "mindmap-validated") return "Mind map validated";
     if (status === "source-validated") return "Source validated";
+    if (status === "mindmap-and-source-validated") return "Mind map and source validated";
     if (status === "validated") return "Validated";
     if (status === "needs-review") return "Needs Review";
     if (status === "invalid-version-4") return "Invalid — ITIL 4";
@@ -465,7 +466,7 @@
   }
 
   function statusClass(status) {
-    if (status === "mindmap-validated" || status === "source-validated" || status === "validated") return "validated";
+    if (status === "mindmap-validated" || status === "source-validated" || status === "mindmap-and-source-validated" || status === "validated") return "validated";
     if (status === "needs-review") return "review";
     return "draft";
   }

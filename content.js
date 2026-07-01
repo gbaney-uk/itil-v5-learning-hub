@@ -1,6 +1,6 @@
 /* ITIL V5 Learning Dashboard — Phase 3 content file
    Learning content is intentionally separate from app logic. */
-const CONTENT_VERSION = "5.0-governance";
+const CONTENT_VERSION = "5.1-guiding-principles-overview-focus";
 
 
 const MIND_MAPS = {
@@ -1001,32 +1001,42 @@ const SECTIONS = [
     order: 6,
     emoji: "🧭",
     title: "ITIL Guiding Principles",
-    short: "The seven principles used to guide decisions and actions.",
+    short: "The seven universal, practical and enduring recommendations used to guide decisions and actions.",
     color: "#2563eb",
-    intro: "The guiding principles are broad recommendations. They should be applied together, not used in isolation.",
+    intro: "The ITIL guiding principles are recommendations that help organizations adopt and adapt ITIL guidance to their context. They support effective decision-making in all circumstances and help people think and act consistently when managing digital products and services.",
     overview: [
-      ["Focus on value", "Everything should link directly or indirectly to value."],
-      ["Start where you are", "Assess and reuse what already exists where useful."],
-      ["Progress iteratively with feedback", "Use manageable steps and learn from feedback."],
-      ["Collaborate and promote visibility", "Work together and make work visible."],
-      ["Think and work holistically", "Consider the whole system, not isolated parts."],
-      ["Keep it simple and practical", "Remove unnecessary complexity."],
-      ["Optimize and automate", "Simplify and improve before automating."],
+      ["Guiding principle", "A recommendation that can guide an organization in all circumstances, regardless of changes in its goals, strategies, type of work, or management structure."],
+      ["Universal", "They remain relevant across different organizations, structures, technologies and ways of working."],
+      ["Practical", "They help people make real decisions instead of prescribing detailed procedures for every situation."],
+      ["Enduring", "They remain useful even when technology, structure and working practices change."],
+      ["Focus on value", "All activities should link directly or indirectly to value for the organization, its customers and other stakeholders."],
+      ["Start where you are", "One of the seven guiding principles; detailed source content will be added when provided."],
+      ["Progress iteratively with feedback", "One of the seven guiding principles; detailed source content will be added when provided."],
+      ["Collaborate and promote visibility", "One of the seven guiding principles; detailed source content will be added when provided."],
+      ["Think and work holistically", "One of the seven guiding principles; detailed source content will be added when provided."],
+      ["Keep it simple and practical", "One of the seven guiding principles; detailed source content will be added when provided."],
+      ["Optimize and automate", "One of the seven guiding principles; detailed source content will be added when provided."],
     ],
     terms: [
-      ["Focus on value", "The principle that links all work to stakeholder value."],
-      ["Start where you are", "The principle that avoids unnecessary reinvention."],
-      ["Progress iteratively", "The principle that uses small steps and feedback."],
-      ["Optimize and automate", "The principle that says optimise before automating."],
+      ["Guiding principle", "A recommendation that can guide an organization in all circumstances."],
+      ["Focus on value", "Value should be the primary consideration in all organizational activities and decisions."],
+      ["Stakeholder perspective", "Different stakeholders may perceive value differently, so value requires understanding stakeholders and expected outcomes."],
+      ["Feedback on value", "Feedback should be collected on an ongoing basis, not only at the beginning of the service relationship."],
+      ["Organizational culture", "Guiding principles encourage behaviours that support collaboration, transparency and continual learning."],
     ],
     examFocus: [
-      "Know all seven principle names.",
-      "Apply the principle to scenarios, not just definitions.",
-      "Simplify and optimise before automation.",
-      "Use feedback and iteration for change."],
+      "Know that guiding principles are recommendations, not rules or processes.",
+      "Know the seven guiding principle names.",
+      "Understand that they are universal, practical and enduring.",
+      "Understand that they influence all components of the ITIL Value System.",
+      "For Focus on value, link work to stakeholder outcomes and perceived benefits.",
+      "For Focus on value, remember that value is perceived differently by different stakeholders.",
+    ],
     traps: [
-      ["Automation first", "This is a common trap. ITIL recommends optimization before automation."],
-      ["One principle only", "The principles should complement each other."],
+      ["Rules vs recommendations", "Guiding principles are not rules or detailed procedures; they guide judgement."],
+      ["Provider-only value", "Focus on value requires understanding value for the organization, customers and other stakeholders."],
+      ["Start-only feedback", "Feedback on value should be collected throughout the service relationship."],
+      ["Project-only value", "Focus on value applies during normal operations and improvement work, not only exciting projects."],
     ],
   },
   {
@@ -1069,33 +1079,40 @@ const SECTIONS = [
     order: 8,
     emoji: "🧩",
     title: "Value Chain and Practices",
-    short: "How value chain activities and management practices work together.",
+    short: "How ITIL V5 value chain activities and practices work together to create and deliver value.",
     color: "#9333ea",
-    intro: "The value chain activities create and deliver value. Management practices provide the capabilities needed to perform that work.",
+    intro: "The ITIL V5 value chain is made up of the activities Discover, Design, Acquire, Build, Transition, Operate, Deliver and Support. Management practices provide the capabilities needed to perform work across these activities.",
     overview: [
-      ["Plan", "Create shared understanding of vision, current status and direction."],
-      ["Improve", "Improve products, services, practices and value chain activities."],
-      ["Engage", "Understand stakeholder needs and maintain relationships."],
-      ["Design and transition", "Ensure products and services meet expectations and are moved into use."],
-      ["Obtain/build", "Ensure service components are available when needed."],
-      ["Deliver and support", "Deliver and support services according to expectations."],
-      ["Practices", "Reusable capabilities such as service desk, incident management, problem management and change enablement."],
+      ["Discover", "Understand needs, opportunities, stakeholders, demand and context."],
+      ["Design", "Define the product, service or solution so it can meet stakeholder needs."],
+      ["Acquire", "Obtain required components, products or services from external sources."],
+      ["Build", "Create, configure or develop required components internally."],
+      ["Transition", "Move products, services or changes into live use in a controlled way."],
+      ["Operate", "Run and maintain products and services so they continue to function."],
+      ["Deliver", "Make products and services available and usable for consumers."],
+      ["Support", "Help users and handle issues, requests and service support needs."],
+      ["Practices", "Organizational capabilities that support work across the value chain."],
     ],
     terms: [
-      ["Service desk", "The single point of contact between provider and users."],
-      ["Incident management", "Restores normal service operation as quickly as possible."],
-      ["Problem management", "Reduces likelihood and impact of incidents by managing causes."],
-      ["Change enablement", "Maximises successful changes through appropriate risk assessment and control."],
-      ["Service level management", "Sets clear service level targets and monitors achievement."],
+      ["Value chain", "The set of activities used to create and deliver value."],
+      ["Discover", "Understand needs and opportunities."],
+      ["Acquire", "Obtain externally."],
+      ["Build", "Create or configure internally."],
+      ["Transition", "Move into live use in a controlled way."],
+      ["Operate", "Keep products and services running."],
+      ["Deliver", "Make the service available to consumers."],
+      ["Support", "Help users and respond to issues and requests."],
     ],
     examFocus: [
-      "Know the purpose of each service value chain activity.",
-      "Know the common practice purposes.",
-      "Incident restores service; problem investigates and manages causes.",
-      "Service desk is the single point of contact."],
+      "Use the ITIL V5 activity names: Discover, Design, Acquire, Build, Transition, Operate, Deliver and Support.",
+      "Do not use ITIL 4 value chain activity wording such as Plan, Improve, Engage, Design and Transition, Obtain/Build, or Deliver and Support for V5 questions.",
+      "Understand the difference between Acquire and Build.",
+      "Understand the difference between Operate, Deliver and Support.",
+      "Practices support the work; they do not replace value chain activities."],
     traps: [
-      ["Incident vs problem", "Incident management restores service; problem management handles causes."],
-      ["Release vs deployment", "Release makes features available; deployment moves components into environments."],
+      ["ITIL 4 wording", "Questions using Engage as a service value chain activity are ITIL 4-style and should not be shown in the ITIL V5 validated bank."],
+      ["Acquire vs Build", "Acquire means obtain externally; Build means create or configure internally."],
+      ["Operate vs Support", "Operate keeps services running; Support helps users and handles issues or requests."],
     ],
   },
   {
@@ -3461,4 +3478,162 @@ const SECTIONS = [
       </div>`
   };
   MIND_MAPS["governance"] = [governanceMap];
+})();
+
+
+/* Phase 5.1 — confirmed ITIL Guiding Principles overview and Focus on Value mind maps */
+(function () {
+  const guidingOverviewMap = {
+    title: "Guiding Principles Overview",
+    html: `
+      <div class="mm-page">
+        <div class="mm-head">
+          <h2 class="mm-title">ITIL V5: Overview of the Guiding Principles</h2>
+          <p class="mm-subtitle">Colour mind map for revision: guiding principles help organizations think and act consistently in changing environments.</p>
+        </div>
+        <div class="mm-grid">
+          <section class="mm-box mm-blue"><div class="mm-box-h"><span class="mm-icon">💡</span>Introduction / core idea</div><div class="mm-box-b"><ul>
+            <li>Organizations operate in complex and constantly changing environments.</li>
+            <li>It is not always possible to rely on detailed procedures or predefined solutions.</li>
+            <li>ITIL addresses this challenge through a set of guiding principles.</li>
+            <li>These principles support effective decision-making in all circumstances.</li>
+          </ul></div></section>
+          <section class="mm-box mm-purple"><div class="mm-box-h"><span class="mm-icon">📋</span>The 7 guiding principles</div><div class="mm-box-b">
+            <ol class="mm-numbers">
+              <li><span class="mm-num" style="background:#1b74e8">1</span><strong>Focus on value</strong></li>
+              <li><span class="mm-num" style="background:#7a42d9">2</span><strong>Start where you are</strong></li>
+              <li><span class="mm-num" style="background:#0f95a3">3</span><strong>Progress iteratively with feedback</strong></li>
+              <li><span class="mm-num" style="background:#f28a07">4</span><strong>Collaborate and promote visibility</strong></li>
+              <li><span class="mm-num" style="background:#e53935">5</span><strong>Think and work holistically</strong></li>
+              <li><span class="mm-num" style="background:#6d3acb">6</span><strong>Keep it simple and practical</strong></li>
+              <li><span class="mm-num" style="background:#2e9b43">7</span><strong>Optimize and automate</strong></li>
+            </ol>
+            <p>Each principle is explored individually in later sections.</p>
+          </div></section>
+          <section class="mm-box mm-orange"><div class="mm-box-h"><span class="mm-icon">🎯</span>Why they matter</div><div class="mm-box-b"><ul>
+            <li>They help ensure consistency across the organization.</li>
+            <li>They influence decision-making related to governance, the service value chain, practices, and continual improvement.</li>
+            <li>They support the adoption and adaptation of ITIL without losing alignment with its core concepts.</li>
+          </ul></div></section>
+          <section class="mm-box mm-purple"><div class="mm-box-h"><span class="mm-icon">📖</span>Definition: Guiding principle</div><div class="mm-box-b"><ul>
+            <li>A guiding principle is a recommendation that can guide an organization in all circumstances, regardless of changes in its goals, strategies, type of work, or management structure.</li>
+            <li>Guiding principles are not rules or processes.</li>
+            <li>They support judgement and help organizations make consistent decisions across different situations.</li>
+          </ul></div></section>
+          <section class="mm-core"><div class="mm-core-kicker">👥</div><h3>Overview of the Guiding Principles</h3><div class="mm-divider"></div>
+            <p>Guiding principles are recommendations that support effective decision-making in all circumstances.</p>
+            <p>They help organizations adopt and adapt ITIL guidance to their specific context.</p>
+            <p>They are universal, practical, and enduring.</p>
+            <p class="mm-emphasis">They provide direction on how to think and act when making decisions related to digital products and services.</p>
+          </section>
+          <section class="mm-box mm-red"><div class="mm-box-h"><span class="mm-icon">👥</span>Guiding principles and organizational culture</div><div class="mm-box-b"><ul>
+            <li>They encourage behaviours that support collaboration, transparency, and continual learning.</li>
+            <li>When applied consistently, they contribute to a culture that focuses on value, embraces change, and seeks improvement rather than rigid compliance.</li>
+          </ul></div></section>
+          <section class="mm-box mm-teal"><div class="mm-box-h"><span class="mm-icon">🎯</span>Purpose of the guiding principles</div><div class="mm-box-b"><ul>
+            <li>Promote a shared understanding of effective behaviour across the organization.</li>
+            <li>Help teams and individuals align their actions with organizational objectives.</li>
+            <li>Help align actions with the broader goals of value creation.</li>
+          </ul></div></section>
+          <section class="mm-box mm-green"><div class="mm-box-h"><span class="mm-icon">🎓</span>Position within ITIL Foundation</div><div class="mm-box-b"><ul>
+            <li>At the Foundation level, the guiding principles are introduced as a set of high-level recommendations.</li>
+            <li>Understanding them is essential for understanding how ITIL guidance should be applied in practice.</li>
+            <li>They provide a common lens through which decisions can be evaluated.</li>
+            <li>They help bridge the gap between theory and real-world application.</li>
+          </ul></div></section>
+          <section class="mm-box mm-gold"><div class="mm-box-h"><span class="mm-icon">🔗</span>Within the ITIL Value System</div><div class="mm-box-b"><ul>
+            <li>The guiding principles influence all components of the ITIL Value System.</li>
+            <li>They guide decision-making related to governance, the service value chain, practices, and continual improvement.</li>
+            <li>Because they apply universally, they help ensure consistency even when different teams, products, or services operate in different contexts.</li>
+          </ul></div></section>
+        </div>
+        <div class="mm-support"><strong>Connected ideas</strong><span class="mm-inline-links"><span>ITIL Value System</span><span class="mm-dot">•</span><span>Governance</span><span class="mm-dot">•</span><span>Service value chain</span><span class="mm-dot">•</span><span>Practices</span><span class="mm-dot">•</span><span>Continual improvement</span><span class="mm-dot">•</span><span>Organizational culture</span><span class="mm-dot">•</span><span>Value creation</span><span class="mm-dot">•</span><span>Decision-making</span></span></div>
+        <div class="mm-exam"><div class="mm-exam-grid"><div class="mm-exam-label">🎓 Exam takeaway</div><ul>
+          <li>Guiding principles are recommendations, not rules or processes.</li>
+          <li>They help organizations think and act consistently in changing situations.</li>
+          <li>They are universal, practical, and enduring.</li>
+          <li>They influence all parts of the ITIL Value System.</li>
+          <li>They provide a common lens for applying ITIL in practice.</li>
+        </ul></div></div>
+      </div>`
+  };
+
+  const focusOnValueMap = {
+    title: "Focus on value",
+    html: `
+      <div class="mm-page">
+        <div class="mm-head">
+          <h2 class="mm-title">ITIL V5: Focus on Value</h2>
+          <p class="mm-subtitle">Colour mind map for revision: value should be the primary consideration in all organizational activities and decisions.</p>
+        </div>
+        <div class="mm-grid">
+          <section class="mm-box mm-blue"><div class="mm-box-h"><span class="mm-icon">💡</span>1 Key message: Focus on value</div><div class="mm-box-b"><ul>
+            <li>All activities conducted by the organization should link back directly or indirectly to value for the organization itself, its customers, and other stakeholders.</li>
+            <li>Value should be the primary consideration in decisions and activities.</li>
+          </ul></div></section>
+          <section class="mm-box mm-purple"><div class="mm-box-h"><span class="mm-icon">📖</span>2 Understanding the principle</div><div class="mm-box-b"><ul>
+            <li>Focus on value emphasizes that value should be the primary consideration in all organizational activities and decisions.</li>
+            <li>In ITIL, value is realized when products and services help stakeholders achieve their desired outcomes.</li>
+            <li>Activities, processes, and improvements only matter if they contribute directly or indirectly to that value.</li>
+          </ul></div></section>
+          <section class="mm-box mm-teal"><div class="mm-box-h"><span class="mm-icon">👥</span>3 Stakeholder perspective</div><div class="mm-box-b"><ul>
+            <li>Different stakeholders may perceive value differently.</li>
+            <li>Understanding value requires clarity about who the stakeholders are.</li>
+            <li>It also requires understanding what outcomes they expect.</li>
+            <li>Products and services must contribute to those outcomes across the service relationship.</li>
+          </ul></div></section>
+          <section class="mm-box mm-red"><div class="mm-box-h"><span class="mm-icon">🧾</span>4 Applying the principle</div><div class="mm-box-b"><ul>
+            <li>Know how service consumers use each service.</li>
+            <li>Understand their expected outcomes and how each service contributes to these.</li>
+            <li>Understand how service consumers perceive the service provider.</li>
+            <li>Collect feedback on value on an ongoing basis, not just at the beginning of the service relationship.</li>
+            <li>Encourage a focus on value among all staff.</li>
+            <li>Help staff understand customers, users, and customer and user experience.</li>
+          </ul></div></section>
+          <section class="mm-core"><div class="mm-core-kicker">🎯</div><h3>Focus on Value</h3><div class="mm-divider"></div>
+            <p>Value should be the primary consideration in all organizational activities and decisions.</p>
+            <p>All activities should link back directly or indirectly to value for the organization, its customers, and other stakeholders.</p>
+            <p>Value is realized when products and services help stakeholders achieve desired outcomes.</p>
+            <p>Activities, processes, and improvements only matter if they contribute to that value.</p>
+            <p class="mm-emphasis">Different stakeholders may perceive value differently.</p>
+          </section>
+          <section class="mm-box mm-orange"><div class="mm-box-h"><span class="mm-icon">📈</span>5 Focus on value in operations and improvement</div><div class="mm-box-b"><ul>
+            <li>Focus on value during normal operational activity as well as during improvement initiatives.</li>
+            <li>The organization as a whole contributes to the value that the customer perceives.</li>
+            <li>Everyone within the organization must maximize the value they create.</li>
+            <li>The creation of value should not rest solely with those involved in exciting projects and innovations.</li>
+            <li>Include focus on value in every step of any improvement initiative.</li>
+            <li>Everyone involved should understand outcomes, how value will be measured, and how they contribute to value co-creation.</li>
+          </ul></div></section>
+          <section class="mm-box mm-green"><div class="mm-box-h"><span class="mm-icon">🤖</span>6 Leverage AI</div><div class="mm-box-b"><ul>
+            <li>AI enables real-time data analysis and predictive analytics.</li>
+            <li>It helps organizations continuously understand and anticipate customer needs, preferences, and experiences.</li>
+            <li>AI-driven insights help service providers better align services with customer expectations.</li>
+            <li>This can improve service relevance and customer satisfaction, thereby enhancing overall value.</li>
+          </ul></div></section>
+          <section class="mm-box mm-blue"><div class="mm-box-h"><span class="mm-icon">🏛️</span>7 Position within the ITIL Value System</div><div class="mm-box-b"><ul>
+            <li>The principle Focus on value underpins all components of the ITIL Value System.</li>
+            <li>It guides governance decisions.</li>
+            <li>It shapes activities within the service value chain.</li>
+            <li>It influences the use of practices.</li>
+            <li>It provides direction for continual improvement.</li>
+            <li>Consistent application maintains alignment between stakeholder expectations and organizational outcomes.</li>
+          </ul></div></section>
+          <section class="mm-box mm-gold"><div class="mm-box-h"><span class="mm-icon">⭐</span>8 Key takeaway</div><div class="mm-box-b"><ul>
+            <li>Focus on value ensures that effort, resources, and decisions remain aligned with what truly matters to stakeholders.</li>
+            <li>By continuously linking work to outcomes and perceived benefits, organizations avoid waste and strengthen value co-creation.</li>
+          </ul></div></section>
+        </div>
+        <div class="mm-support"><strong>Connected ideas</strong><span class="mm-inline-links"><span>ITIL Value System</span><span class="mm-dot">•</span><span>Stakeholders</span><span class="mm-dot">•</span><span>Desired outcomes</span><span class="mm-dot">•</span><span>Service relationship</span><span class="mm-dot">•</span><span>Feedback on value</span><span class="mm-dot">•</span><span>Customer and user experience</span><span class="mm-dot">•</span><span>Continual improvement</span><span class="mm-dot">•</span><span>Co-creation of value</span><span class="mm-dot">•</span><span>AI-driven insights</span></span></div>
+        <div class="mm-exam"><div class="mm-exam-grid"><div class="mm-exam-label">🎓 Exam takeaway</div><ul>
+          <li>Focus on value means linking all work to what matters to stakeholders.</li>
+          <li>Value is realized when products and services help stakeholders achieve desired outcomes.</li>
+          <li>Different stakeholders may perceive value differently.</li>
+          <li>Focus on value should be applied in daily operations and in improvement work.</li>
+          <li>Focus on value underpins the ITIL Value System and supports value co-creation.</li>
+        </ul></div></div>
+      </div>`
+  };
+
+  MIND_MAPS["guiding-principles"] = [guidingOverviewMap, focusOnValueMap];
 })();
