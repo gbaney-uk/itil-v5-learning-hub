@@ -562,6 +562,10 @@ body.dark .flash-card {
   text-align: center;
   margin-bottom: 14px;
 }
+.mindmap-inline-core,
+.mindmap-inline-core * {
+  color: #ffffff !important;
+}
 
 .mindmap-inline-core strong {
   display: block;
@@ -697,13 +701,17 @@ body.dark .flash-card {
 .mm-box-b p:last-child { margin-bottom: 0; }
 .mm-core {
   background: linear-gradient(180deg, #f41a8b 0%, #d70b74 100%);
-  color: #fff;
+  color: #ffffff;
   padding: 20px 22px;
   display: flex;
   flex-direction: column;
   justify-content: center;
   min-height: 260px;
   box-shadow: 0 12px 24px rgba(210, 11, 116, 0.2);
+}
+.mm-core,
+.mm-core * {
+  color: #ffffff !important;
 }
 .mm-core .mm-core-kicker {
   text-align: center;
@@ -724,6 +732,14 @@ body.dark .flash-card {
 }
 .mm-core p { margin: 0 0 12px; text-align: center; line-height: 1.45; }
 .mm-core p:last-child { margin-bottom: 0; }
+.mm-core h3,
+.mm-core p,
+.mm-core .mm-core-kicker,
+.mindmap-inline-core strong,
+.mindmap-inline-core span,
+.mm-mini-center {
+  text-shadow: 0 1px 1px rgba(0, 0, 0, 0.18);
+}
 .mm-core .mm-emphasis { font-weight: 800; }
 .mm-support {
   margin-top: 14px;
@@ -817,11 +833,15 @@ body.dark .flash-card {
   margin: 8px auto;
   max-width: 220px;
   background: linear-gradient(180deg, #f41a8b, #d70b74);
-  color: #fff;
+  color: #ffffff;
   border-radius: 14px;
   text-align: center;
   padding: 10px 12px;
   font-weight: 800;
+}
+.mm-mini-center,
+.mm-mini-center * {
+  color: #ffffff !important;
 }
 .mm-footer-small { text-align: center; color: #2b466a; font-size: 0.92rem; }
 .mm-blue .mm-box-h { background: #1677ea; }

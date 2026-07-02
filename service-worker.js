@@ -1,4 +1,4 @@
-const CACHE_NAME = 'itil-v5-learning-app-v20260702-footer-disclaimer';
+const CACHE_NAME = 'itil-v5-learning-app-v20260702-mindmap-core-text-fix';
 const ASSETS = ['./', './index.html', './styles.css', './content.js', './questions.js', './app.js', './manifest.json', './service-worker.js'];
 
 self.addEventListener('install', event => {
