@@ -95,7 +95,6 @@
   }
 
   function sectionQuestions(sectionId) {
-    // Quizzes are grouped by top-level learning section. question.topic is audit metadata only.
     return visibleQuestions().filter((question) => question.sectionId === sectionId);
   }
 
@@ -308,7 +307,7 @@
         <div class="compact-row">
           <div>
             <strong>${section.emoji} ${escapeHtml(section.title)}</strong><br>
-            <span class="muted">${count} validated questions · Section ${section.order}</span>
+            <span class="muted">${count} draft questions · Section ${section.order}</span>
           </div>
           <div class="compact-row-actions">
             <button class="mini-btn" type="button" data-section-open="${section.id}">Read</button>
